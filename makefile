@@ -1,11 +1,13 @@
 install:
-	julia -e 'using Pkg; Pkg.develop(path = "CAP");'
-	julia -e 'using Pkg; Pkg.develop(path = "MonoidalCategories");'
-	julia -e 'using Pkg; Pkg.develop(path = "CartesianCategories");'
-	julia -e 'using Pkg; Pkg.develop(path = "Toposes");'
-	julia -e 'using Pkg; Pkg.develop(path = "FinSetsForCAP");'
-	julia -e 'using Pkg; Pkg.develop(path = "ZXCalculusForCAP");'
-	julia -e 'using Pkg; Pkg.develop(path = "LinearAlgebraForCAP");'
+	julia -e 'using Pkg; \
+		Pkg.develop(path = "CAP"); \
+		Pkg.develop(path = "MonoidalCategories"); \
+		Pkg.develop(path = "CartesianCategories"); \
+		Pkg.develop(path = "Toposes"); \
+		Pkg.develop(path = "FinSetsForCAP"); \
+		Pkg.develop(path = "ZXCalculusForCAP"); \
+		Pkg.develop(path = "LinearAlgebraForCAP"); \
+	'
 
 gen:
 	$(MAKE) -C CAP gen
