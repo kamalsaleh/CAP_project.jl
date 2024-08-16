@@ -1,0 +1,118 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# CAP: Categories, Algorithms, Programming
+#
+# Implementations
+#
+@InstallGlobalFunction( InfoStringOfInstalledOperationsOfCategory,
+  
+  function( category )
+    local result, MaximalPropertiesWithRegardToImplication, list_of_potential_categorical_properties, list_of_mathematical_properties,
+          list_of_potential_algorithmic_properties, list_of_algorithmic_and_not_yet_algorithmic_properties,
+          list_of_algorithmic_properties, list_of_maximal_algorithmic_properties,
+          list_of_not_yet_algorithmic_properties, list_of_maximal_not_yet_algorithmic_properties,
+          property,
+          list_of_mathematical_properties_not_implied_by_algorithmic_or_not_yet_algorithmic_properties, list_of_maximal_mathematical_properties_not_implied_by_algorithmic_or_not_yet_algorithmic_properties;
+    
+    if (@not IsCapCategory( category ))
+        Error( "first argument must be a category" );
+        return;
+    end;
+    
+    result = StringGAP( Length( ListPrimitivelyInstalledOperationsOfCategory( category ) ) );
+    result = @Concatenation( result, " primitive operations were used to derive " );
+    result = @Concatenation( result, StringGAP( Length( ListInstalledOperationsOfCategory( category ) ) ) );
+    result = @Concatenation( result, " operations for this category" );
+    
+    MaximalPropertiesWithRegardToImplication = function ( list_of_properties )
+        
+        return MaximalObjects( list_of_properties, ( p1, p2 ) -> p1 in ListImpliedFilters( ValueGlobal( p2 ) ) );
+        
+    end;
+    
+    list_of_potential_categorical_properties = SetGAP( Filtered( @Concatenation( CAP_INTERNAL_CATEGORICAL_PROPERTIES_LIST ), x -> x != fail ) );
+    
+    list_of_mathematical_properties = ListKnownCategoricalProperties( category );
+    
+    list_of_potential_algorithmic_properties = SortedList( RecNames( CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD ) );
+    
+    # check that all potential algorithmic properties except "EveryCategory" are potential categorical properties
+    @Assert( 0, Difference( list_of_potential_algorithmic_properties, list_of_potential_categorical_properties ) == [ "EveryCategory" ] );
+    
+    list_of_algorithmic_and_not_yet_algorithmic_properties = Intersection( list_of_mathematical_properties, list_of_potential_algorithmic_properties );
+    
+    list_of_algorithmic_properties = Filtered( list_of_algorithmic_and_not_yet_algorithmic_properties, p -> IsEmpty( MissingOperationsForConstructivenessOfCategory( category, p ) ) );
+    
+    list_of_maximal_algorithmic_properties = MaximalPropertiesWithRegardToImplication( list_of_algorithmic_properties );
+    
+    StableSortBy( list_of_maximal_algorithmic_properties, p -> Length( CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD[p] ) );
+    
+    if (@not IsEmpty( list_of_maximal_algorithmic_properties ))
+        
+        result = @Concatenation( result, " which algorithmically" );
+        
+        for property in list_of_maximal_algorithmic_properties
+            
+            result = @Concatenation( result, "\n* " );
+            result = @Concatenation( result, property );
+            
+        end;
+    end;
+    
+    list_of_not_yet_algorithmic_properties = Difference( list_of_algorithmic_and_not_yet_algorithmic_properties, list_of_algorithmic_properties );
+    
+    list_of_maximal_not_yet_algorithmic_properties = MaximalPropertiesWithRegardToImplication( list_of_not_yet_algorithmic_properties );
+    
+    StableSortBy( list_of_maximal_not_yet_algorithmic_properties, p -> Length( CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD[p] ) );
+    
+    if (@not IsEmpty( list_of_maximal_not_yet_algorithmic_properties ))
+        
+        if (IsEmpty( list_of_maximal_algorithmic_properties ))
+            result = @Concatenation( result, " which" );
+        else
+            result = @Concatenation( result, "\nand" );
+        end;
+        
+        result = @Concatenation( result, " not yet algorithmically" );
+        
+        for property in list_of_maximal_not_yet_algorithmic_properties
+            result = @Concatenation( result, "\n* " );
+            result = @Concatenation( result, property );
+        end;
+        
+    end;
+    
+    ## Finally, capture the remaining mathematical properties influencing the derivation mechanism:
+    list_of_mathematical_properties_not_implied_by_algorithmic_or_not_yet_algorithmic_properties =
+      Difference( list_of_mathematical_properties,
+              @Concatenation( List( list_of_algorithmic_and_not_yet_algorithmic_properties, p -> ListImpliedFilters( ValueGlobal( p ) ) ) ) );
+    
+    list_of_maximal_mathematical_properties_not_implied_by_algorithmic_or_not_yet_algorithmic_properties =
+      MaximalPropertiesWithRegardToImplication( list_of_mathematical_properties_not_implied_by_algorithmic_or_not_yet_algorithmic_properties );
+    
+    if (@not IsEmpty( list_of_maximal_mathematical_properties_not_implied_by_algorithmic_or_not_yet_algorithmic_properties ))
+        
+        if (IsEmpty( list_of_maximal_algorithmic_properties ) && IsEmpty( list_of_maximal_not_yet_algorithmic_properties ))
+            result = @Concatenation( result, " which" );
+        else
+            result = @Concatenation( result, "\nand furthermore" );
+        end;
+        result = @Concatenation( result, " mathematically" );
+        
+        for property in list_of_maximal_mathematical_properties_not_implied_by_algorithmic_or_not_yet_algorithmic_properties
+            result = @Concatenation( result, "\n* " );
+            result = @Concatenation( result, property );
+        end;
+        
+    end;
+    
+    return result;
+    
+end );
+
+@InstallGlobalFunction( InfoOfInstalledOperationsOfCategory,
+  
+  function( category )
+
+    Display( InfoStringOfInstalledOperationsOfCategory( category ) );
+    
+end );
