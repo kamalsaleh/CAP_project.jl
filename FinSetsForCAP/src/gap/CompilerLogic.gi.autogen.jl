@@ -536,7 +536,7 @@ CapJitAddLogicTemplate(
     @rec(
         variable_names = [ "j", "a", "b" ],
         variable_filters = [ IsBigInt, IsBigInt, IsBigInt ],
-        src_template = "Sum( List( (0):(a - 1), k -> List( (0):(a ^ 2 - 1), function( x ) if x in List( (0):(a - 1), i -> i + i * a ) then return BigInt( 1 ); else return BigInt( 0 ); fi; end )[1 + k + j * a] * b ^ k ) )",
+        src_template = "Sum( List( (0):(a - 1), k -> List( (0):(a ^ 2 - 1), function( x ) if x in List( (0):(a - 1), i -> i + i * a ) then return BigInt( 1 ); else return BigInt( 0 ); end; end )[1 + k + j * a] * b ^ k ) )",
         dst_template = "b ^ j",
     )
 );
