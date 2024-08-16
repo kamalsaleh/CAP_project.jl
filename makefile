@@ -7,6 +7,7 @@ install:
 		Pkg.develop(path = "FinSetsForCAP"); \
 		Pkg.develop(path = "ZXCalculusForCAP"); \
 		Pkg.develop(path = "LinearAlgebraForCAP"); \
+		Pkg.develop(path = "FreydCategoriesForCAP"); \
 	'
 
 gen:
@@ -17,6 +18,7 @@ gen:
 	$(MAKE) -C FinSetsForCAP gen
 	$(MAKE) -C ZXCalculusForCAP gen
 	$(MAKE) -C LinearAlgebraForCAP gen
+	$(MAKE) -C FreydCategoriesForCAP gen
 
 clean-gen:
 	$(MAKE) -C CAP clean-gen
@@ -26,6 +28,7 @@ clean-gen:
 	$(MAKE) -C FinSetsForCAP clean-gen
 	$(MAKE) -C ZXCalculusForCAP clean-gen
 	$(MAKE) -C LinearAlgebraForCAP clean-gen
+	$(MAKE) -C FreydCategoriesForCAP clean-gen
 
 test:
 	$(MAKE) -C CAP test
@@ -35,3 +38,4 @@ test:
 	$(MAKE) -C FinSetsForCAP test
 	$(MAKE) -C ZXCalculusForCAP test
 	$(MAKE) -C LinearAlgebraForCAP test
+	$(MAKE) -C FreydCategoriesForCAP test
