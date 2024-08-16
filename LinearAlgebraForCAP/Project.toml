@@ -1,6 +1,10 @@
 name = "LinearAlgebraForCAP"
 uuid = "3dc4824f-14ac-4ab7-8a60-75dbcd4a9d60"
-authors = ["Kamal Saleh <kamal.saleh@web.de>"]
+authors = [
+	"Sebastian Gutsche <gutsche@mathematik.uni-siegen.de>",
+	"Sebastian Posur <sebastian.posur@uni-muenster.de>",
+	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>",
+]
 version = "0.1.0"
 
 [deps]
