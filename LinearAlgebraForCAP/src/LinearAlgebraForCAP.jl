@@ -4,8 +4,6 @@ module LinearAlgebraForCAP
 
 import Base./
 
-using AbstractAlgebra
-
 using MatricesForHomalg
 
 using CAP
@@ -18,9 +16,24 @@ import CAP.LaTeXOutput
 using MonoidalCategories
 
 const IsHomalgRing = Filter("IsHomalgRing", MatricesForHomalg.TypeOfRingForHomalg)
+
 const IsFieldForHomalg = Filter("IsFieldForHomalg", MatricesForHomalg.TypeOfFieldForHomalg)
 
+function HasIsFieldForHomalg(::MatricesForHomalg.TypeOfFieldForHomalg)
+	true
+end
+
+const IsHomalgRingElement = Filter("IsHomalgRingElement", MatricesForHomalg.TypeOfRingElementForHomalg)
+
 const IsHomalgMatrix = Filter("IsHomalgMatrix", MatricesForHomalg.TypeOfMatrixForHomalg)
+
+function HasHasInvariantBasisProperty(::Union{typeof(MatricesForHomalg.ZZ), typeof(MatricesForHomalg.QQ)})
+	true
+end
+
+function HasInvariantBasisProperty(::Union{typeof(MatricesForHomalg.ZZ), typeof(MatricesForHomalg.QQ)})
+	true
+end
 
 # the following operations should be part of MatricesForHomalg.jl
 const NrRows = NumberRows
@@ -56,6 +69,14 @@ function ConvertColumnToMatrix( mat::MatricesForHomalg.TypeOfMatrixForHomalg, r:
 	
     return UnionOfColumns( HomalgRing( mat ), r, List( 1:c, i -> CertainRows( mat, ((i - 1) * c + 1):(i*c) ) ) )
 	
+end
+
+function EntriesOfHomalgMatrix( mat::MatricesForHomalg.TypeOfMatrixForHomalg )
+	collect(mat)[:]
+end
+
+function EntriesOfHomalgMatrixAsListList( mat::MatricesForHomalg.TypeOfMatrixForHomalg )
+	[collect(mat[i,:])[:] for i in 1:NrRows(mat)]
 end
 
 include("init.jl")

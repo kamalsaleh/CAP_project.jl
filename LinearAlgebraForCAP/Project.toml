@@ -8,7 +8,6 @@ authors = [
 version = "0.1.0"
 
 [deps]
-AbstractAlgebra = "c3fe647b-3220-5bb0-a1ea-a7954cac585d"
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 MonoidalCategories = "bfd98c86-782f-4b94-909f-74167f1eb613"
