@@ -2,21 +2,7 @@ module FinSetsForCAP
 
 @nospecialize
 
-import Base.in
-import Base.getindex
-import Base.iterate
-
 using CAP
-
-import CAP.ImageObject_OPERATION
-import CAP.CallFuncList
-import CAP.DisplayString
-import CAP.ViewString
-import CAP.PrintString
-import CAP.StringGAP_OPERATION
-import CAP.ListOp
-import CAP.FilteredOp
-import CAP.First
 
 using CartesianCategories
 

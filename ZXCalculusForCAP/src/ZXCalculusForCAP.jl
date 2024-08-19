@@ -4,11 +4,6 @@ module ZXCalculusForCAP
 
 using CAP
 
-import CAP.ObjectConstructor
-import CAP.MorphismConstructor
-import CAP.DisplayString
-import CAP.ViewString
-
 using MonoidalCategories
 
 using CartesianCategories
