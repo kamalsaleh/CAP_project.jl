@@ -19,7 +19,7 @@
     [ "FinalizeCategory", true ],
   ],
   function( CAP_NAMED_ARGUMENTS, homalg_ring )
-    local ring_as_category, add, object_constructor, modeling_tower_object_constructor, object_datum, modeling_tower_object_datum, morphism_constructor, modeling_tower_morphism_constructor, morphism_datum, modeling_tower_morphism_datum, wrapper;
+    local ring_as_category, add, is_defined_over_field, object_constructor, modeling_tower_object_constructor, object_datum, modeling_tower_object_datum, morphism_constructor, modeling_tower_morphism_constructor, morphism_datum, modeling_tower_morphism_datum, wrapper;
     
     ring_as_category = RING_AS_CATEGORY( homalg_ring );
     
@@ -38,7 +38,9 @@
         
     end;
     
-    if (HasIsFieldForHomalg( homalg_ring ) && IsFieldForHomalg( homalg_ring ))
+    is_defined_over_field = HasIsFieldForHomalg( homalg_ring ) && IsFieldForHomalg( homalg_ring );
+    
+    if (is_defined_over_field)
         
         SetIsAbelianCategory( add, true );
         
@@ -298,6 +300,16 @@
         return CategoryOfRowsMorphism( cat, Range( alpha ), left_divide, Range( beta ) );
         
     end );
+    
+    if (is_defined_over_field)
+        
+        ##
+        AddIsProjective( wrapper, ( cat, obj ) -> true, 1 );
+        
+        ##
+        AddIsInjective( wrapper, ( cat, obj ) -> true, 1 );
+        
+    end;
     
     if (FinalizeCategory)
         

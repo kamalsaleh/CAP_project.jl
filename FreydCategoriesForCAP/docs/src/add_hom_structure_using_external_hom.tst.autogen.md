@@ -1,6 +1,6 @@
 
 ```jldoctest
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
 
 julia> true
 true
@@ -12,8 +12,7 @@ julia> dummy = DummyCategory( @rec(
                            "SumOfMorphisms" ],
                        properties = [ "IsLinearCategoryOverCommutativeRingWithFinitelyGeneratedFreeExternalHoms" ] ); FinalizeCategory = false );
 
-julia> field = HomalgFieldOfRationals( )
-Q
+julia> field = HomalgFieldOfRationals( );
 
 julia> SetCommutativeRingOfLinearCategory( dummy, field )
 

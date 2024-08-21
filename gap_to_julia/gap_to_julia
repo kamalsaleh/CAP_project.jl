@@ -180,7 +180,7 @@ test_replacements() {
 	elif [ "$1" = "LinearAlgebraForCAP" ]; then
 		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using $1"
 	elif [ "$1" = "FreydCategoriesForCAP" ]; then
-		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using $1"
+		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using $1"
 	else
 		>&2 echo "Unkown package $1, please explicitly add its dependencies"
 		USING="using CAP; using $1"
@@ -265,6 +265,7 @@ if [ "$PKG_NAME" = "Toposes" ]; then
 	# remove tests computing HasPushoutComplement
 	# the one using FinSets runs out of memory in GitHub actions
 	rm -f $(grep -l "HasPushoutComplement(" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
 	# LazyCategory is not yet available in Julia
 	rm -f $(grep -l "LazyCategory(" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 fi
@@ -278,9 +279,92 @@ if [ "$PKG_NAME" = "LinearAlgebraForCAP" ]; then
 	# waiting for https://github.com/homalg-project/MatricesForHomalg.jl/issues/41
 	rm -f $(grep -l "matrix over an internal ring>" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "(an empty" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
 	# MonoidalPreComposeMorphism is very slow because multiplication of matrices of Rationals{BigInt} is very slow
 	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/ClosedAndCoclosedInMatrixCategory.tst.autogen.md
 	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/TensorCorrespondenceMatrixCategoryAndOpposite.tst.autogen.md
+fi
+
+if [ "$PKG_NAME" = "FreydCategoriesForCAP" ]; then
+	# random functions, in particular for rings, are not implemented yet
+	rm -f $(grep -l "RandomObject" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "Random" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# Singular is not available yet
+	rm -f $(grep -l "HomalgFieldOfRationalsInSingular" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "HomalgFieldOfRationalsInDefaultCAS" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "M_tor = M/Adel;" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "mu1 = GradeFiltrationNthMonomorphism( M, 1 );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "g = FreydCategoryMorphism( obj_gamma," "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "a = GradedRowOrColumnMorphism( obj1" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "Z2 = FreydCategoryObject( a )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "id = IdentityMorphism( Z2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "id = IdentityMorphism( ZFree )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "Object2LShuffle" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "categoryL = CapCategory( Q1L )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "ZeroObject( categoryL )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "IsWellDefined( IdentityMorphism( Q2L ) )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "O1L" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "O2L" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "proj1L" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "ckL" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "m1L" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "m2L" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "ObjectL" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "O1R" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "O2R" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "proj1R" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "ckR" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "m1R" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "m2R" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "ObjectR" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "coevR" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "coevC" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "DeduceMapFromMatrixAndRangeForGradedRows" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "R2 = DirectSum( T, T );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "M = FreydCategoryObject( alpha );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+
+	# ReducedSyzygiesOfRows/Columns is not available yet
+	rm -f $(grep -l "k = WeakKernelEmbedding( proj1 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "ck = WeakCokernelProjection( k )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "IsEpimorphism( ck )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "fp = WeakBiFiberProduct( mor1, mor2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "po = WeakBiPushout( mor, mor2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "lift = Lift( mor1, mor2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# DiagMat is not available yet
+	rm -f $(grep -l "DirectProductFunctorial( \\[ u, u \\] ) == DirectSumFunctorial( \\[ u, u \\] )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "CoproductFunctorial( \\[ u, u \\] ) == DirectSumFunctorial( \\[ u, u \\] )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# integers of type Int64 are not elements of HomalgRingOfRationals()
+	rm -f $(grep -l "2\\*alpha" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# SimplifyHomalgMatrix* are not available yet
+	rm -f $(grep -l "SimplifySourceAndRange_IsoFromInputSource( alpha, infinity )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "mu1 = GradeFiltrationNthMonomorphism( Mrows, 1 );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "SimplifyObject_IsoFromInputObject( Mcols, infinity )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# AdelmanCategory possibly creates a FreydCategory for the hom structure and tries to compute a distinguished object, which causes problems with world age
+	rm -f $(grep -l "adelman = AdelmanCategory( rows );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "adelman = AdelmanCategory( cols );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "source = AdelmanCategoryObject( two, two );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# FreydCategory possibly creates a FreydCategory for the hom structure and tries to compute a distinguished object, which causes problems with world age
+	rm -f $(grep -l "co_freyd = CoFreydCategory( rows )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# groups are not available yet
+	rm -f $(grep -l "SymmetricGroup" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "u = GroupAsCategoryUniqueObject( CG );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "elem = List( elem, x -> x/CG/ZCG );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# FinSetsForCAP is not available as an optional dependency yet
+	rm -f $(grep -l "ProSetAsCategory" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# example too large (https://github.com/JuliaDocs/Documenter.jl/issues/2489)
+	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/ClosedAndCoclosedRows.tst.autogen.md
+	
+	# MonoidalPreComposeMorphism is very slow because multiplication of matrices of Rationals{BigInt} is very slow
+	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/TensorCorrespondenceRowsAndOppositeOfRows.tst.autogen.md
 fi
 
 # merge AutoDocTests into one big testfile to execute in the correct order

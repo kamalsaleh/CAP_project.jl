@@ -504,7 +504,7 @@ function ( cat_1, arg2_1 )
 end
 ########
         
-    , 100 );
+    , 1 );
     
     ##
     AddIsLiftable( cat,
@@ -526,7 +526,7 @@ function ( cat_1, arg2_1 )
 end
 ########
         
-    , 100 );
+    , 1 );
     
     ##
     AddIsWellDefinedForMorphisms( cat,
@@ -1103,7 +1103,7 @@ end );
         
         
         function ( field )
-    return Opposite( MATRIX_CATEGORY( field; no_precompiled_code = false,
+    return Opposite( MatrixCategory( field; no_precompiled_code = false,
           FinalizeCategory = true ); only_primitive_operations = true );
 end;
         

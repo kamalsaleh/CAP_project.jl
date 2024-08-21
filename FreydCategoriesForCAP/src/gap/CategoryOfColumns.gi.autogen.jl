@@ -20,7 +20,11 @@ include( "precompiled_categories/CategoryOfColumns_as_Opposite_CategoryOfRows_Ar
 @InstallMethod( CategoryOfColumns,
                [ IsHomalgRing ],
                
-  function( homalg_ring )
+  @FunctionWithNamedArguments(
+  [
+    [ "FinalizeCategory", true ],
+  ],
+  function( CAP_NAMED_ARGUMENTS, homalg_ring )
     local cat;
     
     cat = CategoryOfColumns_as_Opposite_CategoryOfRows( homalg_ring; FinalizeCategory = false );
@@ -35,10 +39,12 @@ include( "precompiled_categories/CategoryOfColumns_as_Opposite_CategoryOfRows_Ar
             
             ADD_FUNCTIONS_FOR_CategoryOfColumns_as_Opposite_CategoryOfRows_CommutativeRing_precompiled( cat );
             
+        #= comment for Julia
         elseif (HasIsExteriorRing( homalg_ring ) && IsExteriorRing( homalg_ring ) && IsField( BaseRing( homalg_ring ) ))
             
             ADD_FUNCTIONS_FOR_CategoryOfColumns_as_Opposite_CategoryOfRows_HomalgExteriorRingOverField_precompiled( cat );
             
+        # =#
         else
             
             ADD_FUNCTIONS_FOR_CategoryOfColumns_as_Opposite_CategoryOfRows_ArbitraryRing_precompiled( cat );
@@ -47,11 +53,15 @@ include( "precompiled_categories/CategoryOfColumns_as_Opposite_CategoryOfRows_Ar
         
     end;
     
-    Finalize( cat );
+    if (FinalizeCategory)
+        
+        Finalize( cat );
+        
+    end;
     
     return cat;
     
-end );
+end ) );
 
 ##
 @InstallMethod( CategoryOfColumnsObject,

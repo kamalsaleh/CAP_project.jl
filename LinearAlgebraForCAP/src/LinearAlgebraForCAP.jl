@@ -12,6 +12,10 @@ const IsHomalgRing = Filter("IsHomalgRing", MatricesForHomalg.TypeOfRingForHomal
 
 const IsFieldForHomalg = Filter("IsFieldForHomalg", MatricesForHomalg.TypeOfFieldForHomalg)
 
+function HasIsFieldForHomalg(::MatricesForHomalg.TypeOfRingForHomalg)
+	false
+end
+
 function HasIsFieldForHomalg(::MatricesForHomalg.TypeOfFieldForHomalg)
 	true
 end

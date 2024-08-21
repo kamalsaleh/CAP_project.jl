@@ -20,35 +20,17 @@ include( "precompiled_categories/CategoryOfRows_as_AdditiveClosure_RingAsCategor
 @InstallMethod( CategoryOfRows,
                [ IsHomalgRing ],
                
-  function( homalg_ring )
+  @FunctionWithNamedArguments(
+  [
+    [ "FinalizeCategory", true ],
+  ],
+  function( CAP_NAMED_ARGUMENTS, homalg_ring )
     local cat;
     
     cat = CategoryOfRows_as_AdditiveClosure_RingAsCategory( homalg_ring; FinalizeCategory = false );
     
     # this cache replaces the KeyDependentOperation caching when using ObjectConstructor directly instead of CategoryOfRowsObject
     SetCachingToWeak( cat, "ObjectConstructor" );
-    
-    if (ValueOption( "no_precompiled_code" ) != true)
-        
-        if (HasIsFieldForHomalg( homalg_ring ) && IsFieldForHomalg( homalg_ring ))
-            
-            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_Field_precompiled( cat );
-            
-        elseif (HasIsCommutative( homalg_ring ) && IsCommutative( homalg_ring ))
-            
-            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_CommutativeRing_precompiled( cat );
-            
-        elseif (HasIsExteriorRing( homalg_ring ) && IsExteriorRing( homalg_ring ) && IsField( BaseRing( homalg_ring ) ))
-            
-            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_HomalgExteriorRingOverField_precompiled( cat );
-            
-        else
-            
-            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_ArbitraryRing_precompiled( cat );
-            
-        end;
-        
-    end;
     
     # the folowing properties are not (yet) handled by AdditiveClosure
     if (HasIsCommutative( homalg_ring ) && IsCommutative( homalg_ring ))
@@ -63,11 +45,39 @@ include( "precompiled_categories/CategoryOfRows_as_AdditiveClosure_RingAsCategor
     
     INSTALL_FUNCTIONS_FOR_CATEGORY_OF_ROWS( cat );
     
-    Finalize( cat );
+    if (ValueOption( "no_precompiled_code" ) != true)
+        
+        if (HasIsFieldForHomalg( homalg_ring ) && IsFieldForHomalg( homalg_ring ))
+            
+            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_Field_precompiled( cat );
+            
+        elseif (HasIsCommutative( homalg_ring ) && IsCommutative( homalg_ring ))
+            
+            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_CommutativeRing_precompiled( cat );
+            
+        #= comment for Julia
+        elseif (HasIsExteriorRing( homalg_ring ) && IsExteriorRing( homalg_ring ) && IsField( BaseRing( homalg_ring ) ))
+            
+            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_HomalgExteriorRingOverField_precompiled( cat );
+            
+        # =#
+        else
+            
+            ADD_FUNCTIONS_FOR_CategoryOfRows_as_AdditiveClosure_RingAsCategory_ArbitraryRing_precompiled( cat );
+            
+        end;
+        
+    end;
+    
+    if (FinalizeCategory)
+        
+        Finalize( cat );
+        
+    end;
     
     return cat;
     
-end );
+end ) );
 
 ##
 @InstallMethod( CategoryOfRowsObject,
@@ -773,7 +783,7 @@ end );
       AddEpimorphismFromSomeProjectiveObject( category, ( cat, obj ) -> IdentityMorphism( cat, obj ) );
       
       ##
-      AddIsProjective( category, ( cat, obj ) -> true );
+      AddIsProjective( category, ( cat, obj ) -> true, 1 );
       
       ##
       AddSomeInjectiveObject( category, ( cat, obj ) -> obj );
@@ -782,7 +792,7 @@ end );
       AddMonomorphismIntoSomeInjectiveObject( category, ( cat, obj ) -> IdentityMorphism( cat, obj ) );
       
       ##
-      AddIsInjective( category, ( cat, obj ) -> true );
+      AddIsInjective( category, ( cat, obj ) -> true, 1 );
       
       ##
       AddKernelObject( category,
@@ -973,6 +983,7 @@ end );
         
     end;
     
+    #= comment for Julia
     if (HasIsExteriorRing( ring ) && IsExteriorRing( ring ) && IsField( BaseRing( ring ) ))
         
         @Assert( 0, IsLinearCategoryOverCommutativeRing( category ) );
@@ -989,6 +1000,7 @@ end );
         end );
         
     end;
+    # =#
     
     ## Operations related to tensor structure
     

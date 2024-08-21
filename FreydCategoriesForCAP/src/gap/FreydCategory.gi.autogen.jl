@@ -22,7 +22,11 @@
 
 ##
 @InstallGlobalFunction( FREYD_CATEGORY,
-  function( underlying_category )
+  @FunctionWithNamedArguments(
+  [
+    [ "FinalizeCategory", true ],
+  ],
+  function( CAP_NAMED_ARGUMENTS, underlying_category )
     local name, freyd_category, commutative_ring, conditions;
     
     if (@not IsValidInputForFreydCategory( underlying_category ))
@@ -120,11 +124,15 @@
     
     INSTALL_FUNCTIONS_FOR_FREYD_CATEGORY( freyd_category );
     
-    Finalize( freyd_category );
+    if (FinalizeCategory)
+        
+        Finalize( freyd_category );
+        
+    end;
     
     return freyd_category;
     
-end );
+end ) );
 
 ##
 @InstallMethod( FreydCategory,
@@ -1053,12 +1061,12 @@ end; ArgumentNumber = 2 );
         underlying_range_category = CapCategory( distinguished_object );
         
         ## 3 possible cases:
-        ## 1) the range category is abelian
+        ## 1) the range category is abelian and the distinguished object is projective (the projectiveness has to be known in advance or must be cheap to compute)
         ## 2) one could apply the Freyd category constructor to the range category to make it abelian
         ## 3) else
         if (HasIsAbelianCategory( underlying_range_category )
             && IsAbelianCategory( underlying_range_category )
-            && HasIsProjective( distinguished_object )
+            && (HasIsProjective( distinguished_object ) || CurrentOperationWeight( underlying_range_category.derivations_weight_list, "IsProjective" ) <= 50)
             && IsProjective( distinguished_object ))
             
             SetRangeCategoryOfHomomorphismStructure( category, underlying_range_category );
@@ -1090,7 +1098,7 @@ end; ArgumentNumber = 2 );
                 
             else
                 
-                range_category = FreydCategory( underlying_range_category; FinalizeCategory = true );
+                range_category = FreydCategory( underlying_range_category );
                 
             end;
             

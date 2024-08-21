@@ -15,7 +15,11 @@ include( "precompiled_categories/CoFreydCategory_as_Opposite_FreydCategory_Oppos
 
 ##
 @InstallGlobalFunction( CO_FREYD_CATEGORY,
-  function( underlying_category )
+  @FunctionWithNamedArguments(
+  [
+    [ "FinalizeCategory", true ],
+  ],
+  function( CAP_NAMED_ARGUMENTS, underlying_category )
     local cat;
     
     cat = CoFreydCategory_as_Opposite_FreydCategory_Opposite( underlying_category; FinalizeCategory = false );
@@ -26,11 +30,15 @@ include( "precompiled_categories/CoFreydCategory_as_Opposite_FreydCategory_Oppos
         
     end;
     
-    Finalize( cat );
+    if (FinalizeCategory)
+        
+        Finalize( cat );
+        
+    end;
     
     return cat;
     
-end );
+end ) );
 
 ##
 @InstallMethod( CoFreydCategory,

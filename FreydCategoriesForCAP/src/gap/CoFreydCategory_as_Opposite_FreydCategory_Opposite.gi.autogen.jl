@@ -14,14 +14,18 @@
 @InstallMethod( CoFreydCategory_as_Opposite_FreydCategory_Opposite,
                [ IsCapCategory ],
                
-  function ( underlying_category )
+  @FunctionWithNamedArguments(
+  [
+    [ "FinalizeCategory", true ],
+  ],
+  function ( CAP_NAMED_ARGUMENTS, underlying_category )
     local op1, freyd, op2, object_constructor, modeling_tower_object_constructor, object_datum, modeling_tower_object_datum, morphism_constructor, modeling_tower_morphism_constructor, morphism_datum, modeling_tower_morphism_datum, wrapper;
     
-    op1 = Opposite( underlying_category; only_primitive_operations = true, FinalizeCategory = true );
+    op1 = Opposite( underlying_category; only_primitive_operations = true );
     
-    freyd = FreydCategory( op1; FinalizeCategory = true );
+    freyd = FreydCategory( op1 );
     
-    op2 = Opposite( freyd; only_primitive_operations = true, FinalizeCategory = true );
+    op2 = Opposite( freyd; only_primitive_operations = true );
     
     ##
     object_constructor = function ( cat, co_relation_morphism )
@@ -185,7 +189,7 @@
         modeling_tower_object_constructor = modeling_tower_object_constructor,
         modeling_tower_object_datum = modeling_tower_object_datum,
         only_primitive_operations = true,
-    ) );
+    ); FinalizeCategory = FinalizeCategory );
     
     SetUnderlyingCategory( wrapper, underlying_category );
     
@@ -195,4 +199,4 @@
     
     return wrapper;
     
-end );
+end ) );
