@@ -12,6 +12,8 @@ using Toposes
 
 using FinSetsForCAP
 
+import JSON3
+
 include("init.jl")
 
 # convenience converting Int to BigInt
