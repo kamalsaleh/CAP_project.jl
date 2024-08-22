@@ -181,7 +181,7 @@ test_replacements() {
 	elif [ "$1" = "LinearAlgebraForCAP" ]; then
 		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using $1"
 	elif [ "$1" = "FreydCategoriesForCAP" ]; then
-		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using $1"
+		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using $1"
 	else
 		>&2 echo "Unkown package $1, please explicitly add its dependencies"
 		USING="using CAP; using $1"
@@ -355,9 +355,6 @@ if [ "$PKG_NAME" = "FreydCategoriesForCAP" ]; then
 	rm -f $(grep -l "SymmetricGroup" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "u = GroupAsCategoryUniqueObject( CG );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "elem = List( elem, x -> x/CG/ZCG );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	
-	# FinSetsForCAP is not available as an optional dependency yet
-	rm -f $(grep -l "ProSetAsCategory" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
 	# example too large (https://github.com/JuliaDocs/Documenter.jl/issues/2489)
 	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/ClosedAndCoclosedRows.tst.autogen.md

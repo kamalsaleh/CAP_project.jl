@@ -1,6 +1,6 @@
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> S = HomalgRingOfIntegers();
 
@@ -16,7 +16,7 @@ julia> obj2 = CategoryOfRowsObject( 8, rows )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> obj3 = CategoryOfRowsObject( 1, rows )
 <A row module over Z of rank 1>
@@ -36,7 +36,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> Length( AdditiveGenerators( rows ) )
 1
@@ -50,7 +50,7 @@ julia> obj5 = CategoryOfRowsObject( 2, rows )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> obj6 = CategoryOfRowsObject( 1, rows )
 <A row module over Z of rank 1>
@@ -58,7 +58,7 @@ julia> obj6 = CategoryOfRowsObject( 1, rows )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> directSum = DirectSum( [ obj5, obj6 ] )
 <A row module over Z of rank 3>
@@ -66,7 +66,7 @@ julia> directSum = DirectSum( [ obj5, obj6 ] )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Rows( Z )>
@@ -74,7 +74,7 @@ julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Rows( Z )>
@@ -82,7 +82,7 @@ julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Rows( Z )>
@@ -90,7 +90,7 @@ julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Rows( Z )>
@@ -98,7 +98,7 @@ julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> mor2 = IdentityMorphism( obj6 )
 <A morphism in Rows( Z )>
@@ -106,7 +106,7 @@ julia> mor2 = IdentityMorphism( obj6 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> source = CategoryOfRowsObject( 1, rows )
 <A row module over Z of rank 1>
@@ -123,7 +123,7 @@ julia> colift = Colift( mor2, mor )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> S = HomalgRingOfIntegers();
 
@@ -139,7 +139,7 @@ julia> obj2 = CategoryOfColumnsObject( 8, cols )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> obj3 = CategoryOfColumnsObject( 1, cols )
 <A column module over Z of rank 1>
@@ -159,7 +159,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> ZeroObject( cols )
 <A column module over Z of rank 0>
@@ -170,7 +170,7 @@ julia> obj5 = CategoryOfColumnsObject( 2, cols )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> obj6 = CategoryOfColumnsObject( 1, cols )
 <A column module over Z of rank 1>
@@ -178,7 +178,7 @@ julia> obj6 = CategoryOfColumnsObject( 1, cols )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> directSum = DirectSum( [ obj5, obj6 ] )
 <A column module over Z of rank 3>
@@ -186,7 +186,7 @@ julia> directSum = DirectSum( [ obj5, obj6 ] )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Columns( Z )>
@@ -194,7 +194,7 @@ julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Columns( Z )>
@@ -202,7 +202,7 @@ julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Columns( Z )>
@@ -210,7 +210,7 @@ julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Columns( Z )>
@@ -218,7 +218,7 @@ julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> mor2 = IdentityMorphism( obj6 )
 <A morphism in Columns( Z )>
@@ -226,7 +226,7 @@ julia> mor2 = IdentityMorphism( obj6 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> source = CategoryOfColumnsObject( 1, cols )
 <A column module over Z of rank 1>
@@ -243,7 +243,7 @@ julia> colift = Colift( mor2, mor )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> R = HomalgRingOfIntegers();
 
@@ -334,7 +334,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> R = HomalgRingOfIntegers();
 
@@ -421,7 +421,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> true
 true
@@ -508,5 +508,66 @@ A row module over Q of rank 2
 
 julia> Display( Range( Opposite( sum ) ) )
 A row module over Q of rank 1
+
+```
+
+```jldoctest AutoDocTests
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
+
+julia> K = [ [1, 1, 1], [0, 1, 1], [0, 1, 1] ];
+
+julia> L = [ [1, 1, 0], [0, 1, 1], [0, 0, 1] ];
+
+julia> P_K = ProSetAsCategory(K);
+
+julia> #ProSetAsCategory(L)
+
+julia> a = 1/P_K;
+
+julia> b = ProSetAsCategoryObject(2, P_K);
+
+julia> c = ProSetAsCategoryObject(3, P_K);
+
+julia> d = ProSetAsCategoryObject(4, P_K);
+
+julia> delta = ProSetAsCategoryMorphism(b, a);
+
+julia> IsWellDefined(a)
+true
+
+julia> IsWellDefined(d)
+false
+
+julia> IsWellDefined(delta)
+false
+
+julia> alpha = ProSetAsCategoryMorphism(a, b);
+
+julia> beta = ProSetAsCategoryMorphism(b, c);
+
+julia> gamma = ProSetAsCategoryMorphism(a, c);
+
+julia> gamma == PreCompose(alpha, beta)
+true
+
+julia> id_a = IdentityMorphism(a);
+
+julia> IsWellDefined(Inverse(alpha))
+false
+
+julia> beta*Inverse(beta) == IdentityMorphism(b)
+true
+
+julia> alpha == Lift(gamma, beta)
+true
+
+julia> IsLiftable(beta, gamma)
+false
+
+julia> Colift(alpha, gamma) == beta
+true
+
+julia> alpha == HomStructure(a, b, HomStructure(alpha))
+true
 
 ```

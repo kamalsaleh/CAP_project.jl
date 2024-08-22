@@ -1,6 +1,6 @@
 
 ```jldoctest
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using FreydCategoriesForCAP
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
 julia> true
 true
