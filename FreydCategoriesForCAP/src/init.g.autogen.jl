@@ -33,11 +33,11 @@ include( "gap/AdelmanCategory.gd.autogen.jl" );
 
 include( "gap/GradedModulePresentationsByFreyd/GradedModulePresentationsByFreyd.gd.autogen.jl" );
 
-include( "gap/GroupsAsCats.gd.autogen.jl" );
-
 include( "gap/LinearClosure.gd.autogen.jl" );
 
 include( "gap/ProSetsAsCats.gd.autogen.jl" );
+
+include( "gap/GroupsAsCats.gd.autogen.jl" );
 
 include( "gap/RingsAsAbCats.gd.autogen.jl" );
 

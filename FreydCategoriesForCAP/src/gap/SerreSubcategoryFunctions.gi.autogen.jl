@@ -40,9 +40,9 @@ end );
     
     newL = ShallowCopy( L );
     
-    for i in (1):(Size( L ))
+    for i in (1):(Length( L ))
         
-        for j in (1):(Size( L ))
+        for j in (1):(Length( L ))
             
             hom = HomomorphismStructureOnObjects( L[i], L[j] );
             

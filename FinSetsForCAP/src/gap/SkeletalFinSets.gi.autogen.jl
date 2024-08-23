@@ -11,6 +11,7 @@
  @FunctionWithNamedArguments(
   [
     [ "no_precompiled_code", false ],
+    [ "overhead", true ],
   ],
   function ( CAP_NAMED_ARGUMENTS )
     local cat;
@@ -19,6 +20,7 @@
         "SkeletalFinSets", IsSkeletalCategoryOfFiniteSets,
         IsObjectInSkeletalCategoryOfFiniteSets, IsMorphismInSkeletalCategoryOfFiniteSets, IsCapCategoryTwoCell,
         IsBigInt, CapJitDataTypeOfListOf( IsBigInt ), fail
+       ; overhead = overhead
     );
     
     cat.category_as_first_argument = true;

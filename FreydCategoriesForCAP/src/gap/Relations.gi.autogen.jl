@@ -121,10 +121,9 @@ end );
         
         arrow_beta = Arrow( beta );
         
-        return
-          IsEqualForObjects( Source( arrow_alpha ), Source( arrow_beta ) ) &&
-          IsEqualForMorphisms( arrow_alpha, arrow_beta ) &&
-          IsEqualForMorphisms( ReversedArrow( alpha ), ReversedArrow( beta ) );
+        return IsEqualForObjects( Source( arrow_alpha ), Source( arrow_beta ) ) &&
+               IsEqualForMorphisms( arrow_alpha, arrow_beta ) &&
+               IsEqualForMorphisms( ReversedArrow( alpha ), ReversedArrow( beta ) );
           
     end );
     

@@ -1518,8 +1518,7 @@ end );
     if (IsEmpty( objs ))
       return "0";
     else
-      return
-        JoinStringsWithSeparator(
+      return JoinStringsWithSeparator(
           List( objs,
               function( pair )
                 local s;

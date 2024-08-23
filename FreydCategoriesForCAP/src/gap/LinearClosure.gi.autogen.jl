@@ -23,6 +23,10 @@
         
     end;
     
+    sorting_function = fail;
+    
+    cocycle = fail;
+    
     if (Length( arg ) == 0)
         
         with_nf = false;
@@ -39,7 +43,7 @@
         
         with_nf = arg[2];
         
-        if (@IsBound( arg[3] ))
+        if (Length( arg ) >= 3)
             
             sorting_function = arg[3];
             
@@ -47,7 +51,7 @@
         
     end;
     
-    if (@IsBound( cocycle ))
+    if (cocycle != fail)
         
         name = @Concatenation( "TwistedLinearClosure( ", Name( underlying_category )," )" );
         
@@ -67,13 +71,13 @@
     
     category.with_nf = with_nf;
     
-    if (@IsBound( sorting_function ))
+    if (sorting_function != fail)
         
         category.sorting_function = sorting_function;
         
     end;
     
-    if (@IsBound( cocycle ))
+    if (cocycle != fail)
         
         category.cocycle = cocycle;
         
@@ -288,7 +292,7 @@ end );
     
     c = coefficients_copy[1];
     
-    for i in (2):(Size( support_morphisms_copy ))
+    for i in (2):(Length( support_morphisms_copy ))
         
         m_compare = support_morphisms_copy[i];
         
@@ -499,8 +503,7 @@ end );
             return false;
         end;
         
-        return ForAll( (1):(size), i -> equal_or_cong( SupportMorphisms( alpha )[i], SupportMorphisms( beta )[i] ) )
-                &&
+        return ForAll( (1):(size), i -> equal_or_cong( SupportMorphisms( alpha )[i], SupportMorphisms( beta )[i] ) ) &&
                 coeffs_a == coeffs_b;
         
     end;
@@ -545,9 +548,9 @@ end );
             end;
         end;
         
-        size = Size( coeffs );
+        size = Length( coeffs );
         
-        if (size != Size( supp ))
+        if (size != Length( supp ))
             return false;
         end;
         
@@ -622,9 +625,9 @@ end );
             
             supp = [];
             
-            for a in (1):(Size( coeffs_alpha ))
+            for a in (1):(Length( coeffs_alpha ))
                 
-                for b in (1):(Size( coeffs_beta ))
+                for b in (1):(Length( coeffs_beta ))
                     
                     gamma = mul_supp( supp_alpha[a], supp_beta[b] );
                     
@@ -751,11 +754,9 @@ end );
          "HomomorphismStructureOnMorphismsWithGivenObjects",
          "InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure",
          "InterpretMorphismFromDistinguishedObjectToHomomorphismStructureAsMorphism" ],
-         f -> CanCompute( underlying_category, f ) )
-         &&
-         IsSkeletalCategoryOfFiniteSets( RangeCategoryOfHomomorphismStructure( underlying_category ) )
-         &&
-         with_nf
+         f -> CanCompute( underlying_category, f ) ) &&
+              IsSkeletalCategoryOfFiniteSets( RangeCategoryOfHomomorphismStructure( underlying_category ) ) &&
+              with_nf
         )
             
         finsets = RangeCategoryOfHomomorphismStructure( underlying_category );
@@ -811,11 +812,11 @@ end );
             
             coeffs_a = CoefficientsList( alpha );
             
-            size_a = Size( coeffs_a );
+            size_a = Length( coeffs_a );
             
             coeffs_b = CoefficientsList( beta );
             
-            size_b = Size( coeffs_b );
+            size_b = Length( coeffs_b );
             
             if (size_a == 0 || size_b == 0)
                 
@@ -827,8 +828,7 @@ end );
             
             supp_b = SupportMorphisms( beta );
             
-            return
-                Iterated(
+            return Iterated(
                     List(
                         (1):(size_a),
                         i -> Iterated(
@@ -851,7 +851,7 @@ end );
                 
                 coeffs = CoefficientsList( alpha );
                 
-                if (Size( coeffs ) == 0)
+                if (IsEmpty( coeffs ))
                     
                     return ZeroMorphism( t_obj, HomomorphismStructureOnObjects( Source( alpha ), Range( alpha ) ) );
                     
@@ -859,10 +859,8 @@ end );
                 
                 supp = SupportMorphisms( alpha );
                 
-                return
-                    Sum( List( (1):(Size( coeffs )),
-                    i ->
-                    coeffs[i] * FunctorMor( InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure( supp[i] ) ) ) );
+                return Sum( List( (1):(Length( coeffs )),
+                    i -> coeffs[i] * FunctorMor( InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure( supp[i] ) ) ) );
                 
         end );
         
@@ -879,8 +877,7 @@ end );
             
             range_finset = FinSet( finsets, size );
             
-            return
-                LinearClosureMorphism(
+            return LinearClosureMorphism(
                     a,
                     EntriesOfHomalgMatrix( UnderlyingMatrix( mor ) ),
                     List( (0):(size - 1), i ->
@@ -995,7 +992,7 @@ InstallMethodWithCache( ExtendFunctorToLinearClosureOfSource,
         
         support = SupportMorphisms( alpha );
         
-        list = List( (1):(Size( coeffs )), i -> @Concatenation( "(", ViewString( coeffs[i] ), "*", ViewString( support[i] ), ")" ) );
+        list = List( (1):(Length( coeffs )), i -> @Concatenation( "(", ViewString( coeffs[i] ), "*", ViewString( support[i] ), ")" ) );
         
         return JoinStringsWithSeparator( list, " + " );
         

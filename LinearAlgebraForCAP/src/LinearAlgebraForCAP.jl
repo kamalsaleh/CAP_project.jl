@@ -76,6 +76,14 @@ function EntriesOfHomalgMatrixAsListList( mat::MatricesForHomalg.TypeOfMatrixFor
 	[collect(mat[i,:])[:] for i in 1:NrRows(mat)]
 end
 
+function DiagMat(R, list)::MatricesForHomalg.TypeOfMatrixForHomalg
+    if length(list) == 0
+        return HomalgZeroMatrix(0, 0, R)
+    end
+
+    return cat(list...; dims=(1,2))
+end
+
 include("init.jl")
 
 # IsZero/IsOne: install the functions in MatricesForHomalg as methods for the attributes defined in CAP

@@ -126,6 +126,7 @@ syntax_replacements() {
 	| sed 's/Method( \\\/,/Method( \/,/g' \
 	| sed 's/Method( \\\^,/Method( ^,/g' \
 	| sed 's/Method( \\in,/Method( in,/g' \
+	| sed 's/Method( AdditiveInverse,/Method( -,/g' \
 	| sed 's/^DeclareInfoClass(/@DeclareInfoClass(/g' \
 	| sed 's/^DeclareAttribute(/@DeclareAttribute(/g' \
 	| sed 's/^DeclareSynonymAttr(/@DeclareSynonymAttr(/g' \
@@ -331,25 +332,23 @@ if [ "$PKG_NAME" = "FreydCategoriesForCAP" ]; then
 	rm -f $(grep -l "fp = WeakBiFiberProduct( mor1, mor2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "po = WeakBiPushout( mor, mor2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "lift = Lift( mor1, mor2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	
-	# DiagMat is not available yet
-	rm -f $(grep -l "DirectProductFunctorial( \\[ u, u \\] ) == DirectSumFunctorial( \\[ u, u \\] )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	rm -f $(grep -l "CoproductFunctorial( \\[ u, u \\] ) == DirectSumFunctorial( \\[ u, u \\] )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "IsBijectiveObject( obj )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
 	# integers of type Int64 are not elements of HomalgRingOfRationals()
 	rm -f $(grep -l "2\\*alpha" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# floats of type Float64 are not elements of HomalgRingOfRationals()
+	rm -f $(grep -l "(1/2) \\* alpha" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
 	# SimplifyHomalgMatrix* are not available yet
 	rm -f $(grep -l "SimplifySourceAndRange_IsoFromInputSource( alpha, infinity )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "mu1 = GradeFiltrationNthMonomorphism( Mrows, 1 );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "SimplifyObject_IsoFromInputObject( Mcols, infinity )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
-	# AdelmanCategory possibly creates a FreydCategory for the hom structure and tries to compute a distinguished object, which causes problems with world age
-	rm -f $(grep -l "adelman = AdelmanCategory( rows );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	rm -f $(grep -l "adelman = AdelmanCategory( cols );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	rm -f $(grep -l "source = AdelmanCategoryObject( two, two );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	# functors are not available yet
+	rm -f $(grep -l "EmbeddingFunctorIntoFreydCategory" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
-	# FreydCategory possibly creates a FreydCategory for the hom structure and tries to compute a distinguished object, which causes problems with world age
+	# CoFreyd: FreydCategory tries to compute a distinguished object of the underlying opposite category, which causes problems with world age
 	rm -f $(grep -l "co_freyd = CoFreydCategory( rows )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
 	# groups are not available yet

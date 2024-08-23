@@ -10,6 +10,8 @@
 ##
 ####################################
 
+@BindGlobal( "FREYD_CATEGORIES_SkeletalFinSets", SkeletalCategoryOfFiniteSets(; overhead = false ) );
+
 ## TODO: create a meaningful sanity check
 @InstallGlobalFunction( PRO_SET_AS_CATEGORY_SANITY_CHECK,
   function( incidence_matrix )
@@ -25,7 +27,7 @@
 
     sqr = incidence_matrix^2;
 
-    for i in [1..l]
+    for i in (1):(l)
       if (@not IsSubset([0, 1], SetGAP(incidence_matrix[i])))
         return [ false, "Incidence matrix must have entries in [0, 1]" ];
       end;
@@ -45,6 +47,8 @@ end );
   function( incidence_matrix )
     local category, check;
 
+    #= comment for Julia
+    # `TraceMat` and squaring of lists of lists is not available in Julia yet
     check = PRO_SET_AS_CATEGORY_SANITY_CHECK( incidence_matrix );
 
     if (@not check[1])
@@ -52,6 +56,7 @@ end );
         Error( check[2] );
 
     end;
+    # =#
 
     category = CreateCapCategoryWithDataTypes(
                         "ProSet",
@@ -83,7 +88,7 @@ end );
 
   function( category )
 
-    return Size( IncidenceMatrix( category ) );
+    return Length( IncidenceMatrix( category ) );
 
 end );
 
@@ -163,7 +168,7 @@ end );
     AddIsWellDefinedForObjects( category,
       function( cat, obj )
 
-        return UnderlyingInteger( obj ) in [1 .. Size( category )];
+        return UnderlyingInteger( obj ) in (1):(Size( category ));
 
     end );
 
@@ -301,8 +306,9 @@ end );
 
         m = IncidenceMatrix(category);
         if (m[ UnderlyingInteger( a ) ][ UnderlyingInteger( b ) ] == 1)
-          return OneElementSet;
-        else return emptySet;
+            return OneElementSet;
+        else
+            return emptySet;
         end;
 
     end );
@@ -311,10 +317,10 @@ end );
     AddHomomorphismStructureOnMorphismsWithGivenObjects( category,
       function( cat, source, alpha, beta, range )
 
-        if (IsEqualForObjects(source, OneElementSet )then
-          return IdentityMorphism( source );
-
-        else return UniversalMorphismFromInitialObject( range );
+        if (IsEqualForObjects(source, OneElementSet ))
+            return IdentityMorphism( source );
+        else
+            return UniversalMorphismFromInitialObject( range );
         end;
 
     end );

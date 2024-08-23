@@ -549,8 +549,7 @@ CAP_INTERNAL_INSTALL_ADDS_FROM_RECORD( FREYD_CATEGORIES_METHOD_NAME_RECORD );
                
   function( morphism )
     
-    return 
-      Opposite(
+    return Opposite(
         AsFreydCategoryMorphism(
           Opposite(
             AsFreydCategoryMorphism(

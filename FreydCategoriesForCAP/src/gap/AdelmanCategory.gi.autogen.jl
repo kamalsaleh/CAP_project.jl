@@ -59,9 +59,9 @@
     
     SetUnderlyingCategory( adelman_category, underlying_category );
     
-    if (HasIsLinearCategoryOverCommutativeRing( underlying_category )
-        && IsLinearCategoryOverCommutativeRing( underlying_category )
-          && HasCommutativeRingOfLinearCategory( underlying_category ))
+    if (HasIsLinearCategoryOverCommutativeRing( underlying_category ) &&
+       IsLinearCategoryOverCommutativeRing( underlying_category ) &&
+       HasCommutativeRingOfLinearCategory( underlying_category ))
       
       SetIsLinearCategoryOverCommutativeRing( adelman_category, true );
       
@@ -292,8 +292,8 @@ end );
 @InstallGlobalFunction( INSTALL_FUNCTIONS_FOR_ADELMAN_CATEGORY,
 
   function( category )
-    local underlying_category, distinguished_object, range_category, homomorphism_structure_derivation_case,
-          homomorphism_structure_on_morphisms, interpret_homomorphism_as_morphism_from_distinguished_object_to_homomorphism_structure,
+    local underlying_category, range_category, underlying_distinguished_object, homomorphism_structure_derivation_case,
+          homomorphism_structure_on_morphisms, distinguished_object, interpret_homomorphism_as_morphism_from_distinguished_object_to_homomorphism_structure,
           interpret_morphism_from_distinguished_object_to_homomorphism_structure_as_homomorphism;
     
     underlying_category = UnderlyingCategory( category );
@@ -782,10 +782,9 @@ end );
     if (ForAll( [ "DistinguishedObjectOfHomomorphismStructure" ],
                f -> CanCompute( underlying_category, f ) ))
         
-        distinguished_object = DistinguishedObjectOfHomomorphismStructure( underlying_category );
-            
-        range_category = CapCategory( distinguished_object );
+        range_category = RangeCategoryOfHomomorphismStructure( underlying_category );
         
+        underlying_distinguished_object = DistinguishedObjectOfHomomorphismStructure( underlying_category );
         
         ## 3 possible cases:
         ## 1) the range category is abelian
@@ -794,8 +793,8 @@ end );
         
         if (HasIsAbelianCategory( range_category ) &&
            IsAbelianCategory( range_category ) &&
-           HasIsProjective( distinguished_object ) &&
-           IsProjective( distinguished_object ))
+           HasIsProjective( underlying_distinguished_object ) &&
+           IsProjective( underlying_distinguished_object ))
             
             SetRangeCategoryOfHomomorphismStructure( category, range_category );
             SetIsEquippedWithHomomorphismStructure( category, true );
@@ -804,7 +803,7 @@ end );
             
             homomorphism_structure_on_morphisms = HomomorphismStructureOnMorphisms;
             
-            distinguished_object = distinguished_object;
+            distinguished_object = cat -> underlying_distinguished_object;
             
             interpret_homomorphism_as_morphism_from_distinguished_object_to_homomorphism_structure =
                 InterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure;
@@ -836,7 +835,7 @@ end );
                 
             end;
             
-            distinguished_object = AsFreydCategoryObject( distinguished_object );
+            distinguished_object = cat -> AsFreydCategoryObject( underlying_distinguished_object );
             
             interpret_homomorphism_as_morphism_from_distinguished_object_to_homomorphism_structure =
               function( alpha )
@@ -859,7 +858,7 @@ end );
             ##
             # this is expensive, so we assume a weight of 400 which will be used below
             InstallMethodWithCacheFromObject( HomomorphismStructureOnObjectsForAdelmanCategoryGeneralizedEmbedding,
-                                              [ IsAdelmanCategoryObject && ObjectFilter( category ), IsAdelmanCategoryObject && ObjectFilter( category ) ],
+                                              [ ObjectFilter( category ), ObjectFilter( category ) ],
                 function( object_A, object_B )
                   local A, Ap, App, B, Bp, Bpp, a, b, ap, bp,
                         H_A_b, H_ap_B, H_A_bp, H_a_B, H_ap_Bpp, H_Ap_b, rel, corel, ker, coker, im;
@@ -944,12 +943,7 @@ end );
             end, 100 + 2 * 400 );
             
              ##
-            AddDistinguishedObjectOfHomomorphismStructure( category,
-              function( cat )
-                
-                return distinguished_object;
-                
-            end );
+            AddDistinguishedObjectOfHomomorphismStructure( category, distinguished_object );
             
             ##
             AddInterpretMorphismAsMorphismFromDistinguishedObjectToHomomorphismStructure( category,

@@ -1159,8 +1159,7 @@ end );
     AddSimplifySourceAndRange( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Source( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceAndRangeTuple( alpha )[1],
             Range( alpha )
@@ -1172,8 +1171,7 @@ end );
     AddSimplifySourceAndRange_IsoToInputRange( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Range( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceAndRangeTuple( alpha )[5],
             Range( alpha )
@@ -1185,8 +1183,7 @@ end );
     AddSimplifySourceAndRange_IsoFromInputRange( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Range( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceAndRangeTuple( alpha )[3],
             Range( alpha )
@@ -1198,8 +1195,7 @@ end );
     AddSimplifySourceAndRange_IsoToInputSource( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Source( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceAndRangeTuple( alpha )[2],
             Source( alpha )
@@ -1211,8 +1207,7 @@ end );
     AddSimplifySourceAndRange_IsoFromInputSource( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Source( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceAndRangeTuple( alpha )[4],
             Source( alpha )
@@ -1225,8 +1220,7 @@ end );
     AddSimplifySource( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Source( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceTuple( alpha )[1],
             Range( alpha )
@@ -1238,8 +1232,7 @@ end );
     AddSimplifySource_IsoToInputObject( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Source( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceTuple( alpha )[2],
             Source( alpha )
@@ -1251,8 +1244,7 @@ end );
     AddSimplifySource_IsoFromInputObject( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Source( alpha ),
             CATEGORY_OF_ROWS_SimplificationSourceTuple( alpha )[3],
             Source( alpha )
@@ -1265,8 +1257,7 @@ end );
     AddSimplifyRange( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Source( alpha ),
             CATEGORY_OF_ROWS_SimplificationRangeTuple( alpha )[1],
             Range( alpha )
@@ -1278,8 +1269,7 @@ end );
     AddSimplifyRange_IsoToInputObject( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Range( alpha ),
             CATEGORY_OF_ROWS_SimplificationRangeTuple( alpha )[3],
             Range( alpha )
@@ -1291,8 +1281,7 @@ end );
     AddSimplifyRange_IsoFromInputObject( category,
       function( cat, alpha, i )
         
-        return
-          CategoryOfRowsMorphism( cat,
+        return CategoryOfRowsMorphism( cat,
             Range( alpha ),
             CATEGORY_OF_ROWS_SimplificationRangeTuple( alpha )[2],
             Range( alpha )
