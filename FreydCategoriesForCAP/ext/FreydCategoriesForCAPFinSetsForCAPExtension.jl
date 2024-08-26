@@ -4,7 +4,15 @@ module FreydCategoriesForCAPFinSetsForCAPExtension
 
 using CAP
 
+using MonoidalCategories
+
+using LinearAlgebraForCAP # this is not a GAP dependency but needed for various declarations not (yet) part of MatricesForHomalg
+
 using FreydCategoriesForCAP
+
+using CartesianCategories
+
+using Toposes
 
 using FinSetsForCAP
 
