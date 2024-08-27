@@ -182,6 +182,8 @@ test_replacements() {
 		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using $1"
 	elif [ "$1" = "FreydCategoriesForCAP" ]; then
 		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using $1"
+	elif [ "$1" = "ModulePresentationsForCAP" ]; then
+		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using $1"
 	else
 		>&2 echo "Unkown package $1, please explicitly add its dependencies"
 		USING="using CAP; using $1"
@@ -361,6 +363,15 @@ if [ "$PKG_NAME" = "FreydCategoriesForCAP" ]; then
 	
 	# MonoidalPreComposeMorphism is very slow because multiplication of matrices of Rationals{BigInt} is very slow
 	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/TensorCorrespondenceRowsAndOppositeOfRows.tst.autogen.md
+fi
+
+if [ "$PKG_NAME" = "ModulePresentationsForCAP" ]; then
+	# Singular is not available yet
+	rm -f $(grep -l "HomalgRingOfIntegersInSingular" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "HomalgFieldOfRationalsInSingular" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# convenience operations for UnionOfRows/Columns are missing, see https://github.com/homalg-project/MatricesForHomalg.jl/issues/39
+	rm -f $(grep -l "T = TensorProductOnObjects( M, N )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 fi
 
 # merge AutoDocTests into one big testfile to execute in the correct order
