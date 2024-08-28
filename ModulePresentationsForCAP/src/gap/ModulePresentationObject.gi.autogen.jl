@@ -69,7 +69,7 @@ end );
 ##
 @InstallMethod( FreeLeftPresentation,
                     [ IsCategoryOfLeftPresentations, IsInt ],
-               
+                    
   function( cat, rank )
     local object;
     
@@ -100,7 +100,7 @@ end );
 ##
 @InstallMethod( FreeRightPresentation,
                     [ IsCategoryOfRightPresentations, IsInt ],
-               
+                    
   function( cat, rank )
     local object;
     
@@ -237,9 +237,9 @@ InstallMethodWithCacheFromObject( INTERNAL_HOM_EMBEDDING_IN_TENSOR_PRODUCT_RIGHT
     
     homalg_ring = UnderlyingHomalgRing( object_1 );
     
-    free_module_source = FreeRightPresentation( category, NrRows( underlying_matrix_1 ), homalg_ring );
+    free_module_source = FreeRightPresentation( category, NrRows( underlying_matrix_1 ) );
     
-    free_module_range = FreeRightPresentation( category, NrColumns( underlying_matrix_1 ), homalg_ring );
+    free_module_range = FreeRightPresentation( category, NrColumns( underlying_matrix_1 ) );
     
     differential =  PresentationMorphism( TensorProductOnObjects( free_module_source, object_2 ),
                                            differential_matrix,

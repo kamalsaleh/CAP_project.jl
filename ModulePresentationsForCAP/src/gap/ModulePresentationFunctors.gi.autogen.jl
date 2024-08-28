@@ -25,7 +25,7 @@
     
     InstallOtherMethod( functor_standard_module,
                         [ is_category_of_presentations ],
-                   
+                        
       function( category )
         local functor;
         
@@ -185,7 +185,7 @@ end );
 ##
 @InstallMethod( FunctorLessGeneratorsLeft,
                     [ IsCategoryOfLeftPresentations ],
-               
+                    
   function( category )
     local functor;
     
@@ -236,7 +236,7 @@ end );
 ##
 @InstallMethod( FunctorLessGeneratorsRight,
                     [ IsCategoryOfRightPresentations ],
-               
+                     
   function( category )
     local functor;
     
@@ -286,7 +286,8 @@ end );
 
 ##
 @InstallMethod( FunctorDualLeft,
-                    [ IsCategoryOfLeftPresentations ], 
+                    [ IsCategoryOfLeftPresentations ],
+                    
    function( category )
      local ring, functor;
      
@@ -358,7 +359,8 @@ end );
 
 ##
 @InstallMethod( FunctorDualRight,
-                    [ IsCategoryOfRightPresentations ], 
+                    [ IsCategoryOfRightPresentations ],
+                    
    function( category )
      local ring, functor;
      
@@ -429,7 +431,8 @@ end );
 
 ##
 @InstallMethod( FunctorDoubleDualLeft,
-                    [ IsCategoryOfLeftPresentations ], 
+                    [ IsCategoryOfLeftPresentations ],
+                    
    function( category )
      local functor, dual_functor;
      
@@ -458,18 +461,19 @@ end );
 end );
 
 ##
-@InstallMethod( FunctorDoubleDualLeft,
+@InstallMethod( FunctorDoubleDualRight,
                [ IsHomalgRing ],
                
   function( ring )
     
-    return FunctorDoubleDualLeft( LeftPresentations( ring ) );
+    return FunctorDoubleDualRight( RightPresentations( ring ) );
     
 end );
 
 ##
 @InstallMethod( FunctorDoubleDualRight,
-                    [ IsCategoryOfRightPresentations ], 
+                    [ IsCategoryOfRightPresentations ],
+                    
    function( category )
      local functor, dual_functor;
      

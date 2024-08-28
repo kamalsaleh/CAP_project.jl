@@ -32,8 +32,8 @@
 #! over $R$.
 #! @Returns a category
 #! @Arguments R
-@DeclareOperation( "LeftPresentations",
-                  [ IsHomalgRing ] );
+@DeclareAttribute( "LeftPresentations",
+                  IsHomalgRing );
 
 #! @Description
 #! The argument is a homalg ring $R$.
@@ -41,8 +41,8 @@
 #! over $R$.
 #! @Returns a category
 #! @Arguments R
-@DeclareOperation( "RightPresentations",
-                  [ IsHomalgRing ] );
+@DeclareAttribute( "RightPresentations",
+                  IsHomalgRing );
 
 ####################################
 ##
