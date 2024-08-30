@@ -224,30 +224,17 @@ find . \( -type d -name .git -prune \) -o \( -type f -name '*.tst' \) -exec bash
 rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/100_LoadPackage.tst.autogen.md
 
 if [ "$PKG_NAME" = "CAP" ]; then
-	# DummyRing
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap02.tst.autogen.md
+	# DummyRing is not available yet
+	rm -f $(grep -l "DummyRing( )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
-	# ReadPackage
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap11.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap12.tst.autogen.md
-
-	# HomalgRingOfIntegers/HomalgFieldOfRationals
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap13.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap14.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap15.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap16.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap17.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap18.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap21.tst.autogen.md
+	# ReadPackage is not available
+	rm -f $(grep -l "ReadPackage( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 
 	# Functor example (continued)
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap03.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap04.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap05.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap06.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap07.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap08.tst.autogen.md
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/cap09.tst.autogen.md
+	rm -f $(grep -l "CapFunctor( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "InputSignature( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "InstallFunctor( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "ApplyFunctor( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 
 	# needs CapCat
 	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/CAP_INTERNAL_ASSERT_VALUE_IS_OF_TYPE_GETTER.tst.autogen.md
@@ -336,16 +323,14 @@ if [ "$PKG_NAME" = "FreydCategoriesForCAP" ]; then
 	rm -f $(grep -l "lift = Lift( mor1, mor2 )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "IsBijectiveObject( obj )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
-	# integers of type Int64 are not elements of HomalgRingOfRationals()
-	rm -f $(grep -l "2\\*alpha" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	
-	# floats of type Float64 are not elements of HomalgRingOfRationals()
-	rm -f $(grep -l "(1/2) \\* alpha" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	
 	# SimplifyHomalgMatrix* are not available yet
 	rm -f $(grep -l "SimplifySourceAndRange_IsoFromInputSource( alpha, infinity )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "mu1 = GradeFiltrationNthMonomorphism( Mrows, 1 );" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "SimplifyObject_IsoFromInputObject( Mcols, infinity )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	
+	# differences in the output of SyzygiesOfRows, see https://github.com/homalg-project/MatricesForHomalg.jl/issues/50
+	rm -f $(grep -l "Display( EntriesOfHomalgMatrixAsListList( UnderlyingMatrix( equalizer ) ) )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "Display( EntriesOfHomalgMatrixAsListList( UnderlyingMatrix( coequalizer ) ) )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
 	# functors are not available yet
 	rm -f $(grep -l "EmbeddingFunctorIntoFreydCategory" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
@@ -372,6 +357,7 @@ if [ "$PKG_NAME" = "ModulePresentationsForCAP" ]; then
 	
 	# convenience operations for UnionOfRows/Columns are missing, see https://github.com/homalg-project/MatricesForHomalg.jl/issues/39
 	rm -f $(grep -l "T = TensorProductOnObjects( M, N )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
+	rm -f $(grep -l "Tl = TensorProductOnObjects( Ml, Nl )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 fi
 
 # merge AutoDocTests into one big testfile to execute in the correct order
