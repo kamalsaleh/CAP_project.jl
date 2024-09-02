@@ -69,7 +69,7 @@ function ConvertColumnToMatrix( mat::MatricesForHomalg.TypeOfMatrixForHomalg, r:
 end
 
 function EntriesOfHomalgMatrix( mat::MatricesForHomalg.TypeOfMatrixForHomalg )
-	collect(mat)[:]
+	vcat(EntriesOfHomalgMatrixAsListList(mat)...)
 end
 
 function EntriesOfHomalgMatrixAsListList( mat::MatricesForHomalg.TypeOfMatrixForHomalg )
