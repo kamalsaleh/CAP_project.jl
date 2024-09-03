@@ -232,14 +232,12 @@ if [ "$PKG_NAME" = "CAP" ]; then
 	# DummyRing is not available yet
 	rm -f $(grep -l "DummyRing( )" "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	
-	# Functor example (continued)
+	# Functor example: requires ModulePresentationsForCAP and convenience functions for UnionOfRows,
+	# a better example is part of LinearAlgebraForCAP
 	rm -f $(grep -l "CapFunctor( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "InputSignature( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "InstallFunctor( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
 	rm -f $(grep -l "ApplyFunctor( " "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.tst.autogen.md)
-	
-	# needs CapCat
-	rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/CAP_INTERNAL_ASSERT_VALUE_IS_OF_TYPE_GETTER.tst.autogen.md
 fi
 
 if [ "$PKG_NAME" = "FinSetsForCAP" ]; then
