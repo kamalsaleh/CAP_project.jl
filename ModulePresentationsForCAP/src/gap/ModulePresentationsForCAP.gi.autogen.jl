@@ -1259,37 +1259,6 @@ end );
     
   end );
   
-  AddLiftOrFail( category, function( cat, morphism_1, morphism_2 )
-    local P, M, v, s, sol, XX;
-    
-    P = UnderlyingMatrix( Source( morphism_1 ) );
-    
-    M = UnderlyingMatrix( Source( morphism_2 ) );
-    
-    v = NrColumns( M );
-    
-    s = NrColumns( P );
-    
-    sol = CallFuncList( LeftDivide, lift_via_compiled_linear_system_func( morphism_1, morphism_2 ) );
-    
-    if (sol == fail)
-        
-        return fail;
-        
-    else
-        
-        if (v <= 1)
-            XX = CertainRows( sol, [ 1.. s ] );
-        else
-            XX = UnionOfColumns( List( (1):(v), i-> CertainRows( sol, [ (i-1)*s+1.. i*s ] ) ) );
-        end;
-        
-        return PresentationMorphism( cat, Source( morphism_1 ), XX, Source( morphism_2 ) );
-        
-    end;
-    
-  end );
-  
   AddIsLiftable( category, function( cat, morphism_1, morphism_2 )
     
     return IsZero( CallFuncList( DecideZeroColumns, Reversed( lift_via_compiled_linear_system_func( morphism_1, morphism_2 ) ) ) );
@@ -1385,41 +1354,6 @@ end );
     end;
     
     return PresentationMorphism( cat, Range( morphism_1 ), XX, Range( morphism_2 ) );
-    
-  end, 1000 );
-  
-  AddColiftOrFail( category, function( cat, morphism_1, morphism_2 )
-    local I, M, v, s, sol, XX;
-    
-    I = UnderlyingMatrix( Range( morphism_2 ) );
-    
-    M = UnderlyingMatrix( Range( morphism_1 ) );
-    
-    v = NrColumns( M );
-    
-    s = NrColumns( I );
-    
-    sol = CallFuncList( LeftDivide, colift_via_compiled_linear_system_func( morphism_1, morphism_2 ) );
-    
-    if (sol == fail)
-        
-        return fail;
-        
-    else
-        
-        v = NrColumns( M );
-        
-        s = NrColumns( I );
-        
-        if (s <= 1)
-            XX = CertainRows( sol, [ 1.. v ] );
-        else
-            XX = UnionOfColumns( List( (1):(s), i-> CertainRows( sol, [ (i-1)*v+1.. i*v ] ) ) );
-        end;
-        
-        return PresentationMorphism( cat, Range( morphism_1 ), XX, Range( morphism_2 ) );
-        
-    end;
     
   end, 1000 );
   
@@ -1544,36 +1478,6 @@ end );
     
   end );
   
-  AddLiftOrFail( category, function( cat, morphism_1, morphism_2 )
-    local Pt, Mt, v, s, sol, XX;
-    
-    Pt = TransposedMatrix( UnderlyingMatrix( Source( morphism_1 ) ) );
-    Mt = TransposedMatrix( UnderlyingMatrix( Source( morphism_2 ) ) );
-    
-    v = NrColumns( Mt );
-    
-    s = NrColumns( Pt );
-    
-    sol = CallFuncList( LeftDivide, lift_via_compiled_linear_system_func( morphism_1, morphism_2 ) );
-    
-    if (sol == fail)
-        
-        return fail;
-        
-    else
-        
-        if (v <= 1)
-            XX = TransposedMatrix( CertainRows( sol, [ 1.. s ] ) );
-        else
-            XX = TransposedMatrix( UnionOfColumns( List( (1):(v), i-> CertainRows( sol, [ (i-1)*s+1.. i*s ] ) ) ) );
-        end;
-        
-        return PresentationMorphism( cat, Source( morphism_1 ), XX, Source( morphism_2 ) );
-        
-    end;
-    
-  end );
-  
   AddIsLiftable( category, function( cat, morphism_1, morphism_2 )
     
     return IsZero( CallFuncList( DecideZeroColumns, Reversed( lift_via_compiled_linear_system_func( morphism_1, morphism_2 ) ) ) );
@@ -1651,41 +1555,6 @@ end );
     end;
     
     return PresentationMorphism( cat, Range( morphism_1 ), XX, Range( morphism_2 ) );
-    
-  end, 1000 );
-  
-  AddColiftOrFail( category, function( cat, morphism_1, morphism_2 )
-    local It, Mt, v, s, sol, XX;
-    
-    It = TransposedMatrix( UnderlyingMatrix( Range( morphism_2 ) ) );
-    
-    Mt = TransposedMatrix( UnderlyingMatrix( Range( morphism_1 ) ) );
-    
-    v = NrColumns( Mt );
-    
-    s = NrColumns( It );
-    
-    sol = CallFuncList( LeftDivide, colift_via_compiled_linear_system_func( morphism_1, morphism_2 ) );
-    
-    if (sol == fail)
-        
-        return fail;
-        
-    else
-        
-        v = NrColumns( Mt );
-        
-        s = NrColumns( It );
-        
-        if (s <= 1)
-            XX = TransposedMatrix( CertainRows( sol, [ 1.. v ] ) );
-        else
-            XX = TransposedMatrix( UnionOfColumns( List( (1):(s), i-> CertainRows( sol, [ (i-1)*v+1.. i*v ] ) ) ) );
-        end;
-        
-        return PresentationMorphism( cat, Range( morphism_1 ), XX, Range( morphism_2 ) );
-        
-    end;
     
   end, 1000 );
   
