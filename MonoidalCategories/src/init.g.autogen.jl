@@ -7,7 +7,8 @@
 ## Monoidal
 
 include( "gap/MonoidalCategoriesProperties.gd.autogen.jl" );
-include( "gap/MonoidalCategoriesTensorProductOnObjectsAndUnitObject.gd.autogen.jl" );
+include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnit.gd.autogen.jl" );
+include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnit.autogen.gd.autogen.jl" );
 include( "gap/MonoidalCategories.gd.autogen.jl" );
 include( "gap/MonoidalCategories.autogen.gd.autogen.jl" );
 
@@ -78,7 +79,7 @@ include( "gap/Synonyms.gd.autogen.jl" );
 
 ## Test methods
 
-include( "gap/MonoidalCategoriesTensorProductAndUnitTest.gd.autogen.jl" );
+include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest.gd.autogen.jl" );
 include( "gap/MonoidalCategoriesTest.gd.autogen.jl" );
 include( "gap/AdditiveMonoidalCategoriesTest.gd.autogen.jl" );
 include( "gap/BraidedMonoidalCategoriesTest.gd.autogen.jl" );

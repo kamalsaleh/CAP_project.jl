@@ -11,19 +11,27 @@ TensorProductOnObjects = @rec(
   return_type = "object",
   dual_operation = "TensorProductOnObjects",
   dual_arguments_reversed = false,
-  # Test in MonoidalCategoriesTensorProductAndUnitTest
+  # Test in MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest
 ),
 
 TensorUnit = @rec(
   filter_list = [ "category" ],
   return_type = "object",
   dual_operation = "TensorUnit",
-  # Test in MonoidalCategoriesTensorProductAndUnitTest
+  # Test in MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest
 ),
 
 ) );
 
 CAP_INTERNAL_ENHANCE_NAME_RECORD( MONOIDAL_CATEGORIES_BASIC_METHOD_NAME_RECORD );
+
+CAP_INTERNAL_GENERATE_DOCUMENTATION_FROM_METHOD_NAME_RECORD(
+    MONOIDAL_CATEGORIES_BASIC_METHOD_NAME_RECORD,
+    "MonoidalCategories",
+    "MonoidalCategoriesTensorProductOnObjectsAndTensorUnit.autogen.gd",
+    "Monoidal Categories",
+    "Add-methods"
+);
 
 CAP_INTERNAL_REGISTER_METHOD_NAME_RECORD_OF_PACKAGE( MONOIDAL_CATEGORIES_BASIC_METHOD_NAME_RECORD, "MonoidalCategories" );
 

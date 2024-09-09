@@ -16,19 +16,19 @@ julia> a = "a" / T;
 
 julia> b = "b" / T;
 
-julia> MonoidalCategoriesTensorProductAndUnitTest( T, opposite, a, b );
+julia> MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest( T, opposite, a, b );
 
-julia> MonoidalCategoriesTensorProductAndUnitTest( T, opposite_primitive, a, b );
+julia> MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest( T, opposite_primitive, a, b );
 
 julia> z = ZeroObject( T );
 
-julia> MonoidalCategoriesTensorProductAndUnitTest( T, opposite, z, b );
+julia> MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest( T, opposite, z, b );
 
-julia> MonoidalCategoriesTensorProductAndUnitTest( T, opposite_primitive, z, b );
+julia> MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest( T, opposite_primitive, z, b );
 
-julia> MonoidalCategoriesTensorProductAndUnitTest( T, opposite, a, z );
+julia> MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest( T, opposite, a, z );
 
-julia> MonoidalCategoriesTensorProductAndUnitTest( T, opposite_primitive, a, z );
+julia> MonoidalCategoriesTensorProductOnObjectsAndTensorUnitTest( T, opposite_primitive, a, z );
 
 julia> a = "a" / T;
 
