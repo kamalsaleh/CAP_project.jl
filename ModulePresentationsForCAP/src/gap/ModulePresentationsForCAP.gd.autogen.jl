@@ -65,8 +65,6 @@ CapJitAddTypeSignature( "UnderlyingRing", [ IsCategoryOfLeftOrRightPresentations
 
 @DeclareGlobalFunction( "ADD_KERNEL_LEFT" );
 
-@DeclareGlobalFunction( "ADD_PRECOMPOSE_LEFT" );
-
 @DeclareGlobalFunction( "ADD_IS_WELL_DEFINED_FOR_MORPHISM_LEFT" );
 
 @DeclareGlobalFunction( "ADD_TENSOR_PRODUCT_ON_OBJECTS_LEFT" );
@@ -89,8 +87,6 @@ CapJitAddTypeSignature( "UnderlyingRing", [ IsCategoryOfLeftOrRightPresentations
 @DeclareGlobalFunction( "ADD_FUNCTIONS_FOR_RIGHT_PRESENTATION" );
 
 @DeclareGlobalFunction( "ADD_KERNEL_RIGHT" );
-
-@DeclareGlobalFunction( "ADD_PRECOMPOSE_RIGHT" );
 
 @DeclareGlobalFunction( "ADD_IS_WELL_DEFINED_FOR_MORPHISM_RIGHT" );
 

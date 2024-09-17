@@ -8,20 +8,24 @@
 
 include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnitMethodRecord.gi.autogen.jl" );
 include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnit.gi.autogen.jl" );
+include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnitMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 include( "gap/MonoidalCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/MonoidalCategories.gi.autogen.jl" );
+include( "gap/MonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 ## Additive Monoidal
 
 include( "gap/AdditiveMonoidalCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/AdditiveMonoidalCategories.gi.autogen.jl" );
+include( "gap/AdditiveMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 ## Braided Monoidal
 
 include( "gap/BraidedMonoidalCategoriesProperties.gi.autogen.jl" );
 include( "gap/BraidedMonoidalCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/BraidedMonoidalCategories.gi.autogen.jl" );
+include( "gap/BraidedMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 ## Symmetric Monoidal
 
@@ -38,6 +42,9 @@ include( "gap/LeftCoclosedMonoidalCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/LeftClosedMonoidalCategories.gi.autogen.jl" );
 include( "gap/LeftCoclosedMonoidalCategories.gi.autogen.jl" );
 
+include( "gap/LeftClosedMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/LeftCoclosedMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+
 include( "gap/ClosedMonoidalCategoriesProperties.gi.autogen.jl" );
 include( "gap/CoclosedMonoidalCategoriesProperties.gi.autogen.jl" );
 
@@ -46,6 +53,9 @@ include( "gap/CoclosedMonoidalCategoriesMethodRecord.gi.autogen.jl" );
 
 include( "gap/ClosedMonoidalCategories.gi.autogen.jl" );
 include( "gap/CoclosedMonoidalCategories.gi.autogen.jl" );
+
+include( "gap/ClosedMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/CoclosedMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 ## Symmetric (Co)Closed Monoidal
 
@@ -62,6 +72,9 @@ include( "gap/RigidSymmetricCoclosedMonoidalCategoriesMethodRecord.gi.autogen.jl
 
 include( "gap/RigidSymmetricClosedMonoidalCategories.gi.autogen.jl" );
 include( "gap/RigidSymmetricCoclosedMonoidalCategories.gi.autogen.jl" );
+
+include( "gap/RigidSymmetricClosedMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/RigidSymmetricCoclosedMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 ## Derived Methods
 

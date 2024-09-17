@@ -6,6 +6,8 @@
 
 include( "gap/FreydCategoriesForCAP.gd.autogen.jl" );
 
+include( "gap/MethodRecordDeclarations.autogen.gd.autogen.jl" );
+
 include( "gap/CategoryOfRows.gd.autogen.jl" );
 include( "gap/CategoryOfRows_as_AdditiveClosure_RingAsCategory.gd.autogen.jl" );
 

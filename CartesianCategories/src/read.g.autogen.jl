@@ -16,17 +16,26 @@ include( "gap/CocartesianCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/CartesianCategories.gi.autogen.jl" );
 include( "gap/CocartesianCategories.gi.autogen.jl" );
 
+include( "gap/CartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/CocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+
 include( "gap/DistributiveCartesianCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/CodistributiveCocartesianCategoriesMethodRecord.gi.autogen.jl" );
 
 include( "gap/DistributiveCartesianCategories.gi.autogen.jl" );
 include( "gap/CodistributiveCocartesianCategories.gi.autogen.jl" );
 
+include( "gap/DistributiveCartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/CodistributiveCocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+
 include( "gap/BraidedCartesianCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/BraidedCocartesianCategoriesMethodRecord.gi.autogen.jl" );
 
 include( "gap/BraidedCartesianCategories.gi.autogen.jl" );
 include( "gap/BraidedCocartesianCategories.gi.autogen.jl" );
+
+include( "gap/BraidedCartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/BraidedCocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 ## Cartesian Closed and Cocartesian Coclosed
 
@@ -38,6 +47,9 @@ include( "gap/CocartesianCoclosedCategoriesMethodRecord.gi.autogen.jl" );
 
 include( "gap/CartesianClosedCategories.gi.autogen.jl" );
 include( "gap/CocartesianCoclosedCategories.gi.autogen.jl" );
+
+include( "gap/CartesianClosedCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/CocartesianCoclosedCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
 ## Derived methods
 

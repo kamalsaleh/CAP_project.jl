@@ -6,7 +6,7 @@
 
 ## Topos
 include( "gap/Topos.gd.autogen.jl" );
-include( "gap/Topos.autogen.gd.autogen.jl" );
+include( "gap/ToposMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Category of relations
 include( "gap/CategoryOfRelations.gd.autogen.jl" );

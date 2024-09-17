@@ -8,20 +8,20 @@
 
 include( "gap/MonoidalCategoriesProperties.gd.autogen.jl" );
 include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnit.gd.autogen.jl" );
-include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnit.autogen.gd.autogen.jl" );
+include( "gap/MonoidalCategoriesTensorProductOnObjectsAndTensorUnitMethodRecordDeclarations.autogen.gd.autogen.jl" );
 include( "gap/MonoidalCategories.gd.autogen.jl" );
-include( "gap/MonoidalCategories.autogen.gd.autogen.jl" );
+include( "gap/MonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Additive Monoidal
 
 include( "gap/AdditiveMonoidalCategories.gd.autogen.jl" );
-include( "gap/AdditiveMonoidalCategories.autogen.gd.autogen.jl" );
+include( "gap/AdditiveMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Braided Monoidal
 
 include( "gap/BraidedMonoidalCategoriesProperties.gd.autogen.jl" );
 include( "gap/BraidedMonoidalCategories.gd.autogen.jl" );
-include( "gap/BraidedMonoidalCategories.autogen.gd.autogen.jl" );
+include( "gap/BraidedMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Symmetric Monoidal
 
@@ -35,8 +35,8 @@ include( "gap/LeftCoclosedMonoidalCategoriesProperties.gd.autogen.jl" );
 include( "gap/LeftClosedMonoidalCategories.gd.autogen.jl" );
 include( "gap/LeftCoclosedMonoidalCategories.gd.autogen.jl" );
 
-include( "gap/LeftClosedMonoidalCategories.autogen.gd.autogen.jl" );
-include( "gap/LeftCoclosedMonoidalCategories.autogen.gd.autogen.jl" );
+include( "gap/LeftClosedMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
+include( "gap/LeftCoclosedMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 include( "gap/ClosedMonoidalCategoriesProperties.gd.autogen.jl" );
 include( "gap/CoclosedMonoidalCategoriesProperties.gd.autogen.jl" );
@@ -44,8 +44,8 @@ include( "gap/CoclosedMonoidalCategoriesProperties.gd.autogen.jl" );
 include( "gap/ClosedMonoidalCategories.gd.autogen.jl" );
 include( "gap/CoclosedMonoidalCategories.gd.autogen.jl" );
 
-include( "gap/ClosedMonoidalCategories.autogen.gd.autogen.jl" );
-include( "gap/CoclosedMonoidalCategories.autogen.gd.autogen.jl" );
+include( "gap/ClosedMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
+include( "gap/CoclosedMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Symmetric C(oc)losed Monoidal
 
@@ -60,8 +60,8 @@ include( "gap/RigidSymmetricCoclosedMonoidalCategoriesProperties.gd.autogen.jl" 
 include( "gap/RigidSymmetricClosedMonoidalCategories.gd.autogen.jl" );
 include( "gap/RigidSymmetricCoclosedMonoidalCategories.gd.autogen.jl" );
 
-include( "gap/RigidSymmetricClosedMonoidalCategories.autogen.gd.autogen.jl" );
-include( "gap/RigidSymmetricCoclosedMonoidalCategories.autogen.gd.autogen.jl" );
+include( "gap/RigidSymmetricClosedMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
+include( "gap/RigidSymmetricCoclosedMonoidalCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Create files for monoidal categories
 

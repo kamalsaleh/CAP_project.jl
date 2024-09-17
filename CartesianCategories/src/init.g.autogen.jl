@@ -22,8 +22,8 @@ include( "gap/CocartesianCategories_extra.gd.autogen.jl" );
 include( "gap/CartesianCategoriesProperties.gd.autogen.jl" );
 include( "gap/CocartesianCategoriesProperties.gd.autogen.jl" );
 
-include( "gap/CartesianCategories.autogen.gd.autogen.jl" );
-include( "gap/CocartesianCategories.autogen.gd.autogen.jl" );
+include( "gap/CartesianCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
+include( "gap/CocartesianCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 include( "gap/DistributiveCartesianCategories.gd.autogen.jl" );
 include( "gap/CodistributiveCocartesianCategories.gd.autogen.jl" );
@@ -31,14 +31,14 @@ include( "gap/CodistributiveCocartesianCategories.gd.autogen.jl" );
 include( "gap/DistributiveCartesianCategoriesProperties.gd.autogen.jl" );
 include( "gap/CodistributiveCocartesianCategoriesProperties.gd.autogen.jl" );
 
-include( "gap/DistributiveCartesianCategories.autogen.gd.autogen.jl" );
-include( "gap/CodistributiveCocartesianCategories.autogen.gd.autogen.jl" );
+include( "gap/DistributiveCartesianCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
+include( "gap/CodistributiveCocartesianCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 include( "gap/BraidedCartesianCategories.gd.autogen.jl" );
 include( "gap/BraidedCocartesianCategories.gd.autogen.jl" );
 
-include( "gap/BraidedCartesianCategories.autogen.gd.autogen.jl" );
-include( "gap/BraidedCocartesianCategories.autogen.gd.autogen.jl" );
+include( "gap/BraidedCartesianCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
+include( "gap/BraidedCocartesianCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Cartesian Closed and Cocartesian Coclosed
 
@@ -48,8 +48,8 @@ include( "gap/CocartesianCoclosedCategoriesProperties.gd.autogen.jl" );
 include( "gap/CartesianClosedCategories.gd.autogen.jl" );
 include( "gap/CocartesianCoclosedCategories.gd.autogen.jl" );
 
-include( "gap/CartesianClosedCategories.autogen.gd.autogen.jl" );
-include( "gap/CocartesianCoclosedCategories.autogen.gd.autogen.jl" );
+include( "gap/CartesianClosedCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
+include( "gap/CocartesianCoclosedCategoriesMethodRecordDeclarations.autogen.gd.autogen.jl" );
 
 ## Bicartesian and finite (co)complete categories
 
