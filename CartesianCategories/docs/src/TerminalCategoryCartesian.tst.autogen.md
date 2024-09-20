@@ -12,6 +12,12 @@ julia> opposite = Opposite( T, "Opposite with all operations" );
 
 julia> opposite_primitive = Opposite( T, "Opposite with primitive operations"; only_primitive_operations = true );
 
+julia> DeactivateCachingOfCategory( T )
+
+julia> DeactivateCachingOfCategory( opposite )
+
+julia> DeactivateCachingOfCategory( opposite_primitive )
+
 julia> a = "a" / T;
 
 julia> b = "b" / T;
