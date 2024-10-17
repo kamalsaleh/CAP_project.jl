@@ -793,7 +793,7 @@ end );
         
         if (HasIsAbelianCategory( range_category ) &&
            IsAbelianCategory( range_category ) &&
-           (HasIsProjective( underlying_distinguished_object ) || CurrentOperationWeight( range_category.derivations_weight_list, "IsProjective" ) <= 50) &&
+           (HasIsProjective( underlying_distinguished_object ) || (CanCompute( range_category, "IsProjective" ) && OperationWeight( range_category, "IsProjective" ) <= 50)) &&
            IsProjective( underlying_distinguished_object ))
             
             SetRangeCategoryOfHomomorphismStructure( category, range_category );

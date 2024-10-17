@@ -245,6 +245,164 @@ julia> colift = Colift( mor2, mor )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
 
+julia> true
+true
+
+julia> Q = HomalgFieldOfRationals()
+Q
+
+julia> R = RingAsCategory( Q )
+RingAsCategory( Q )
+
+julia> A = AdditiveClosure( R )
+AdditiveClosure( RingAsCategory( Q ) )
+
+julia> u = TensorUnit( A )
+<An object in AdditiveClosure( RingAsCategory( Q ) )
+ defined by 1 underlying objects>
+
+julia> mor1 = [ [ 1 / R, 2 / R ] ] / A
+<A morphism in AdditiveClosure( RingAsCategory( Q ) )
+ defined by a 1 x 2 matrix of underlying morphisms>
+
+julia> mor2 = [ [ 3 / R, 4 / R ] ] / A
+<A morphism in AdditiveClosure( RingAsCategory( Q ) )
+ defined by a 1 x 2 matrix of underlying morphisms>
+
+julia> T = TensorProduct( mor1, mor2 )
+<A morphism in AdditiveClosure( RingAsCategory( Q ) )
+ defined by a 1 x 4 matrix of underlying morphisms>
+
+julia> Display( T )
+A 1 x 4 matrix with entries in RingAsCategory( Q )
+
+[1,1]: <3>
+[1,2]: <4>
+[1,3]: <6>
+[1,4]: <8>
+
+```
+
+```jldoctest AutoDocTests
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
+
+julia> true
+true
+
+julia> T = TerminalCategoryWithMultipleObjects( )
+TerminalCategoryWithMultipleObjects( )
+
+julia> A = "A" / T
+<An object in TerminalCategoryWithMultipleObjects( )>
+
+julia> B = "B" / T
+<An object in TerminalCategoryWithMultipleObjects( )>
+
+julia> AT = AdditiveClosure( T )
+AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+
+julia> ABAA = [ A, B, A, A ] / AT
+<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by 4 underlying objects>
+
+julia> BAB = [ B, A, B ] / AT
+<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by 3 underlying objects>
+
+julia> AB = [ A, B ] / AT
+<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by 2 underlying objects>
+
+julia> mor_AB = MorphismConstructor( A, "A -> B", B )
+<A morphism in TerminalCategoryWithMultipleObjects( )>
+
+julia> mor_BA = MorphismConstructor( B, "B -> A", A )
+<A morphism in TerminalCategoryWithMultipleObjects( )>
+
+julia> id_A = IdentityMorphism( A )
+<A morphism in TerminalCategoryWithMultipleObjects( )>
+
+julia> id_B = IdentityMorphism( B )
+<A morphism in TerminalCategoryWithMultipleObjects( )>
+
+julia> alpha = MorphismConstructor( ABAA,
+          [ [ mor_AB, id_A, mor_AB ],
+            [ id_B, mor_BA, id_B ],
+            [ mor_AB, id_A, mor_AB ],
+            [ mor_AB, id_A, mor_AB ] ],
+            BAB )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 4 x 3 matrix of underlying morphisms>
+
+julia> IsWellDefined( alpha )
+true
+
+julia> alpha2 = TensorProduct( alpha, alpha )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 16 x 9 matrix of underlying morphisms>
+
+julia> IsWellDefined( alpha2 )
+true
+
+julia> IsIsomorphism( alpha2 )
+true
+
+julia> left = LeftUnitor( ABAA )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 4 x 4 matrix of underlying morphisms>
+
+julia> IsWellDefined( left )
+true
+
+julia> left_inv = LeftUnitorInverse( ABAA )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 4 x 4 matrix of underlying morphisms>
+
+julia> IsOne( PreCompose( left, left_inv ) )
+true
+
+julia> IsOne( PreCompose( left_inv, left ) )
+true
+
+julia> right = RightUnitor( BAB )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 3 x 3 matrix of underlying morphisms>
+
+julia> IsWellDefined( right )
+true
+
+julia> right_inv = RightUnitorInverse( BAB )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 3 x 3 matrix of underlying morphisms>
+
+julia> IsOne( PreCompose( right, right_inv ) )
+true
+
+julia> IsOne( PreCompose( right_inv, right ) )
+true
+
+julia> aslr = AssociatorLeftToRight( AB, BAB, AB )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 12 x 12 matrix of underlying morphisms>
+
+julia> IsWellDefined( aslr )
+true
+
+julia> asrl = AssociatorRightToLeft( AB, BAB, AB )
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
+ defined by a 12 x 12 matrix of underlying morphisms>
+
+julia> IsOne( PreCompose( aslr, asrl ) )
+true
+
+julia> IsOne( PreCompose( asrl, aslr ) )
+true
+
+```
+
+```jldoctest AutoDocTests
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using FreydCategoriesForCAP
+
 julia> R = HomalgRingOfIntegers();
 
 julia> rows = CategoryOfRows( R );
