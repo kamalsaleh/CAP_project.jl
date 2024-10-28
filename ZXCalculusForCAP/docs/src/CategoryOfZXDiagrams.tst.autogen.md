@@ -34,6 +34,8 @@ julia> PreCompose( coev, IdentityMorphism( TensorProduct( three, three ) ) );
 
 julia> PreCompose( IdentityMorphism( zero ), coev );
 
+julia> ZX.cached_precompiled_functions.PreCompose( ZX, IdentityMorphism( TensorProduct( three, three ) ), ev );
+
 julia> Display( PreCompose( coev, ev ) )
 A morphism in Category of ZX-diagrams given by a ZX diagram with 0 vertex labels
   [  ],
@@ -56,6 +58,12 @@ A morphism in Category of ZX-diagrams given by a ZX diagram with 6 vertex labels
 
 julia> IsEqualForMorphisms( TensorProductOnMorphisms( IdentityMorphism( one ), IdentityMorphism( two ) ), IdentityMorphism( three ) )
 true
+
+julia> ZX.cached_precompiled_functions.TensorProductOnMorphismsWithGivenTensorProducts( ZX, 
+          TensorProductOnObjects( one, two ),
+          IdentityMorphism( one ), IdentityMorphism( two ),
+          TensorProductOnObjects( one, two )
+        );
 
 julia> IsEqualForMorphisms( AssociatorLeftToRight( zero, one, two ), IdentityMorphism( three ) )
 true

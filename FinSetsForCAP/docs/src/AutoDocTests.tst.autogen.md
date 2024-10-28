@@ -2619,6 +2619,10 @@ julia> Display( Range( lf ) )
 julia> Display( lf )
 [ 0 ] ⱶ[ 3 ]→ [ 0,..., 7 ]
 
+julia> SkeletalFinSets.cached_precompiled_functions.
+            CartesianLambdaIntroduction( SkeletalFinSets, f )
+|1| → |8|
+
 julia> elf = CartesianLambdaElimination( S, R, lf )
 |3| → |2|
 
@@ -2818,9 +2822,30 @@ julia> CartesianBraiding( M, N );
 
 julia> CartesianBraidingInverse( M, N );
 
+julia> SkeletalFinSets.cached_precompiled_functions.
+            CartesianBraidingWithGivenDirectProducts( SkeletalFinSets,
+                DirectProduct( M, N ),
+                M, N,
+                DirectProduct( N, M )
+        );
+
+julia> SkeletalFinSets.cached_precompiled_functions.
+            CartesianBraidingInverseWithGivenDirectProducts( SkeletalFinSets,
+                DirectProduct( N, M ),
+                M, N,
+                DirectProduct( M, N )
+        );
+
 julia> ExponentialOnObjects( M, N );
 
 julia> ExponentialOnMorphisms( f, g );
+
+julia> SkeletalFinSets.cached_precompiled_functions.
+            ExponentialOnMorphismsWithGivenExponentials( SkeletalFinSets,
+                ExponentialOnObjects( Range( f ), Source( g ) ),
+                f, g,
+                ExponentialOnObjects( Source( f ), Range( g ) )
+        );
 
 julia> CartesianRightEvaluationMorphism( M, N );
 
@@ -3007,5 +3032,9 @@ julia> c = PushoutComplement( l, m )
 
 julia> Display( c )
 [ 0,..., 4 ] ⱶ[ 2, 3, 4, 5, 7 ]→ [ 0,..., 7 ]
+
+julia> SkeletalFinSets.cached_precompiled_functions.
+            PushoutComplement( SkeletalFinSets, l, m )
+|5| → |8|
 
 ```
