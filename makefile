@@ -1,3 +1,6 @@
+update-subsplits:
+	./dev/update_subsplits.sh
+
 install:
 	julia -e 'using Pkg; \
 		Pkg.develop(path = "CAP"); \
