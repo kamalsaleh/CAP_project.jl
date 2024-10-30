@@ -168,7 +168,7 @@ export -f syntax_replacements
 
 test_replacements() {
 	if [ "$1" = "CAP" ]; then
-		USING="using MonoidalCategories; using $1"
+		USING="using $1"
 	elif [ "$1" = "MonoidalCategories" ]; then
 		USING="using CAP; using $1"
 	elif [ "$1" = "CartesianCategories" ]; then
