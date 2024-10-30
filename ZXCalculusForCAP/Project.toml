@@ -15,6 +15,12 @@ JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
 
 [compat]
 julia = "1.11"
+CAP = "0.1"
+MonoidalCategories = "0.1"
+CartesianCategories = "0.1"
+Toposes = "0.1"
+FinSetsForCAP = "0.1"
+JSON3 = "1.14"
 
 [extras]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
