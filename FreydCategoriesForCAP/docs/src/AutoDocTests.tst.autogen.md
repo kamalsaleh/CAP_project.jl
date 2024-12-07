@@ -248,8 +248,7 @@ julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using Linea
 julia> true
 true
 
-julia> Q = HomalgFieldOfRationals()
-Q
+julia> Q = HomalgFieldOfRationals();
 
 julia> R = RingAsCategory( Q )
 RingAsCategory( Q )
@@ -258,20 +257,16 @@ julia> A = AdditiveClosure( R )
 AdditiveClosure( RingAsCategory( Q ) )
 
 julia> u = TensorUnit( A )
-<An object in AdditiveClosure( RingAsCategory( Q ) )
- defined by 1 underlying objects>
+<An object in AdditiveClosure( RingAsCategory( Q ) ) defined by 1 underlying objects>
 
 julia> mor1 = [ [ 1 / R, 2 / R ] ] / A
-<A morphism in AdditiveClosure( RingAsCategory( Q ) )
- defined by a 1 x 2 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( RingAsCategory( Q ) ) defined by a 1 x 2 matrix of underlying morphisms>
 
 julia> mor2 = [ [ 3 / R, 4 / R ] ] / A
-<A morphism in AdditiveClosure( RingAsCategory( Q ) )
- defined by a 1 x 2 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( RingAsCategory( Q ) ) defined by a 1 x 2 matrix of underlying morphisms>
 
 julia> T = TensorProduct( mor1, mor2 )
-<A morphism in AdditiveClosure( RingAsCategory( Q ) )
- defined by a 1 x 4 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( RingAsCategory( Q ) ) defined by a 1 x 4 matrix of underlying morphisms>
 
 julia> Display( T )
 A 1 x 4 matrix with entries in RingAsCategory( Q )
@@ -280,6 +275,13 @@ A 1 x 4 matrix with entries in RingAsCategory( Q )
 [1,2]: <4>
 [1,3]: <6>
 [1,4]: <8>
+
+julia> Display( Range( T ) )
+A formal direct sum consisting of 4 objects.
+*
+*
+*
+*
 
 ```
 
@@ -302,16 +304,13 @@ julia> AT = AdditiveClosure( T )
 AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
 
 julia> ABAA = [ A, B, A, A ] / AT
-<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by 4 underlying objects>
+<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by 4 underlying objects>
 
 julia> BAB = [ B, A, B ] / AT
-<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by 3 underlying objects>
+<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by 3 underlying objects>
 
 julia> AB = [ A, B ] / AT
-<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by 2 underlying objects>
+<An object in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by 2 underlying objects>
 
 julia> mor_AB = MorphismConstructor( A, "A -> B", B )
 <A morphism in TerminalCategoryWithMultipleObjects( )>
@@ -331,15 +330,13 @@ julia> alpha = MorphismConstructor( ABAA,
             [ mor_AB, id_A, mor_AB ],
             [ mor_AB, id_A, mor_AB ] ],
             BAB )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 4 x 3 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 4 x 3 matrix of underlying morphisms>
 
 julia> IsWellDefined( alpha )
 true
 
 julia> alpha2 = TensorProduct( alpha, alpha )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 16 x 9 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 16 x 9 matrix of underlying morphisms>
 
 julia> IsWellDefined( alpha2 )
 true
@@ -348,54 +345,48 @@ julia> IsIsomorphism( alpha2 )
 true
 
 julia> left = LeftUnitor( ABAA )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 4 x 4 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 4 x 4 matrix of underlying morphisms>
 
 julia> IsWellDefined( left )
 true
 
 julia> left_inv = LeftUnitorInverse( ABAA )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 4 x 4 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 4 x 4 matrix of underlying morphisms>
 
-julia> IsOne( PreCompose( left, left_inv ) )
+julia> PreCompose( left, left_inv ) == IdentityMorphism( Source( left ) )
 true
 
-julia> IsOne( PreCompose( left_inv, left ) )
+julia> PreCompose( left_inv, left ) == IdentityMorphism( Range( left ) )
 true
 
 julia> right = RightUnitor( BAB )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 3 x 3 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 3 x 3 matrix of underlying morphisms>
 
 julia> IsWellDefined( right )
 true
 
 julia> right_inv = RightUnitorInverse( BAB )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 3 x 3 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 3 x 3 matrix of underlying morphisms>
 
-julia> IsOne( PreCompose( right, right_inv ) )
+julia> PreCompose( right, right_inv ) == IdentityMorphism( Source( right ) )
 true
 
-julia> IsOne( PreCompose( right_inv, right ) )
+julia> PreCompose( right_inv, right ) == IdentityMorphism( Range( right ) )
 true
 
 julia> aslr = AssociatorLeftToRight( AB, BAB, AB )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 12 x 12 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 12 x 12 matrix of underlying morphisms>
 
 julia> IsWellDefined( aslr )
 true
 
 julia> asrl = AssociatorRightToLeft( AB, BAB, AB )
-<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) )
- defined by a 12 x 12 matrix of underlying morphisms>
+<A morphism in AdditiveClosure( TerminalCategoryWithMultipleObjects( ) ) defined by a 12 x 12 matrix of underlying morphisms>
 
-julia> IsOne( PreCompose( aslr, asrl ) )
+julia> PreCompose( aslr, asrl ) == IdentityMorphism( Source( aslr ) )
 true
 
-julia> IsOne( PreCompose( asrl, aslr ) )
+julia> PreCompose( asrl, aslr ) == IdentityMorphism( Range( aslr ) )
 true
 
 ```

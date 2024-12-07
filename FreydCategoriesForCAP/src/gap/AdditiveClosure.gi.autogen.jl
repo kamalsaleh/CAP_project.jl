@@ -1686,52 +1686,56 @@ end );
 end );
 
 ##
-@InstallMethod( Display,
+@InstallMethod( DisplayString,
                [ IsAdditiveClosureMorphism ],
                
   function( morphism )
-    local nr_rows, nr_cols, i, j;
+    local nr_rows, nr_cols, string, i, j;
     
     nr_rows = NrRows( morphism );
     
     nr_cols = NrCols( morphism );
     
-    Print( @Concatenation( "A ", StringGAP( nr_rows ), " x ", StringGAP( nr_cols ), " matrix with entries in ", Name( UnderlyingCategory( CapCategory( morphism ) ) ), "\n" ) );
+    string = @Concatenation( "A ", StringGAP( nr_rows ), " x ", StringGAP( nr_cols ), " matrix with entries in ", Name( UnderlyingCategory( CapCategory( morphism ) ) ), "\n" );
     
     for i in (1):(nr_rows)
         
         for j in (1):(nr_cols)
             
-            Print( @Concatenation( "\n[", StringGAP(i), ",", StringGAP(j), "]: " ) );
+            string = @Concatenation( string, @Concatenation( "\n[", StringGAP(i), ",", StringGAP(j), "]: " ) );
             
-            ViewObj( morphism[i, j] );
+            string = @Concatenation( string, ViewString( morphism[i, j] ) );
             
         end;
         
     end;
     
-    Print( "\n" );
+    string = @Concatenation( string, "\n" );
+    
+    return string;
     
 end );
 
 ##
-@InstallMethod( Display,
+@InstallMethod( DisplayString,
                [ IsAdditiveClosureObject ],
                
   function( object )
-    local object_list, obj;
+    local object_list, string, obj;
     
     object_list = ObjectList( object );
     
-    Print( @Concatenation( "A formal direct sum consisting of ", StringGAP( Length( object_list ) ), " objects.\n" ) );
+    string = @Concatenation( "A formal direct sum consisting of ", StringGAP( Length( object_list ) ), " objects.\n" );
     
     for obj in object_list
         
-        ViewObj( obj );
+        string = @Concatenation( string, ViewString( obj ) );
         
-        Print( "\n" );
+        string = @Concatenation( string, "\n" );
         
     end;
+    
+    return string;
     
 end );
 
