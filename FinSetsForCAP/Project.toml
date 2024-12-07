@@ -14,7 +14,7 @@ Toposes = "36a15fe6-6211-457f-8fdb-aa2e0d2f3052"
 
 [compat]
 julia = "1.11"
-CAP = "0.1"
+CAP = "0.1, 0.2"
 CartesianCategories = "0.1"
 Toposes = "0.1"
 

@@ -14,7 +14,7 @@ CartesianCategories = "c5961c08-7b59-43f4-a15e-02b3e7c87ab8"
 
 [compat]
 julia = "1.11"
-CAP = "0.1"
+CAP = "0.1, 0.2"
 CartesianCategories = "0.1"
 
 [extras]
