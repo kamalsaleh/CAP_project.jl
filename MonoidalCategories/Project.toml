@@ -7,7 +7,7 @@ authors = [
 	"Sebastian Posur <sebastian.posur@uni-muenster.de>",
 	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>",
 ]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
