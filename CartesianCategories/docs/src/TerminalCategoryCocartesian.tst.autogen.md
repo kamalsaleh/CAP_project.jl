@@ -82,25 +82,25 @@ julia> d = "d" / T;
 
 julia> u = InitialObject( T );
 
-julia> a_product_b = Coproduct( a, b );
+julia> a_coproduct_b = Coproduct( a, b );
 
-julia> c_product_d = Coproduct( c, d );
+julia> c_coproduct_d = Coproduct( c, d );
 
-julia> hom_ab = CoexponentialOnObjects( a, b );
+julia> cohom_ab = CoexponentialOnObjects( a, b );
 
-julia> hom_cd = CoexponentialOnObjects( c, d );
+julia> cohom_cd = CoexponentialOnObjects( c, d );
 
 julia> alpha = MorphismConstructor( a, "f_ab", b );
 
 julia> beta = MorphismConstructor( c, "f_cd", d );
 
-julia> gamma = MorphismConstructor( a_product_b, "f_abu", u );
+julia> gamma = MorphismConstructor( u, "f_abu", a_coproduct_b );
 
-julia> delta = MorphismConstructor( c_product_d, "f_cdu", u );
+julia> delta = MorphismConstructor( u, "f_cdu", c_coproduct_d );
 
-julia> epsilon = MorphismConstructor( u, "f_uhomab", hom_ab );
+julia> epsilon = MorphismConstructor( cohom_ab, "f_uhomab", u );
 
-julia> zeta = MorphismConstructor( u, "f_uhomcd", hom_cd );
+julia> zeta = MorphismConstructor( cohom_cd, "f_uhomcd", u );
 
 julia> CocartesianCoclosedCategoriesTest( T, opposite, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta );
 
@@ -108,25 +108,25 @@ julia> CocartesianCoclosedCategoriesTest( T, opposite_primitive, a, b, c, d, alp
 
 julia> z = ZeroObject( T );
 
-julia> z_product_a = Coproduct( z, a );
+julia> z_coproduct_a = Coproduct( z, a );
 
-julia> a_product_z = Coproduct( a, z );
+julia> a_coproduct_z = Coproduct( a, z );
 
-julia> hom_za = CoexponentialOnObjects( z, a );
+julia> cohom_za = CoexponentialOnObjects( z, a );
 
-julia> hom_az = CoexponentialOnObjects( a, z );
+julia> cohom_az = CoexponentialOnObjects( a, z );
 
 julia> alpha = MorphismConstructor( z, "f_za", a );
 
 julia> beta = MorphismConstructor( a, "f_az", z );
 
-julia> gamma = MorphismConstructor( z_product_a, "f_zau", u );
+julia> gamma = MorphismConstructor( u, "f_zau", z_coproduct_a );
 
-julia> delta = MorphismConstructor( a_product_z, "f_azu", u );
+julia> delta = MorphismConstructor( u, "f_azu", a_coproduct_z );
 
-julia> epsilon = MorphismConstructor( u, "f_uhomza", hom_za );
+julia> epsilon = MorphismConstructor( cohom_za, "f_uhomza", u );
 
-julia> zeta = MorphismConstructor( u, "f_uhomaz", hom_az );
+julia> zeta = MorphismConstructor( cohom_az, "f_uhomaz", u );
 
 julia> CocartesianCoclosedCategoriesTest( T, opposite, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
 
