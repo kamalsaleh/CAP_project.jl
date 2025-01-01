@@ -186,7 +186,7 @@ julia> delta = MorphismConstructor( u, "f_ucd", c_product_d );
 
 julia> epsilon = MorphismConstructor( cohom_ab, "f_cohomabu", u );
 
-julia> zeta = MorphismConstructor( cohom_cd, "f_cohomcdu", u);
+julia> zeta = MorphismConstructor( cohom_cd, "f_cohomcdu", u );
 
 julia> CoclosedMonoidalCategoriesTest( T, opposite, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta );
 
