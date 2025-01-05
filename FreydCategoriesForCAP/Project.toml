@@ -3,7 +3,7 @@ uuid = "cec356e3-7627-4f73-8308-af32cbf46c2b"
 authors = [
 	"Sebastian Posur <sebastian.posur@uni-muenster.de>",
 	"Martin Bies <martin.bies@alumni.uni-heidelberg.de>",
-	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>",
+	"Fabian Zickgraf <fabian.zickgraf@mailbox.org>",
 ]
 version = "0.1.0"
 

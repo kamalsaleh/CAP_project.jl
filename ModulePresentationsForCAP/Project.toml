@@ -1,9 +1,9 @@
 name = "ModulePresentationsForCAP"
 uuid = "80a941df-def7-4d99-bd07-d3a3a468fbfc"
 authors = [
-	"Sebastian Gutsche <gutsche@mathematik.uni-siegen.de>",
+	"Sebastian Gutsche <sebastian.gutsche@gmail.com>",
 	"Sebastian Posur <sebastian.posur@uni-muenster.de>",
-	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>",
+	"Fabian Zickgraf <fabian.zickgraf@mailbox.org>",
 ]
 version = "0.1.0"
 
