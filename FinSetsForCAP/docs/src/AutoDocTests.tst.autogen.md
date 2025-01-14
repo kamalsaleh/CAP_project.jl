@@ -2619,10 +2619,6 @@ julia> Display( Range( lf ) )
 julia> Display( lf )
 [ 0 ] ⱶ[ 3 ]→ [ 0,..., 7 ]
 
-julia> SkeletalFinSets.cached_precompiled_functions.
-            CartesianLambdaIntroduction( SkeletalFinSets, f )
-|1| → |8|
-
 julia> elf = CartesianLambdaElimination( S, R, lf )
 |3| → |2|
 
