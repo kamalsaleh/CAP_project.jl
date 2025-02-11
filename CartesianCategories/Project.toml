@@ -5,14 +5,14 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>",
 	"Fabian Zickgraf <fabian.zickgraf@mailbox.org>",
 ]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 
 [compat]
 julia = "1.11"
-CAP = "0.1, 0.2"
+CAP = "0.1, 0.2, 0.3"
 
 [extras]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
