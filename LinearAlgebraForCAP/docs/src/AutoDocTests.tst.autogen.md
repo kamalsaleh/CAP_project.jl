@@ -276,6 +276,77 @@ julia> d = MatrixCategoryObject( vec, 1 )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP
 
+julia> pre_compose = MonoidalPreComposeMorphism( a, b, c )
+<A morphism in Category of matrices over Q>
+
+julia> post_compose = MonoidalPostComposeMorphism( a, b, c )
+<A morphism in Category of matrices over Q>
+
+julia> pre_cocompose = MonoidalPreCoComposeMorphism( c, b, a )
+<A morphism in Category of matrices over Q>
+
+julia> post_cocompose = MonoidalPostCoComposeMorphism( c, b, a )
+<A morphism in Category of matrices over Q>
+
+julia> UnderlyingMatrix( pre_compose ) == TransposedMatrix( UnderlyingMatrix( pre_cocompose ) )
+true
+
+julia> UnderlyingMatrix( post_compose ) == TransposedMatrix( UnderlyingMatrix( post_cocompose ) )
+true
+
+julia> tp_hom_comp = TensorProductInternalHomCompatibilityMorphism( [ a, b, c, d ] )
+<A morphism in Category of matrices over Q>
+
+julia> cohom_tp_comp = InternalCoHomTensorProductCompatibilityMorphism( [ b, d, a, c ] )
+<A morphism in Category of matrices over Q>
+
+julia> UnderlyingMatrix( tp_hom_comp ) == TransposedMatrix( UnderlyingMatrix( cohom_tp_comp ) )
+true
+
+julia> lambda = LambdaIntroduction( alpha )
+<A morphism in Category of matrices over Q>
+
+julia> lambda_elim = LambdaElimination( a, b, lambda )
+<A morphism in Category of matrices over Q>
+
+julia> alpha == lambda_elim
+true
+
+julia> alpha_op = VectorSpaceMorphism( b, TransposedMatrix( UnderlyingMatrix( alpha ) ), a )
+<A morphism in Category of matrices over Q>
+
+julia> colambda = CoLambdaIntroduction( alpha_op )
+<A morphism in Category of matrices over Q>
+
+julia> colambda_elim = CoLambdaElimination( b, a, colambda )
+<A morphism in Category of matrices over Q>
+
+julia> alpha_op == colambda_elim
+true
+
+julia> UnderlyingMatrix( lambda ) == TransposedMatrix( UnderlyingMatrix( colambda ) )
+true
+
+julia> delta = PreCompose( colambda, lambda)
+<A morphism in Category of matrices over Q>
+
+julia> Display( EntriesOfHomalgMatrixAsListList( UnderlyingMatrix( TraceMap( delta ) ) ) )
+[ [ 9 ] ]
+
+julia> Display( EntriesOfHomalgMatrixAsListList( UnderlyingMatrix( CoTraceMap( delta ) ) ) )
+[ [ 9 ] ]
+
+julia> TraceMap( delta ) == CoTraceMap( delta )
+true
+
+julia> RankMorphism( a ) == CoRankMorphism( a )
+true
+
+```
+
+```jldoctest AutoDocTests
+julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP
+
 julia> true
 true
 
