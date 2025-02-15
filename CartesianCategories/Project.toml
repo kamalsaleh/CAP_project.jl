@@ -3,9 +3,9 @@ uuid = "c5961c08-7b59-43f4-a15e-02b3e7c87ab8"
 authors = [
 	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>",
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>",
-	"Fabian Zickgraf <fabian.zickgraf@mailbox.org>",
+	"Fabian Zickgraf <f.zickgraf@dashdos.com>",
 ]
-version = "0.1.2"
+version = "0.1.3"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"

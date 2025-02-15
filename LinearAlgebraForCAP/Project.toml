@@ -3,9 +3,9 @@ uuid = "3dc4824f-14ac-4ab7-8a60-75dbcd4a9d60"
 authors = [
 	"Sebastian Gutsche <sebastian.gutsche@gmail.com>",
 	"Sebastian Posur <sebastian.posur@uni-muenster.de>",
-	"Fabian Zickgraf <fabian.zickgraf@mailbox.org>",
+	"Fabian Zickgraf <f.zickgraf@dashdos.com>",
 ]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
