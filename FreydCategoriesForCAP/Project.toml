@@ -5,7 +5,7 @@ authors = [
 	"Martin Bies <martin.bies@alumni.uni-heidelberg.de>",
 	"Fabian Zickgraf <f.zickgraf@dashdos.com>",
 ]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"

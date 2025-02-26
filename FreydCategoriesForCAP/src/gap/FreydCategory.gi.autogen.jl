@@ -991,6 +991,9 @@ end; ArgumentNumber = 2 );
     if (is_possible_to_install( "Lift, Colift",
                                [ "SolveLinearSystemInAbCategory" ] ))
         
+        SetIsCategoryWithDecidableLifts( category, true );
+        SetIsCategoryWithDecidableColifts( category, true );
+        
         ##
         AddLift( category,
                  
