@@ -11,7 +11,10 @@ if [ "$#" -ne 1 ]; then
 fi
 
 PKG_NAME="$1"
+echo "PKG_NAME: $PKG_NAME"
+
 PKG_NAME_LOWERCASE=$(echo "$PKG_NAME" | tr '[:upper:]' '[:lower:]')
+echo "PKG_NAME_LOWERCASE: $PKG_NAME_LOWERCASE"
 
 if [ -d "$GAP_PKG_DIR$PKG_NAME" ]; then
 	PKG_FULL_NAME="$PKG_NAME"
@@ -24,22 +27,33 @@ else
 	exit 1
 fi
 
+echo "PKG_FULL_NAME: $PKG_FULL_NAME"
+
 if [ ! -d "$JULIA_PKG_DIR$PKG_NAME" ]; then
 	echo "Could not find Julia package $PKG_NAME"
 	exit 1
 fi
+echo "Found Julia package $JULIA_PKG_DIR$PKG_NAME"
 
 mkdir -p "$JULIA_PKG_DIR$PKG_NAME/src/gap/"
+echo "Created directory $JULIA_PKG_DIR$PKG_NAME/src/gap/"
+
 mkdir -p "$JULIA_PKG_DIR$PKG_NAME/docs/src/"
+echo "Created directory $JULIA_PKG_DIR$PKG_NAME/docs/src/"
 
 if [ -d "$GAP_PKG_DIR$PKG_FULL_NAME/gap/precompiled_categories/" ]; then
 	mkdir -p "$JULIA_PKG_DIR$PKG_NAME/src/gap/precompiled_categories/"
+  echo "Created directory $JULIA_PKG_DIR$PKG_NAME/src/gap/precompiled_categories/"
 fi
 
 cp "$(dirname $(realpath $0))/LICENSE" "$JULIA_PKG_DIR$PKG_NAME/LICENSE"
+echo "Copied LICENSE to $JULIA_PKG_DIR$PKG_NAME/LICENSE"
 
 cp -u "$(dirname $(realpath $0))/init.jl" "$JULIA_PKG_DIR$PKG_NAME/src/init.jl"
+echo "Securily copied init.jl to $JULIA_PKG_DIR$PKG_NAME/src/init.jl"
+
 cmp -s "$(dirname $(realpath $0))/init.jl" "$JULIA_PKG_DIR$PKG_NAME/src/init.jl" || echo "init.jl in Julia package was modified, not overwriting"
+
 
 cat > "$JULIA_PKG_DIR$PKG_NAME/makefile" << EOS
 .PHONY: test
@@ -56,15 +70,33 @@ clean-gen:
 test:
 	julia -e 'using Pkg; Pkg.test("$PKG_NAME");'
 EOS
+echo "Created makefile in $JULIA_PKG_DIR$PKG_NAME/makefile"
 
 cd "$GAP_PKG_DIR$PKG_FULL_NAME"
+echo "Changed directory to $GAP_PKG_DIR$PKG_FULL_NAME"
+echo "Current directory: $(pwd)"
 
 cat "init.g" | sed "s/ReadPackage( \"$PKG_NAME\", \"\\(.*\\)\" );$/include( \"\\1.autogen.jl\" );/g" > "$JULIA_PKG_DIR$PKG_NAME/src/init.g.autogen.jl"
+echo "Alter & Copy init.g from $GAP_PKG_DIR$PKG_FULL_NAME to $JULIA_PKG_DIR$PKG_NAME/src/read.g.autogen.jl"
+
 cat "read.g" | sed "s/ReadPackage( \"$PKG_NAME\", \"\\(.*\\)\" );$/include( \"\\1.autogen.jl\" );/g" > "$JULIA_PKG_DIR$PKG_NAME/src/read.g.autogen.jl"
+echo "Alter & Copy read.g from $GAP_PKG_DIR$PKG_FULL_NAME to $JULIA_PKG_DIR$PKG_NAME/src/read.g.autogen.jl"
+
+if grep -q "ReadPackage(.*);" "$JULIA_PKG_DIR$PKG_NAME/src/init.g.autogen.jl"; then
+  echo -e "\e[31mError: Please check and/or adjust the parentheses in $GAP_PKG_DIR$PKG_FULL_NAME/init.g manually.\e[0m"
+  exit 1
+fi
+
+if grep -q "ReadPackage(.*);" "$JULIA_PKG_DIR$PKG_NAME/src/read.g.autogen.jl"; then
+  echo -e "\e[31mError: Please check and/or adjust the parentheses in $GAP_PKG_DIR$PKG_FULL_NAME/read.g manually.\e[0m"
+  exit 1
+fi
 
 cd gap
+echo "Changed directory to $GAP_PKG_DIR$PKG_FULL_NAME/gap"
 
 chmod u+w "$JULIA_PKG_DIR$PKG_NAME"/src/gap/*.autogen.jl || true
+echo "Made files in $JULIA_PKG_DIR$PKG_NAME/src/gap writable"
 
 syntax_replacements() {
 	sed "s/ReadPackage( \"$1\", \"gap\/\\(.*\\)\" );$/include( \"\\1.autogen.jl\" );/g" \
@@ -127,6 +159,7 @@ syntax_replacements() {
 	| sed 's/Method( \\\/,/Method( \/,/g' \
 	| sed 's/Method( \\\^,/Method( ^,/g' \
 	| sed 's/Method( \\in,/Method( in,/g' \
+  | sed 's/Method( POW,/Method( ^,/g' \
 	| sed 's/Method( AdditiveInverse,/Method( -,/g' \
 	| sed 's/^DeclareInfoClass(/@DeclareInfoClass(/g' \
 	| sed 's/^DeclareAttribute(/@DeclareAttribute(/g' \
@@ -162,6 +195,7 @@ syntax_replacements() {
 	| sed 's/\bString\b/StringGAP/g' \
 	| sed 's/\bSet\b/SetGAP/g' \
 	| sed 's/\bNumber\b/NumberGAP/g' \
+  | sed 's/\bOneMutable\b/OneMutableGAP/g' \
 	# terminate line continuation
 }
 export -f syntax_replacements
@@ -185,8 +219,10 @@ test_replacements() {
 		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using CartesianCategories; using Toposes; using FinSetsForCAP; using $1"
 	elif [ "$1" = "ModulePresentationsForCAP" ]; then
 		USING="using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using $1"
+  elif [ "$1" = "ToolsForCategoricalTowers" ]; then
+    USING="using CAP; using MonoidalCategories; using CartesianCategories; using Toposes; using FinSetsForCAP; using $1"
 	else
-		>&2 echo "Unkown package $1, please explicitly add its dependencies"
+    >&2 echo -e "\e[31mUnkown package $1, please explicitly add its dependencies.\e[0m"
 		USING="using CAP; using $1"
 	fi
 	# first, revert some code changes also affecting output lines
@@ -214,20 +250,26 @@ test_replacements() {
 }
 export -f test_replacements
 
+
 for FILE in $(git ls-files); do
 	cat "$FILE" | syntax_replacements $PKG_NAME > "$JULIA_PKG_DIR$PKG_NAME"/src/gap/"$FILE".autogen.jl
+  echo "Replace-Syntax and Copy $GAP_PKG_DIR$PKG_FULL_NAME/gap/$FILE to $JULIA_PKG_DIR$PKG_NAME/src/gap/$FILE.autogen.jl"
 done
 
 chmod a-w "$JULIA_PKG_DIR$PKG_NAME"/src/gap/*.autogen.jl
+echo "Made files in $JULIA_PKG_DIR$PKG_NAME/src/gap read-only"
 
 cd ../tst
 
 chmod u+w "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.autogen.md || true
+echo "Made files in $JULIA_PKG_DIR$PKG_NAME/docs/src writable"
 
 # use perl to handle line continuation and empty lines starting comments
 find . \( -type d -name .git -prune \) -o \( -type f -name '*.tst' \) -exec bash -c "cat '{}' | perl -p -e 's/\\\\\\n//' | perl -0 -p -e 's/\\n\\n#.*\\n/\\n/g' | syntax_replacements $PKG_NAME | test_replacements $PKG_NAME > \"$JULIA_PKG_DIR$PKG_NAME\"/docs/src/'{}'.autogen.md" \;
+echo "Replace-Syntax and Copy $GAP_PKG_DIR$PKG_FULL_NAME/gap/tst/*.tst to $JULIA_PKG_DIR$PKG_NAME/docs/src/*.autogen.md"
 
 rm "$JULIA_PKG_DIR$PKG_NAME"/docs/src/100_LoadPackage.tst.autogen.md
+echo "Remove $JULIA_PKG_DIR$PKG_NAME/docs/src/100_LoadPackage.tst.autogen.md"
 
 if [ "$PKG_NAME" = "CAP" ]; then
 	# DummyRing is not available yet

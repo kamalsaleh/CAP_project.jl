@@ -74,6 +74,10 @@ function Zero(R::Union{typeof(Integers), typeof(Rationals)})
 	zero(R)
 end
 
+function OneMutableGAP(R::Union{typeof(Integers), typeof(Rationals)})
+  one(R)
+end
+
 function /(elem::AbstractAlgebra.NCRingElement, ::typeof(Integers))
 	Nemo.ZZ(BigInt(elem))
 end

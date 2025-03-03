@@ -12,6 +12,7 @@ install:
 		Pkg.develop(path = "LinearAlgebraForCAP"); \
 		Pkg.develop(path = "FreydCategoriesForCAP"); \
 		Pkg.develop(path = "ModulePresentationsForCAP"); \
+		Pkg.develop(path = "ToolsForCategoricalTowers"); \
 	'
 
 gen:
@@ -24,6 +25,7 @@ gen:
 	$(MAKE) -C LinearAlgebraForCAP gen
 	$(MAKE) -C FreydCategoriesForCAP gen
 	$(MAKE) -C ModulePresentationsForCAP gen
+	$(MAKE) -C ToolsForCategoricalTowers gen
 
 clean-gen:
 	$(MAKE) -C CAP clean-gen
@@ -35,6 +37,7 @@ clean-gen:
 	$(MAKE) -C LinearAlgebraForCAP clean-gen
 	$(MAKE) -C FreydCategoriesForCAP clean-gen
 	$(MAKE) -C ModulePresentationsForCAP clean-gen
+	$(MAKE) -C ToolsForCategoricalTowers clean-gen
 
 test:
 	$(MAKE) -C CAP test
@@ -46,3 +49,4 @@ test:
 	$(MAKE) -C LinearAlgebraForCAP test
 	$(MAKE) -C FreydCategoriesForCAP test
 	$(MAKE) -C ModulePresentationsForCAP test
+	$(MAKE) -C ToolsForCategoricalTowers test

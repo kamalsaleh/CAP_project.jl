@@ -56,7 +56,7 @@ macro InstallMethod(operation::Symbol, filter_list, func)
 		return
 	end
 	
-	@assert filter_list === :nothing || (filter_list isa Expr && filter_list.head === :vect && all(f -> f isa Symbol, filter_list.args))
+	@assert filter_list === :nothing || (filter_list isa Expr && filter_list.head === :vect && all(f -> f isa Symbol, filter_list.args)) "AssertionError while applying 'InstallMethod' on $(operation) and $(filter_list)"
 	
 	if !(func isa Expr)
 		if filter_list === :nothing
