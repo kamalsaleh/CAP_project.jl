@@ -3029,8 +3029,4 @@ julia> c = PushoutComplement( l, m )
 julia> Display( c )
 [ 0,..., 4 ] ⱶ[ 2, 3, 4, 5, 7 ]→ [ 0,..., 7 ]
 
-julia> SkeletalFinSets.cached_precompiled_functions.
-            PushoutComplement( SkeletalFinSets, l, m )
-|5| → |8|
-
 ```
