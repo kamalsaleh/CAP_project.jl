@@ -1,0 +1,38 @@
+name: Run Julia Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"  # Run every day at midnight
+
+jobs:
+  test:
+    name: Julia ${{ matrix.julia-version }} on ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        julia-version:
+          - '1.11'
+          - 'nightly'
+        os:
+          - ubuntu-latest
+          - macOS-latest
+        arch:
+          - x64
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: ${{ matrix.julia-version }}
+          arch: ${{ matrix.arch }}
+      - name: Install all packages
+        run: make install
+      - name: Run tests
+        run: make test
