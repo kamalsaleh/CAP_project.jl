@@ -14,6 +14,19 @@ install:
 		Pkg.develop(path = "ModulePresentationsForCAP"); \
 	'
 
+uninstall:
+	julia -e 'using Pkg; \
+		Pkg.rm("CAP"); \
+		Pkg.rm("MonoidalCategories"); \
+		Pkg.rm("CartesianCategories"); \
+		Pkg.rm("Toposes"); \
+		Pkg.rm("FinSetsForCAP"); \
+		Pkg.rm("ZXCalculusForCAP"); \
+		Pkg.rm("LinearAlgebraForCAP"); \
+		Pkg.rm("FreydCategoriesForCAP"); \
+		Pkg.rm("ModulePresentationsForCAP"); \
+	'
+
 gen:
 	$(MAKE) -C CAP gen
 	$(MAKE) -C MonoidalCategories gen
