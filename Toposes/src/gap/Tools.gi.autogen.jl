@@ -42,18 +42,19 @@ end );
     Append( str, "digraph subobject_lattice[\n" );
     Append( str, "rankdir=\"BT\"\n" );
     Append( str, "minlen=0\n" );
-    Append( str, "node [shape=circle width=0 height=0]\n" );
+    Append( str, "node [shape=circle width=0 height=0 fontsize=12 margin=0.01 fontname=\"DejaVu Serif,serif\"]\n" );
+    Append( str, "edge [arrowsize=0.5]\n" );
     
     for i in DigraphVertices( D )
         Append( str, StringGAP( i ) );
         Append( str, " [label=\"" );
         Append( str, StringGAP( DigraphVertexLabel( D, i ) ) );
-        Append( str, "\" fontsize=12 margin=0.01 fontname=\"DejaVu Serif,serif\"]\n" );
+        Append( str, "\"]\n" );
     end;
     
     for i in DigraphVertices( D )
         for j in out[i]
-            Append( str, @Concatenation( StringGAP( i ), " -> ", StringGAP( j ), " [arrowsize=0.5]\n" ) );
+            Append( str, @Concatenation( StringGAP( i ), " -> ", StringGAP( j ), "\n" ) );
         end;
     end;
     

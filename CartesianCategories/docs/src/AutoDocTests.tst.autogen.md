@@ -7,9 +7,7 @@ true
 
 julia> distributive = DummyCategory( @rec(
           list_of_operations_to_install =
-            DuplicateFreeList( @Concatenation(
-              CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD.IsCartesianClosedCategory,
-              CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD.IsCocartesianCategory ) ),
+            ListOfDefiningOperations( "IsBicartesianClosedCategory" ),
           properties = [ "IsBicartesianClosedCategory", "IsSkeletalCategory" ] ) );
 
 julia> InfoOfInstalledOperationsOfCategory( distributive )

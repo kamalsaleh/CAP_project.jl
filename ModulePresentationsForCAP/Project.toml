@@ -16,8 +16,8 @@ LinearAlgebraForCAP = "3dc4824f-14ac-4ab7-8a60-75dbcd4a9d60"
 [compat]
 julia = "1.11"
 MatricesForHomalg = "0.1"
-CAP = "0.3"
-MonoidalCategories = "0.1"
+CAP = "0.3, 0.4"
+MonoidalCategories = "0.1, 0.2"
 LinearAlgebraForCAP = "0.1"
 
 [extras]
