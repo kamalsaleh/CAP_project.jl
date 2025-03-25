@@ -64,7 +64,7 @@ cat "read.g" | sed "s/ReadPackage( \"$PKG_NAME\", \"\\(.*\\)\" );$/include( \"\\
 
 cd gap
 
-chmod u+w "$JULIA_PKG_DIR$PKG_NAME"/src/gap/*.autogen.jl || true
+chmod -f u+w "$JULIA_PKG_DIR$PKG_NAME"/src/gap/*.autogen.jl || true
 
 syntax_replacements() {
 	sed "s/ReadPackage( \"$1\", \"gap\/\\(.*\\)\" );$/include( \"\\1.autogen.jl\" );/g" \
@@ -218,11 +218,11 @@ for FILE in $(git ls-files); do
 	cat "$FILE" | syntax_replacements $PKG_NAME > "$JULIA_PKG_DIR$PKG_NAME"/src/gap/"$FILE".autogen.jl
 done
 
-chmod a-w "$JULIA_PKG_DIR$PKG_NAME"/src/gap/*.autogen.jl
+chmod -f a-w "$JULIA_PKG_DIR$PKG_NAME"/src/gap/*.autogen.jl
 
 cd ../tst
 
-chmod u+w "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.autogen.md || true
+chmod -f u+w "$JULIA_PKG_DIR$PKG_NAME"/docs/src/*.autogen.md || true
 
 # use perl to handle line continuation and empty lines starting comments
 find . \( -type d -name .git -prune \) -o \( -type f -name '*.tst' \) -exec bash -c "cat '{}' | perl -p -e 's/\\\\\\n//' | perl -0 -p -e 's/\\n\\n#.*\\n/\\n/g' | syntax_replacements $PKG_NAME | test_replacements $PKG_NAME > \"$JULIA_PKG_DIR$PKG_NAME\"/docs/src/'{}'.autogen.md" \;
