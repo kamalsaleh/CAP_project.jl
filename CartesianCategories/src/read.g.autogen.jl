@@ -22,12 +22,6 @@ include( "gap/CocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.
 include( "gap/DistributiveCartesianCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/CodistributiveCocartesianCategoriesMethodRecord.gi.autogen.jl" );
 
-include( "gap/DistributiveCartesianCategories.gi.autogen.jl" );
-include( "gap/CodistributiveCocartesianCategories.gi.autogen.jl" );
-
-include( "gap/DistributiveCartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
-include( "gap/CodistributiveCocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
-
 include( "gap/BraidedCartesianCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/BraidedCocartesianCategoriesMethodRecord.gi.autogen.jl" );
 
@@ -51,6 +45,16 @@ include( "gap/CocartesianCoclosedCategories.gi.autogen.jl" );
 include( "gap/CartesianClosedCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 include( "gap/CocartesianCoclosedCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
+## Bicartesian, distributive, and codistributive categories
+
+include( "gap/BicartesianCategories.gi.autogen.jl" );
+
+include( "gap/DistributiveCartesianCategories.gi.autogen.jl" );
+include( "gap/CodistributiveCocartesianCategories.gi.autogen.jl" );
+
+include( "gap/DistributiveCartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+include( "gap/CodistributiveCocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
+
 ## Derived methods
 
 include( "gap/CartesianCategoriesDerivedMethods.gi.autogen.jl" );
@@ -71,10 +75,6 @@ include( "gap/SymmetricCocartesianCoclosedCategoriesDerivedMethods.gi.autogen.jl
 
 include( "gap/CartesianCategoriesDerivedMethods_extra.gi.autogen.jl" );
 include( "gap/CocartesianCategoriesDerivedMethods_extra.gi.autogen.jl" );
-
-## Bicartesian and finite (co)complete categories
-
-include( "gap/BicartesianCategories.gi.autogen.jl" );
 
 ## Synonyms
 
