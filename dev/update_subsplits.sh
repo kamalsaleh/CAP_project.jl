@@ -5,6 +5,18 @@ set -e
 # update git index
 git status > /dev/null
 
+# Check if token exists
+if [ -z "$GITHUB_TOKEN" ]; then
+  echo "ERROR: Missing GITHUB_TOKEN"
+  exit 1
+fi
+
+# Check if username exists
+if [ -z "$GITHUB_USERNAME" ]; then
+  echo "ERROR: Missing GITHUB_USERNAME"
+  exit 1
+fi
+
 if ! git diff-index --quiet HEAD; then
 	echo "WARNING: Dirty working tree."
 fi

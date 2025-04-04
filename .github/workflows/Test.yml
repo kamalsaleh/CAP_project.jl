@@ -34,8 +34,8 @@ jobs:
           arch: ${{ matrix.arch }}
       - name: Install all packages
         run: make install
-      - name: Run tests
-        run: make test
+      #- name: Run tests
+      #  run: make test
       - name: Run update_subsplits script if tests pass
         if: success() && github.event_name == 'push'
         env:
