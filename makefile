@@ -1,5 +1,5 @@
 update-subsplits:
-	./dev/update_subsplits.sh
+	./dev/manually_update_subsplits.sh
 
 install:
 	julia -e 'using Pkg; \
