@@ -2,6 +2,12 @@
 
 set -e
 
+# Check if token exists
+if [ -z "$JULIA_SUBSPLIT_TOKEN" ]; then
+  echo "ERROR: Missing JULIA_SUBSPLIT_TOKEN"
+  exit 1
+fi
+
 # update git index
 git status > /dev/null
 
@@ -15,46 +21,46 @@ if [[ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]]; then
 fi
 
 # CAP
-git subtree split --prefix=CAP -b CAP-split
-git push git@github.com:homalg-project/CAP.jl.git CAP-split:master
-echo ""
+git subtree split --prefix=CAP -b CAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/CAP.jl.git CAP-split:master
+echo "Pushed to CAP.jl"
 
 # MonoidalCategories
-git subtree split --prefix=MonoidalCategories -b MonoidalCategories-split
-git push git@github.com:homalg-project/MonoidalCategories.jl.git MonoidalCategories-split:master
-echo ""
+git subtree split --prefix=MonoidalCategories -b MonoidalCategories-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/MonoidalCategories.jl.git MonoidalCategories-split:master
+echo "Pushed to MonoidalCategories.jl"
 
 # CartesianCategories
-git subtree split --prefix=CartesianCategories -b CartesianCategories-split
-git push git@github.com:homalg-project/CartesianCategories.jl.git CartesianCategories-split:master
-echo ""
+git subtree split --prefix=CartesianCategories -b CartesianCategories-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/CartesianCategories.jl.git CartesianCategories-split:master
+echo "Pushed to CartesianCategories.jl"
 
 # Toposes
-git subtree split --prefix=Toposes -b Toposes-split
-git push git@github.com:homalg-project/Toposes.jl.git Toposes-split:master
-echo ""
+git subtree split --prefix=Toposes -b Toposes-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/Toposes.jl.git Toposes-split:master
+echo "Pushed to Toposes.jl"
 
 # FinSetsForCAP
-git subtree split --prefix=FinSetsForCAP -b FinSetsForCAP-split
-git push git@github.com:homalg-project/FinSetsForCAP.jl.git FinSetsForCAP-split:master
-echo ""
+git subtree split --prefix=FinSetsForCAP -b FinSetsForCAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FinSetsForCAP.jl.git FinSetsForCAP-split:master
+echo "Pushed to FinSetsForCAP.jl"
 
 # ZXCalculusForCAP
-git subtree split --prefix=ZXCalculusForCAP -b ZXCalculusForCAP-split
-git push git@github.com:homalg-project/ZXCalculusForCAP.jl.git ZXCalculusForCAP-split:master
-echo ""
+git subtree split --prefix=ZXCalculusForCAP -b ZXCalculusForCAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/ZXCalculusForCAP.jl.git ZXCalculusForCAP-split:master
+echo "Pushed to ZXCalculusForCAP.jl"
 
 # LinearAlgebraForCAP
-git subtree split --prefix=LinearAlgebraForCAP -b LinearAlgebraForCAP-split
-git push git@github.com:homalg-project/LinearAlgebraForCAP.jl.git LinearAlgebraForCAP-split:master
-echo ""
+git subtree split --prefix=LinearAlgebraForCAP -b LinearAlgebraForCAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/LinearAlgebraForCAP.jl.git LinearAlgebraForCAP-split:master
+echo "Pushed to LinearAlgebraForCAP.jl"
 
 # FreydCategoriesForCAP
-git subtree split --prefix=FreydCategoriesForCAP -b FreydCategoriesForCAP-split
-git push git@github.com:homalg-project/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:master
-echo ""
+git subtree split --prefix=FreydCategoriesForCAP -b FreydCategoriesForCAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:mas
+echo "Pushed to FreydCategoriesForCAP.jl"
 
 # ModulePresentationsForCAP
-git subtree split --prefix=ModulePresentationsForCAP -b ModulePresentationsForCAP-split
-git push git@github.com:homalg-project/ModulePresentationsForCAP.jl.git ModulePresentationsForCAP-split:master
-echo ""
+git subtree split --prefix=ModulePresentationsForCAP -b ModulePresentationsForCAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/ModulePresentationsForCAP.jl.git ModulePresentationsForCAP-s
+echo "Pushed to ModulePresentationsForCAP.jl"
