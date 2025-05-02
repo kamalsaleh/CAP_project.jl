@@ -10,11 +10,17 @@ include( "gap/InitialCategory.gi.autogen.jl" );
 
 ## Cartesian and Cocartesian
 
+include( "gap/CartesianCategoriesProperties.gi.autogen.jl" );
+include( "gap/CocartesianCategoriesProperties.gi.autogen.jl" );
+
 include( "gap/CartesianCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/CocartesianCategoriesMethodRecord.gi.autogen.jl" );
 
 include( "gap/CartesianCategories.gi.autogen.jl" );
 include( "gap/CocartesianCategories.gi.autogen.jl" );
+
+include( "gap/CartesianCategories_extra.gi.autogen.jl" );
+include( "gap/CocartesianCategories_extra.gi.autogen.jl" );
 
 include( "gap/CartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 include( "gap/CocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
