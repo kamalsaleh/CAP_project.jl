@@ -29,7 +29,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.JULIA_SUBSPLIT_TOKEN }}
+          token: ${{ secrets.SUBSPLIT_PUSH_SECRET }}
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Julia
@@ -44,6 +44,6 @@ jobs:
       - name: Run update_subsplits script if tests pass
         if: success() && github.event_name == 'push' && matrix.julia-version == '1.11' && matrix.os == 'ubuntu-latest' && matrix.arch == 'x64'
         env:
-          JULIA_SUBSPLIT_TOKEN: ${{ secrets.JULIA_SUBSPLIT_TOKEN }}
+          SUBSPLIT_PUSH_SECRET: ${{ secrets.SUBSPLIT_PUSH_SECRET }}
         run: |
           ./dev/update_subsplits.sh
