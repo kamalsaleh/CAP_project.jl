@@ -1,6 +1,3 @@
-update-subsplits:
-	./dev/manually_update_subsplits.sh
-
 install:
 	julia -e 'using Pkg; \
 		Pkg.develop(path = "CAP"); \
@@ -46,3 +43,6 @@ test:
 	$(MAKE) -C LinearAlgebraForCAP test
 	$(MAKE) -C FreydCategoriesForCAP test
 	$(MAKE) -C ModulePresentationsForCAP test
+
+update-subsplits:
+	./dev/manually_update_subsplits.sh
