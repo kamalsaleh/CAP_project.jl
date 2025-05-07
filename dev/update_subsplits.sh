@@ -57,10 +57,10 @@ echo "Pushed to LinearAlgebraForCAP.jl"
 
 # FreydCategoriesForCAP
 git subtree split --prefix=FreydCategoriesForCAP -b FreydCategoriesForCAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:mas
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:master
 echo "Pushed to FreydCategoriesForCAP.jl"
 
 # ModulePresentationsForCAP
 git subtree split --prefix=ModulePresentationsForCAP -b ModulePresentationsForCAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/ModulePresentationsForCAP.jl.git ModulePresentationsForCAP-s
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/ModulePresentationsForCAP.jl.git ModulePresentationsForCAP-split:master
 echo "Pushed to ModulePresentationsForCAP.jl"
