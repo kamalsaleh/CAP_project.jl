@@ -27,9 +27,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.SUBSPLIT_PUSH_SECRET }}
           fetch-depth: 0
           persist-credentials: false
+          token: ${{ github.event_name != 'pull_request' && secrets.SUBSPLIT_PUSH_SECRET || '' }}
       - name: Set up Julia
         uses: julia-actions/setup-julia@v2
         with:
