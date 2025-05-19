@@ -22,45 +22,45 @@ fi
 
 # CAP
 git subtree split --prefix=CAP -b CAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/CAP.jl.git CAP-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/CAP.jl.git CAP-split:master
 echo "Pushed to CAP.jl"
 
 # MonoidalCategories
 git subtree split --prefix=MonoidalCategories -b MonoidalCategories-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/MonoidalCategories.jl.git MonoidalCategories-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/MonoidalCategories.jl.git MonoidalCategories-split:master
 echo "Pushed to MonoidalCategories.jl"
 
 # CartesianCategories
 git subtree split --prefix=CartesianCategories -b CartesianCategories-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/CartesianCategories.jl.git CartesianCategories-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/CartesianCategories.jl.git CartesianCategories-split:master
 echo "Pushed to CartesianCategories.jl"
 
 # Toposes
 git subtree split --prefix=Toposes -b Toposes-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/Toposes.jl.git Toposes-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/Toposes.jl.git Toposes-split:master
 echo "Pushed to Toposes.jl"
 
 # FinSetsForCAP
 git subtree split --prefix=FinSetsForCAP -b FinSetsForCAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FinSetsForCAP.jl.git FinSetsForCAP-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/FinSetsForCAP.jl.git FinSetsForCAP-split:master
 echo "Pushed to FinSetsForCAP.jl"
 
 # ZXCalculusForCAP
 git subtree split --prefix=ZXCalculusForCAP -b ZXCalculusForCAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/ZXCalculusForCAP.jl.git ZXCalculusForCAP-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/ZXCalculusForCAP.jl.git ZXCalculusForCAP-split:master
 echo "Pushed to ZXCalculusForCAP.jl"
 
 # LinearAlgebraForCAP
 git subtree split --prefix=LinearAlgebraForCAP -b LinearAlgebraForCAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/LinearAlgebraForCAP.jl.git LinearAlgebraForCAP-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/LinearAlgebraForCAP.jl.git LinearAlgebraForCAP-split:master
 echo "Pushed to LinearAlgebraForCAP.jl"
 
 # FreydCategoriesForCAP
 git subtree split --prefix=FreydCategoriesForCAP -b FreydCategoriesForCAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:master
 echo "Pushed to FreydCategoriesForCAP.jl"
 
 # ModulePresentationsForCAP
 git subtree split --prefix=ModulePresentationsForCAP -b ModulePresentationsForCAP-split > /dev/null 2>&1
-git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/ModulePresentationsForCAP.jl.git ModulePresentationsForCAP-split:master
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/kamalsaleh/ModulePresentationsForCAP.jl.git ModulePresentationsForCAP-split:master
 echo "Pushed to ModulePresentationsForCAP.jl"
