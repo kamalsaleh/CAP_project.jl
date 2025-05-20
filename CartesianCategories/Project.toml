@@ -5,7 +5,7 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>",
 	"Fabian Zickgraf <f.zickgraf@dashdos.com>",
 ]
-version = "0.3.1"
+version = "0.3.2"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
