@@ -5,14 +5,14 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>",
 	"Fabian Zickgraf <f.zickgraf@dashdos.com>",
 ]
-version = "0.3.2"
+version = "0.3.3"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 
 [compat]
 julia = "1.11"
-CAP = "0.4, 0.5"
+CAP = "0.4, 0.5, 0.6"
 
 [extras]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
