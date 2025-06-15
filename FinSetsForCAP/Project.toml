@@ -5,7 +5,7 @@ authors = [
 	"Julia Mickisch <julia.mickisch@student.uni-siegen.de>",
 	"Fabian Zickgraf <f.zickgraf@dashdos.com>",
 ]
-version = "0.1.8"
+version = "0.1.9"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
@@ -14,7 +14,7 @@ Toposes = "36a15fe6-6211-457f-8fdb-aa2e0d2f3052"
 
 [compat]
 julia = "1.11"
-CAP = "0.1, 0.2, 0.3, 0.4, 0.5"
+CAP = "0.1, 0.2, 0.3, 0.4, 0.5, 0.6"
 CartesianCategories = "0.1, 0.2, 0.3"
 Toposes = "0.1"
 
