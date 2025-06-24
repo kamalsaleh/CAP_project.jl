@@ -19,9 +19,6 @@ include( "gap/CocartesianCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/CartesianCategories.gi.autogen.jl" );
 include( "gap/CocartesianCategories.gi.autogen.jl" );
 
-include( "gap/CartesianCategories_extra.gi.autogen.jl" );
-include( "gap/CocartesianCategories_extra.gi.autogen.jl" );
-
 include( "gap/CartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 include( "gap/CocartesianCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );
 
@@ -71,6 +68,11 @@ include( "gap/BraidedCocartesianCategoriesDerivedMethods.gi.autogen.jl" );
 
 include( "gap/SymmetricCartesianCategoriesDerivedMethods.gi.autogen.jl" );
 include( "gap/SymmetricCocartesianCategoriesDerivedMethods.gi.autogen.jl" );
+
+include( "gap/SymmetricCartesianCategoriesDerivedMethods_extra.gi.autogen.jl" );
+include( "gap/SymmetricCocartesianCategoriesDerivedMethods_extra.gi.autogen.jl" );
+
+
 
 include( "gap/CartesianClosedCategoriesDerivedMethods.gi.autogen.jl" );
 include( "gap/CartesianClosedCategoriesDerivedMethods_extra.gi.autogen.jl" );
