@@ -4,6 +4,10 @@
 # Reading the implementation part of the package.
 #
 
+#= comment for Julia
+include( "gap/Tools.gi.autogen.jl" );
+# =#
+
 ## Initial category
 
 include( "gap/InitialCategory.gi.autogen.jl" );

@@ -52,6 +52,3 @@ DeclareGlobalVariable( "BRAIDED_COCARTESIAN_CATEGORIES_METHOD_NAME_RECORD" );
 #! @Arguments s,a,b,r
 @DeclareOperation( "CocartesianBraidingInverseWithGivenCoproducts",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
-
-@DeclareOperation( "CheckCocartesianBraiding",
-                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );

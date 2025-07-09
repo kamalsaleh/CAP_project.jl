@@ -52,6 +52,3 @@ DeclareGlobalVariable( "BRAIDED_CARTESIAN_CATEGORIES_METHOD_NAME_RECORD" );
 #! @Arguments s,a,b,r
 @DeclareOperation( "CartesianBraidingInverseWithGivenDirectProducts",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
-
-@DeclareOperation( "CheckCartesianBraiding",
-                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );

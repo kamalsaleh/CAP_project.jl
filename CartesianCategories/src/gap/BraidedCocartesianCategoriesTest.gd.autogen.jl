@@ -12,6 +12,26 @@
 #! @Section Test functions
 
 #! @Description
+#! This is a debug operation.
+#! The arguments are three objects $obj_1, obj_2, obj_3$
+#! in a braided cocartesian category $cat$.
+#! The output is true if the braiding compatabilities with the associator hold,
+#! false otherwise.
+#! @Returns a boolean
+#! @Arguments cat, obj_1, obj_2, obj_3
+@DeclareOperation( "TestCocartesianBraidingCompatability",
+              [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
+
+#! @Description
+#! This is a debug operation.
+#! The argument is a list $L$ of objects in a braided cocartesian category $cat$.
+#! The output is true if the braiding compatabilities with the associator hold
+#! for all triples of objects in $L$, otherwise false.
+#! @Returns a boolean
+#! @Arguments cat, L
+@DeclareOperation( "TestCocartesianBraidingCompatabilityForAllTriplesInList", [ IsCapCategory, IsList ] );
+
+#! @Description
 #! The arguments are
 #! * a CAP category $cat$
 #! * objects $a, b$

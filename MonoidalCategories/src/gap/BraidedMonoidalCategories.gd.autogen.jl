@@ -49,6 +49,3 @@ DeclareGlobalVariable( "BRAIDED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD" );
 #! @Arguments s,a,b,r
 @DeclareOperation( "BraidingInverseWithGivenTensorProducts",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
-
-@DeclareOperation( "CheckBraiding",
-                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
