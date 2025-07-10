@@ -5,7 +5,7 @@
 #
 
 ##
-@InstallMethod( TestBraidingCompatability,
+@InstallMethod( TestBraidingCompatibility,
               [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
               
   function( cat, object_1, object_2, object_3 )
@@ -55,7 +55,7 @@
 end );
 
 ##
-@InstallMethod( TestBraidingCompatabilityForAllTriplesInList,
+@InstallMethod( TestBraidingCompatibilityForAllTriplesInList,
                [ IsCapCategory, IsList ],
                
   function( cat, object_list )
@@ -71,7 +71,7 @@ end );
             
             for c in list
                 
-                test = TestBraidingCompatability( cat, object_list[a], object_list[b], object_list[c] );
+                test = TestBraidingCompatibility( cat, object_list[a], object_list[b], object_list[c] );
                 
                 if (@not test)
                     
@@ -104,13 +104,13 @@ end );
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsBraidedMonoidalCategory" ) ))
             
-            @Assert( 0, TestBraidingCompatability( cat, a, b, a ) );
+            @Assert( 0, TestBraidingCompatibility( cat, a, b, a ) );
             
         end;
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsBraidedMonoidalCategory" ) ))
             
-            @Assert( 0, TestBraidingCompatability( opposite, a_op, b_op, a_op ) );
+            @Assert( 0, TestBraidingCompatibility( opposite, a_op, b_op, a_op ) );
             
         end;
         

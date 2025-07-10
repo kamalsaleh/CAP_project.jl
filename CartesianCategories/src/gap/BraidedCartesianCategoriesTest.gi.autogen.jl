@@ -8,7 +8,7 @@
 
 
 ##
-@InstallMethod( TestCartesianBraidingCompatability,
+@InstallMethod( TestCartesianBraidingCompatibility,
               [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
               
   function( cat, object_1, object_2, object_3 )
@@ -58,7 +58,7 @@
 end );
 
 ##
-@InstallMethod( TestCartesianBraidingCompatabilityForAllTriplesInList,
+@InstallMethod( TestCartesianBraidingCompatibilityForAllTriplesInList,
                [ IsCapCategory, IsList ],
                
   function( cat, object_list )
@@ -74,7 +74,7 @@ end );
             
             for c in list
                 
-                test = TestCartesianBraidingCompatability( cat, object_list[a], object_list[b], object_list[c] );
+                test = TestCartesianBraidingCompatibility( cat, object_list[a], object_list[b], object_list[c] );
                 
                 if (@not test)
                     
@@ -107,13 +107,13 @@ end );
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsCartesianCategory" ) ))
             
-            @Assert( 0, TestCartesianBraidingCompatability( cat, a, b, a ) );
+            @Assert( 0, TestCartesianBraidingCompatibility( cat, a, b, a ) );
             
         end;
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsCartesianCategory" ) ))
             
-            @Assert( 0, TestCartesianBraidingCompatability( opposite, a_op, b_op, a_op ) );
+            @Assert( 0, TestCartesianBraidingCompatibility( opposite, a_op, b_op, a_op ) );
             
         end;
         
