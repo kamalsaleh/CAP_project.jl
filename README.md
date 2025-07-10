@@ -5,7 +5,7 @@
 
 <!-- END HEADER -->
 
-This repository contains the transpiled Julia versions of several package of the [CAP project][CAP_project].
+This repository contains several Julia packages transpiled from the corresponding GAP packages in the [CAP project][CAP_project].
 
 [CAP_project]: https://homalg-project.github.io/docs/CAP_project-based/
 

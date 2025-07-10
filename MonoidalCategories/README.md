@@ -9,7 +9,7 @@
 
 <!-- END HEADER -->
 
-This is the Julia version of [CAP-based][CAP_project] package [MonoidalCategories][MonoidalCategories].
+This is the Julia version of the [CAP-based][CAP_project] package [MonoidalCategories][MonoidalCategories].
 
 [CAP_project]: https://homalg-project.github.io/docs/CAP_project-based/
 [MonoidalCategories]: https://homalg-project.github.io/pkg/MonoidalCategories
