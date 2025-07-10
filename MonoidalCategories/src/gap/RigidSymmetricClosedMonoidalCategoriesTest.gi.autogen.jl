@@ -4,10 +4,49 @@
 # Implementations
 #
 
+##
+@InstallMethod( TestZigZagIdentitiesForDual,
+               [ IsCapCategory, IsCapCategoryObject ],
+               
+  function( cat, object )
+    local id_object, dual_object, id_dual_object, automorphism;
+    
+    @Assert( 0, HasIsMonoidalCategory( cat ) && IsMonoidalCategory( cat ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object ) ) );
+    
+    id_object = IdentityMorphism( object );
+    
+    dual_object = DualOnObjects( object );
+    
+    id_dual_object = IdentityMorphism( dual_object );
+    
+    automorphism = PreCompose( [
+      LeftUnitorInverse( object ),
+      TensorProductOnMorphisms( CoevaluationForDual( object ), id_object ),
+      AssociatorLeftToRight( object, dual_object, object ),
+      TensorProductOnMorphisms( id_object, EvaluationForDual( object ) ),
+      RightUnitor( object ) ] );
+    
+    if (@not IsCongruentForMorphisms( automorphism, id_object ))
+        
+        return false;
+        
+    end;
+    
+    automorphism = PreCompose( [
+      RightUnitorInverse( dual_object ),
+      TensorProductOnMorphisms( id_dual_object, CoevaluationForDual( object ) ),
+      AssociatorRightToLeft( dual_object, object, dual_object ),
+      TensorProductOnMorphisms( EvaluationForDual( object ), id_dual_object ),
+      LeftUnitor( dual_object ) ] );
+    
+    return IsCongruentForMorphisms( automorphism, id_dual_object );
+    
+end );
+
+##
 @InstallGlobalFunction( "RigidSymmetricClosedMonoidalCategoriesTest",
-
     function( cat, opposite, a, b, c, d, alpha )
-
         local verbose,
               
               a_op, c_op,
@@ -43,6 +82,18 @@
         alpha_op = Opposite( opposite, alpha );
         
         verbose = ValueOption( "verbose" ) == true;
+        
+        if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsRigidSymmetricClosedMonoidalCategory" ) ))
+            
+            @Assert( 0, ForAll( [ a, b, c, d ], obj -> TestZigZagIdentitiesForDual( cat, obj ) ) );
+            
+        end;
+        
+        if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsRigidSymmetricClosedMonoidalCategory" ) ))
+            
+            @Assert( 0, ForAll( [ a_op, b_op, c_op, d_op ], obj_op -> TestZigZagIdentitiesForDual( opposite, obj_op ) ) );
+            
+        end;
         
         if (CanCompute( cat, "IsomorphismFromTensorProductWithDualObjectToInternalHom" ))
             

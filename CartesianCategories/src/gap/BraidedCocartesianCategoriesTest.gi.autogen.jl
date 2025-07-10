@@ -7,10 +7,94 @@
 
 
 
-@InstallGlobalFunction( "BraidedCocartesianCategoriesTest",
+##
+@InstallMethod( TestCocartesianBraidingCompatability,
+              [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
+              
+  function( cat, object_1, object_2, object_3 )
+    local morphism_left, morphism_right;
     
-    function( cat, opposite, a, b )
+    @Assert( 0, HasIsCocartesianCategory( cat ) && IsCocartesianCategory( cat ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object_1 ) ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object_2 ) ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object_3 ) ) );
+    
+    morphism_left = CocartesianBraiding( BinaryCoproduct( cat, object_1, object_2 ), object_3 );
+    
+    morphism_left = PreCompose( morphism_left, CocartesianAssociatorRightToLeft( object_3, object_1, object_2 ) );
+    
+    morphism_left = PreCompose( morphism_left,
+                    CoproductOnMorphisms( CocartesianBraiding( object_3, object_1 ), IdentityMorphism( object_2 ) ) );
+    
+    morphism_right = CocartesianAssociatorLeftToRight( object_1, object_2, object_3 );
+    
+    morphism_right = PreCompose( morphism_right,
+                    CoproductOnMorphisms( IdentityMorphism( object_1 ), CocartesianBraiding( object_2, object_3 ) ) );
+    
+    morphism_right = PreCompose( morphism_right, CocartesianAssociatorRightToLeft( object_1, object_3, object_2 ) );
+    
+    if (!( morphism_left == morphism_right ))
         
+        return false;
+        
+    end;
+    
+    morphism_left = CocartesianBraiding( object_1, BinaryCoproduct( cat, object_2, object_3 ) );
+    
+    morphism_left = PreCompose( morphism_left, CocartesianAssociatorLeftToRight( object_2, object_3, object_1 ) );
+    
+    morphism_left = PreCompose( morphism_left,
+                    CoproductOnMorphisms( IdentityMorphism( object_2 ), CocartesianBraiding( object_3, object_1 ) ) );
+    
+    morphism_right = CocartesianAssociatorRightToLeft( object_1, object_2, object_3 );
+    
+    morphism_right = PreCompose( morphism_right,
+                    CoproductOnMorphisms( CocartesianBraiding( object_1, object_2 ), IdentityMorphism( object_3 ) ) );
+    
+    morphism_right = PreCompose( morphism_right, CocartesianAssociatorLeftToRight( object_2, object_1, object_3 ) );
+    
+    return morphism_left == morphism_right;
+    
+end );
+
+##
+@InstallMethod( TestCocartesianBraidingCompatabilityForAllTriplesInList,
+               [ IsCapCategory, IsList ],
+               
+  function( cat, object_list )
+    local a, b, c, size, list, test;
+    
+    size = Length( object_list );
+    
+    list = (1):(size);
+    
+    for a in list
+        
+        for b in list
+            
+            for c in list
+                
+                test = TestCocartesianBraidingCompatability( cat, object_list[a], object_list[b], object_list[c] );
+                
+                if (@not test)
+                    
+                    Print( "indices of failing triple: ", [ a, b, c ], "\n" );
+                    
+                    return false;
+                    
+                end;
+                
+            end;
+            
+        end;
+        
+    end;
+    
+end );
+
+##
+@InstallGlobalFunction( "BraidedCocartesianCategoriesTest",
+    function( cat, opposite, a, b )
         local verbose,
               
               a_op, braiding_a_b, braiding_a_b_op, braiding_inverse_a_b, braiding_inverse_a_b_op, 
@@ -20,6 +104,18 @@
         b_op = Opposite( opposite, b );
         
         verbose = ValueOption( "verbose" ) == true;
+        
+        if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsCocartesianCategory" ) ))
+            
+            @Assert( 0, TestCocartesianBraidingCompatability( cat, a, b, a ) );
+            
+        end;
+        
+        if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsCocartesianCategory" ) ))
+            
+            @Assert( 0, TestCocartesianBraidingCompatability( opposite, a_op, b_op, a_op ) );
+            
+        end;
         
         if (CanCompute( cat, "CocartesianBraiding" ))
             

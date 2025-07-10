@@ -100,9 +100,9 @@ julia> d = "d" / T;
 
 julia> u = TensorUnit( T );
 
-julia> a_product_b = TensorProduct( a, b );
+julia> a_product_b = TensorProductOnObjects( T, a, b );
 
-julia> c_product_d = TensorProduct( c, d );
+julia> c_product_d = TensorProductOnObjects( T, c, d );
 
 julia> hom_ab = InternalHom( a, b );
 
@@ -130,9 +130,9 @@ julia> ClosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, a, b, c, d,
 
 julia> z = ZeroObject( T );
 
-julia> z_product_a = TensorProduct( z, a );
+julia> z_product_a = TensorProductOnObjects( T, z, a );
 
-julia> a_product_z = TensorProduct( a, z );
+julia> a_product_z = TensorProductOnObjects( T, a, z );
 
 julia> hom_za = InternalHom( z, a );
 
@@ -168,9 +168,9 @@ julia> d = "d" / T;
 
 julia> u = TensorUnit( T );
 
-julia> a_product_b = TensorProduct( a, b );
+julia> a_product_b = TensorProductOnObjects( T, a, b );
 
-julia> c_product_d = TensorProduct( c, d );
+julia> c_product_d = TensorProductOnObjects( T, c, d );
 
 julia> cohom_ab = InternalCoHom( a, b );
 
@@ -198,9 +198,9 @@ julia> CoclosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, a, b, c, 
 
 julia> z = ZeroObject( T );
 
-julia> z_product_a = TensorProduct( z, a );
+julia> z_product_a = TensorProductOnObjects( T, z, a );
 
-julia> a_product_z = TensorProduct( a, z );
+julia> a_product_z = TensorProductOnObjects( T, a, z );
 
 julia> cohom_za = InternalCoHom( z, a );
 
