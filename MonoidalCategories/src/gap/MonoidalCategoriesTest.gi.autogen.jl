@@ -5,6 +5,22 @@
 #
 
 ##
+@InstallMethod( TestMonoidalUnitorsForInvertibility,
+               [ IsCapCategory, IsCapCategoryObject ],
+               
+  function( cat, object )
+    
+    @Assert( 0, HasIsMonoidalCategory( cat ) && IsMonoidalCategory( cat ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object ) ) );
+    
+    return IsOne( PreCompose( LeftUnitor( object ), LeftUnitorInverse( object ) ) ) &&
+           IsOne( PreCompose( LeftUnitorInverse( object ), LeftUnitor( object ) ) ) &&
+           IsOne( PreCompose( RightUnitor( object ), RightUnitorInverse( object ) ) ) &&
+           IsOne( PreCompose( RightUnitorInverse( object ), RightUnitor( object ) ) );
+    
+end );
+
+##
 @InstallMethod( TestMonoidalTriangleIdentity,
                [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
                
@@ -289,6 +305,8 @@ end );
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsMonoidalCategory" ) ))
             
+            @Assert( 0, ForAll( [ a, b, c ], obj -> TestMonoidalUnitorsForInvertibility( cat, obj ) ) );
+            
             @Assert( 0, TestMonoidalTriangleIdentityForAllPairsInList( cat, [ a, b, c ] ) );
             
             @Assert( 0, TestMonoidalPentagonIdentity( cat, a, b, c, b ) );
@@ -298,6 +316,8 @@ end );
         end;
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsMonoidalCategory" ) ))
+            
+            @Assert( 0, ForAll( [ a_op, b_op, c_op ], obj -> TestMonoidalUnitorsForInvertibility( opposite, obj ) ) );
             
             @Assert( 0, TestMonoidalTriangleIdentityForAllPairsInList( opposite, [ a_op, b_op, c_op ] ) );
             

@@ -8,6 +8,22 @@
 
 
 ##
+@InstallMethod( TestCartesianUnitorsForInvertibility,
+               [ IsCapCategory, IsCapCategoryObject ],
+               
+  function( cat, object )
+    
+    @Assert( 0, HasIsCartesianCategory( cat ) && IsCartesianCategory( cat ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object ) ) );
+    
+    return IsOne( PreCompose( CartesianLeftUnitor( object ), CartesianLeftUnitorInverse( object ) ) ) &&
+           IsOne( PreCompose( CartesianLeftUnitorInverse( object ), CartesianLeftUnitor( object ) ) ) &&
+           IsOne( PreCompose( CartesianRightUnitor( object ), CartesianRightUnitorInverse( object ) ) ) &&
+           IsOne( PreCompose( CartesianRightUnitorInverse( object ), CartesianRightUnitor( object ) ) );
+    
+end );
+
+##
 @InstallMethod( TestCartesianTriangleIdentity,
                [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
                
@@ -292,6 +308,8 @@ end );
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsCartesianCategory" ) ))
             
+            @Assert( 0, ForAll( [ a, b, c ], obj -> TestCartesianUnitorsForInvertibility( cat, obj ) ) );
+            
             @Assert( 0, TestCartesianTriangleIdentityForAllPairsInList( cat, [ a, b, c ] ) );
             
             @Assert( 0, TestCartesianPentagonIdentity( cat, a, b, c, b ) );
@@ -301,6 +319,8 @@ end );
         end;
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsCartesianCategory" ) ))
+            
+            @Assert( 0, ForAll( [ a_op, b_op, c_op ], obj -> TestCartesianUnitorsForInvertibility( opposite, obj ) ) );
             
             @Assert( 0, TestCartesianTriangleIdentityForAllPairsInList( opposite, [ a_op, b_op, c_op ] ) );
             
