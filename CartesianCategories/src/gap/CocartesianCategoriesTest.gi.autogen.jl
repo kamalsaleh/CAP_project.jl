@@ -8,6 +8,22 @@
 
 
 ##
+@InstallMethod( TestCocartesianUnitorsForInvertibility,
+               [ IsCapCategory, IsCapCategoryObject ],
+               
+  function( cat, object )
+    
+    @Assert( 0, HasIsCocartesianCategory( cat ) && IsCocartesianCategory( cat ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object ) ) );
+    
+    return IsOne( PreCompose( CocartesianLeftUnitor( object ), CocartesianLeftUnitorInverse( object ) ) ) &&
+           IsOne( PreCompose( CocartesianLeftUnitorInverse( object ), CocartesianLeftUnitor( object ) ) ) &&
+           IsOne( PreCompose( CocartesianRightUnitor( object ), CocartesianRightUnitorInverse( object ) ) ) &&
+           IsOne( PreCompose( CocartesianRightUnitorInverse( object ), CocartesianRightUnitor( object ) ) );
+    
+end );
+
+##
 @InstallMethod( TestCocartesianTriangleIdentity,
                [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
                
@@ -292,6 +308,8 @@ end );
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsCocartesianCategory" ) ))
             
+            @Assert( 0, ForAll( [ a, b, c ], obj -> TestCocartesianUnitorsForInvertibility( cat, obj ) ) );
+            
             @Assert( 0, TestCocartesianTriangleIdentityForAllPairsInList( cat, [ a, b, c ] ) );
             
             @Assert( 0, TestCocartesianPentagonIdentity( cat, a, b, c, b ) );
@@ -301,6 +319,8 @@ end );
         end;
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsCocartesianCategory" ) ))
+            
+            @Assert( 0, ForAll( [ a_op, b_op, c_op ], obj -> TestCocartesianUnitorsForInvertibility( opposite, obj ) ) );
             
             @Assert( 0, TestCocartesianTriangleIdentityForAllPairsInList( opposite, [ a_op, b_op, c_op ] ) );
             
