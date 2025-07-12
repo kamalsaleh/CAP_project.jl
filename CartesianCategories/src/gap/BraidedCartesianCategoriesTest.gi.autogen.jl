@@ -8,6 +8,23 @@
 
 
 ##
+@InstallMethod( TestCartesianBraidingForInvertibility,
+              [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
+              
+  function( cat, object_1, object_2 )
+    
+    @Assert( 0, HasIsCartesianCategory( cat ) && IsCartesianCategory( cat ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object_1 ) ) );
+    @Assert( 0, IsIdenticalObj( cat, CapCategory( object_2 ) ) );
+    
+    return IsOne( PreCompose( CartesianBraiding( object_1, object_2 ), CartesianBraidingInverse( object_1, object_2 ) ) ) &&
+           IsOne( PreCompose( CartesianBraidingInverse( object_1, object_2 ), CartesianBraiding( object_1, object_2 ) ) ) &&
+           IsOne( PreCompose( CartesianBraiding( object_2, object_1 ), CartesianBraidingInverse( object_2, object_1 ) ) ) &&
+           IsOne( PreCompose( CartesianBraidingInverse( object_2, object_1 ), CartesianBraiding( object_2, object_1 ) ) );
+    
+end );
+
+##
 @InstallMethod( TestCartesianBraidingCompatibility,
               [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
               
@@ -107,11 +124,15 @@ end );
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsCartesianCategory" ) ))
             
+            @Assert( 0, TestCartesianBraidingForInvertibility( cat, a, b ) );
+            
             @Assert( 0, TestCartesianBraidingCompatibility( cat, a, b, a ) );
             
         end;
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsCartesianCategory" ) ))
+            
+            @Assert( 0, TestCartesianBraidingForInvertibility( opposite, a_op, b_op ) );
             
             @Assert( 0, TestCartesianBraidingCompatibility( opposite, a_op, b_op, a_op ) );
             
