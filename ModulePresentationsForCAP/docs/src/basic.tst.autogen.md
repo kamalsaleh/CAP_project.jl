@@ -1,6 +1,6 @@
 
 ```jldoctest
-julia> using MatricesForHomalg; using CAP; using MonoidalCategories; using LinearAlgebraForCAP; using ModulePresentationsForCAP
+julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, ModulePresentationsForCAP
 
 julia> true
 true
