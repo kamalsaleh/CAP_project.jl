@@ -1,6 +1,6 @@
 
 ```jldoctest AutoDocTests
-julia> using CAP; using CartesianCategories
+julia> using CAP, CartesianCategories
 
 julia> true
 true
@@ -21,7 +21,7 @@ and furthermore mathematically
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP; using CartesianCategories
+julia> using CAP, CartesianCategories
 
 julia> I = InitialCategory( )
 InitialCategory( )
