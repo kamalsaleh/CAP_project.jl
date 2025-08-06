@@ -1,2 +1,4 @@
 using Test, Documenter, FinSetsForCAP
-doctest(FinSetsForCAP)
+
+# test upto whitespaces
+doctest(FinSetsForCAP; doctestfilters=[r"\s+" => ""])

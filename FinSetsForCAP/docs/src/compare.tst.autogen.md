@@ -1,7 +1,7 @@
 
 
 ```jldoctest
-julia> using CAP; using CartesianCategories; using Toposes; using FinSetsForCAP
+julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
