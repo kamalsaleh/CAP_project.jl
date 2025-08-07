@@ -1,0 +1,35 @@
+name = "LinearClosuresForCAP"
+uuid = "1f080b7b-ff6a-46b3-9ade-986f655adc86"
+authors = [
+	"Sebastian Posur <sebastian.posur@uni-siegen.de>",
+	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>",
+	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>"
+]
+
+# Transpiled from GAP's LinearClosuresForCAP v2025.08-03
+version = "0.1.0"
+
+[deps]
+CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
+LinearAlgebraForCAP = "3dc4824f-14ac-4ab7-8a60-75dbcd4a9d60"
+AdditiveClosuresForCAP = "bbee75d5-3cb4-4478-8ae7-eddc7864e69e"
+FinSetsForCAP = "0a079e9b-4bc2-44fe-a89b-7607e4464786"
+
+[weakdeps]
+
+[extensions]
+
+[compat]
+julia = "1.11"
+CAP = "0.6"
+LinearAlgebraForCAP = "0.1"
+AdditiveClosuresForCAP = "0.1"
+FinSetsForCAP = "0.1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
+
+[targets]
+test = ["Test", "Documenter", "MatricesForHomalg"]
