@@ -45,9 +45,6 @@ cat > "$JULIA_PKG_DIR$PKG_NAME/makefile" << EOS
 .PHONY: test
 
 gen:
-	gap_to_julia $PKG_NAME
-
-clean-gen:
 	rm -f ./src/gap/*.autogen.jl
 	rm -f ./src/gap/*/*.autogen.jl
 	rm -f ./docs/src/*.autogen.md
