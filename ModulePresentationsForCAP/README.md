@@ -9,9 +9,9 @@
 
 <!-- END HEADER -->
 
-This is the Julia version of the [CAP-based][CAP_project] package [ModulePresentationsForCAP][ModulePresentationsForCAP].
+This is the Julia version of the [CAP-based][CAP_based] package [ModulePresentationsForCAP][ModulePresentationsForCAP].
 
-[CAP_project]: https://homalg-project.github.io/docs/CAP_project-based/
+[CAP_based]: https://homalg-project.github.io/docs/CAP_project-based/
 [ModulePresentationsForCAP]: https://homalg-project.github.io/pkg/ModulePresentationsForCAP
 
 <!-- BEGIN FOOTER -->

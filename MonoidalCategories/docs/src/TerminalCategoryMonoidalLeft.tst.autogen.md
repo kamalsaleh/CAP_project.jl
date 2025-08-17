@@ -1,7 +1,7 @@
 
 
 ```jldoctest
-julia> using CAP; using MonoidalCategories
+julia> using CAP, MonoidalCategories
 
 julia> true
 true

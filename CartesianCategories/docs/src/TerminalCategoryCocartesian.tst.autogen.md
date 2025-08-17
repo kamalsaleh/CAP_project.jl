@@ -1,7 +1,7 @@
 
 
 ```jldoctest
-julia> using CAP; using CartesianCategories
+julia> using CAP, CartesianCategories
 
 julia> true
 true

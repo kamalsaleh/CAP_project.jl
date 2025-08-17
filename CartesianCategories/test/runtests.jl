@@ -1,2 +1,4 @@
 using Test, Documenter, CartesianCategories
-doctest(CartesianCategories)
+
+# test upto whitespaces
+doctest(CartesianCategories; doctestfilters=[r"\s+" => ""])

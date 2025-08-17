@@ -1,2 +1,4 @@
 using Test, Documenter, MonoidalCategories
-doctest(MonoidalCategories)
+
+# test upto whitespaces
+doctest(MonoidalCategories; doctestfilters=[r"\s+" => ""])
