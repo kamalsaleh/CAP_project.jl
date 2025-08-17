@@ -26,19 +26,6 @@ gen:
 	$(MAKE) -C FreydCategoriesForCAP gen
 	$(MAKE) -C ModulePresentationsForCAP gen
 
-clean-gen:
-	$(MAKE) -C CAP clean-gen
-	$(MAKE) -C MonoidalCategories clean-gen
-	$(MAKE) -C CartesianCategories clean-gen
-	$(MAKE) -C Toposes clean-gen
-	$(MAKE) -C FinSetsForCAP clean-gen
-	$(MAKE) -C ZXCalculusForCAP clean-gen
-	$(MAKE) -C LinearAlgebraForCAP clean-gen
-	$(MAKE) -C AdditiveClosuresForCAP clean-gen
-	$(MAKE) -C LinearClosuresForCAP clean-gen
-	$(MAKE) -C FreydCategoriesForCAP clean-gen
-	$(MAKE) -C ModulePresentationsForCAP clean-gen
-
 gen-full:
 	$(MAKE) -C CAP gen-full
 	$(MAKE) -C MonoidalCategories gen-full
