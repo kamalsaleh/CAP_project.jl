@@ -21,6 +21,16 @@ function FinSet(n::Int)
 end
 
 ##
+function FinSet(cat::IsSkeletalCategoryOfFiniteSets.abstract_type, n::Int)
+    FinSet(cat, BigInt(n))
+end
+
+##
+function /(n::Int, cat::IsSkeletalCategoryOfFiniteSets.abstract_type)
+    FinSet(cat, n)
+end
+
+##
 function MapOfFinSets(s::IsObjectInSkeletalCategoryOfFiniteSets.abstract_type, G::Vector{Int}, t::IsObjectInSkeletalCategoryOfFiniteSets.abstract_type)
 	MapOfFinSets( s, Vector{BigInt}(G), t );
 end
