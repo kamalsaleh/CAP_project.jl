@@ -6,7 +6,7 @@ authors = [
 	"Fabian Zickgraf <f.zickgraf@dashdos.com>"
 ]
 
-# Transpiled from GAP's FinSetsForCAP v2025.08-01
+# Transpiled from GAP's FinSetsForCAP v2025.08-02
 version = "0.1.12"
 
 [deps]
