@@ -1,7 +1,7 @@
 <!-- BEGIN HEADER -->
 # AdditiveClosuresForCAP
 
-### Additive closures for pre-abelian categories
+### Additive closures for pre-additive categories
 
 | Documentation |
 | ------------- |
