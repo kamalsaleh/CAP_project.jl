@@ -55,6 +55,16 @@ git subtree split --prefix=LinearAlgebraForCAP -b LinearAlgebraForCAP-split > /d
 git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/LinearAlgebraForCAP.jl.git LinearAlgebraForCAP-split:master
 echo "Pushed to LinearAlgebraForCAP.jl"
 
+# AdditiveClosuresForCAP
+git subtree split --prefix=AdditiveClosuresForCAP -b AdditiveClosuresForCAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/AdditiveClosuresForCAP.jl.git AdditiveClosuresForCAP-split:master
+echo "Pushed to AdditiveClosuresForCAP.jl"
+
+# LinearClosuresForCAP
+git subtree split --prefix=LinearClosuresForCAP -b LinearClosuresForCAP-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/LinearClosuresForCAP.jl.git LinearClosuresForCAP-split:master
+echo "Pushed to LinearClosuresForCAP.jl"
+
 # FreydCategoriesForCAP
 git subtree split --prefix=FreydCategoriesForCAP -b FreydCategoriesForCAP-split > /dev/null 2>&1
 git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:master
