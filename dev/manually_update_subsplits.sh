@@ -56,6 +56,16 @@ git subtree split --prefix=LinearAlgebraForCAP -b LinearAlgebraForCAP-split
 git push git@github.com:${GITHUB_USER}/LinearAlgebraForCAP.jl.git LinearAlgebraForCAP-split:master
 echo ""
 
+# AdditiveClosuresForCAP
+git subtree split --prefix=AdditiveClosuresForCAP -b AdditiveClosuresForCAP-split
+git push git@github.com:${GITHUB_USER}/AdditiveClosuresForCAP.jl.git AdditiveClosuresForCAP-split:master
+echo ""
+
+# LinearClosuresForCAP
+git subtree split --prefix=LinearClosuresForCAP -b LinearClosuresForCAP-split
+git push git@github.com:${GITHUB_USER}/LinearClosuresForCAP.jl.git LinearClosuresForCAP-split:master
+echo ""
+
 # FreydCategoriesForCAP
 git subtree split --prefix=FreydCategoriesForCAP -b FreydCategoriesForCAP-split
 git push git@github.com:${GITHUB_USER}/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:master
