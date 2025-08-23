@@ -37,6 +37,8 @@ include( "precompiled_categories/CategoryOfRows_as_AdditiveClosure_RingAsCategor
         
         SetIsStrictMonoidalCategory( cat, true );
         
+        SetIsAdditiveMonoidalCategory( cat, true );
+        
         SetIsRigidSymmetricClosedMonoidalCategory( cat, true );
         
         SetIsRigidSymmetricCoclosedMonoidalCategory( cat, true );

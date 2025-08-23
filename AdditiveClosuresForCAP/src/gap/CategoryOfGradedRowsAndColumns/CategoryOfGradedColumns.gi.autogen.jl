@@ -27,15 +27,16 @@
       
       # here we can switch internal checks in constructor on or of - true means they are performed and false means they are not
       category.constructor_checks_wished = true;
-
+      
       # set its properties
       SetIsAdditiveCategory( category, true );
       if (HasIsCommutative( UnderlyingNonGradedRing( homalg_graded_ring ) )
          && IsCommutative( UnderlyingNonGradedRing( homalg_graded_ring ) ))
-        SetIsStrictMonoidalCategory( category, true );
-        SetIsRigidSymmetricClosedMonoidalCategory( category, true );
+          SetIsStrictMonoidalCategory( category, true );
+          SetIsAdditiveMonoidalCategory( category, true );
+          SetIsRigidSymmetricClosedMonoidalCategory( category, true );
       end;
-    
+      
       # install its functionality
       INSTALL_FUNCTIONS_FOR_CAP_CATEGORY_OF_GRADED_COLUMNS( category, category.constructor_checks_wished );
       
@@ -46,7 +47,7 @@
       
       # and return the completed category
       return category;
-    
+      
 end );
 
 ####################################################################

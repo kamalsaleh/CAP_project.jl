@@ -6,8 +6,8 @@ authors = [
 	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's ModulePresentationsForCAP v2025.06-02
-version = "0.1.8"
+# Transpiled from GAP's ModulePresentationsForCAP v2025.08-01
+version = "0.1.9"
 
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
@@ -23,8 +23,8 @@ LinearAlgebraForCAP = "3dc4824f-14ac-4ab7-8a60-75dbcd4a9d60"
 julia = "1.11"
 MatricesForHomalg = "0.1"
 CAP = "0.3, 0.4, 0.5, 0.6"
-MonoidalCategories = "0.1, 0.2"
-LinearAlgebraForCAP = "0.1"
+MonoidalCategories = "~0.2.11"
+LinearAlgebraForCAP = "~0.1.12"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

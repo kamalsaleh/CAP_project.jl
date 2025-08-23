@@ -16,6 +16,7 @@ include( "gap/MonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl"
 
 ## Additive Monoidal
 
+include( "gap/AdditiveMonoidalCategoriesProperties.gi.autogen.jl" );
 include( "gap/AdditiveMonoidalCategoriesMethodRecord.gi.autogen.jl" );
 include( "gap/AdditiveMonoidalCategories.gi.autogen.jl" );
 include( "gap/AdditiveMonoidalCategoriesMethodRecordInstallations.autogen.gi.autogen.jl" );

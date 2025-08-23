@@ -137,9 +137,10 @@ end );
     end;
     
     if (HasIsStrictMonoidalCategory( underlying_category ) && IsStrictMonoidalCategory( underlying_category ))
-      SetIsStrictMonoidalCategory( category, true );
+        SetIsStrictMonoidalCategory( category, true );
+        SetIsAdditiveMonoidalCategory( category, true );
     elseif (HasIsMonoidalCategory( underlying_category ) && IsMonoidalCategory( underlying_category ))
-      SetIsMonoidalCategory( category, true );
+        SetIsAdditiveMonoidalCategory( category, true );
     end;
     
     INSTALL_FUNCTIONS_FOR_ADDITIVE_CLOSURE( category );
