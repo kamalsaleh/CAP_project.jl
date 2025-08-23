@@ -1,6 +1,6 @@
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -34,7 +34,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -79,7 +79,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -172,7 +172,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -217,7 +217,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -285,7 +285,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -314,7 +314,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -343,7 +343,7 @@ julia> Display( MorphismsOfExternalHom( M, N ) )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -368,7 +368,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -401,7 +401,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -447,7 +447,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -506,7 +506,7 @@ julia> Display( List( M, pi_t ) )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -538,7 +538,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -573,7 +573,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -602,7 +602,7 @@ julia> Display( P )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -681,7 +681,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -727,7 +727,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -773,7 +773,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -839,7 +839,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -888,7 +888,7 @@ julia> Display( int2 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1090,7 +1090,7 @@ julia> Display( AsList( C )[ 1 ][ 2 ] )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1145,7 +1145,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1189,7 +1189,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1240,7 +1240,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1260,7 +1260,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1354,7 +1354,7 @@ julia> DirectProductExponentialCompatibilityMorphism( [ M, N, P, Q ] );
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1398,7 +1398,7 @@ julia> Display( ClassifyingMorphismOfSubobject( m ) )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1481,7 +1481,7 @@ julia> Display( NpL )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1510,7 +1510,7 @@ julia> m = EmbeddingOfFinSets( L, G )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1529,7 +1529,7 @@ julia> Display( D )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1582,7 +1582,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1633,7 +1633,7 @@ julia> Display( phi )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1662,7 +1662,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1700,7 +1700,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1729,7 +1729,7 @@ julia> Display( alpha )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1791,7 +1791,7 @@ julia> id
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1853,7 +1853,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1885,7 +1885,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1920,7 +1920,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -1967,7 +1967,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2027,7 +2027,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2062,7 +2062,7 @@ julia> Length( I )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2085,7 +2085,7 @@ julia> Display( pi )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2153,7 +2153,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2200,7 +2200,7 @@ julia> Display( ImageEmbedding( phi ) )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2227,7 +2227,7 @@ julia> Display( P )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2289,7 +2289,7 @@ julia> Display( psi )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2353,7 +2353,7 @@ julia> Display( omega1 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2451,7 +2451,7 @@ julia> C = Coequalizer( [ f, g ] )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2497,7 +2497,7 @@ julia> Display( pi2 )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2525,7 +2525,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2581,7 +2581,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2649,7 +2649,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2700,7 +2700,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2747,7 +2747,7 @@ false
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2769,7 +2769,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2880,7 +2880,7 @@ julia> DirectProductExponentialCompatibilityMorphism( [ M, N, P, Q ] );
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2924,7 +2924,7 @@ julia> Display( ClassifyingMorphismOfSubobject( m ) )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -2983,7 +2983,7 @@ julia> Display( iotaNpL )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
@@ -3015,7 +3015,7 @@ julia> Display( m )
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true

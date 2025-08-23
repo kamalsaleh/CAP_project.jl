@@ -4,6 +4,8 @@ module FinSetsForCAP
 
 using CAP
 
+using MonoidalCategories
+
 using CartesianCategories
 
 using Toposes

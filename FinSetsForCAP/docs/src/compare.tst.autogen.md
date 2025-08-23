@@ -1,7 +1,7 @@
 
 
 ```jldoctest
-julia> using CAP, CartesianCategories, Toposes, FinSetsForCAP
+julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
 julia> true
 true
