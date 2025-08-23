@@ -19,6 +19,7 @@ A CAP category with name Rows( Z ):
 * IsPreAbelianCategory
 * IsRigidSymmetricClosedMonoidalCategory
 * IsRigidSymmetricCoclosedMonoidalCategory
+* IsAdditiveMonoidalCategory
 and furthermore mathematically
 * IsSkeletalCategory
 * IsStrictMonoidalCategory

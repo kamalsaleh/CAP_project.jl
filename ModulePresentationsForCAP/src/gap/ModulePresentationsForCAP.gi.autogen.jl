@@ -40,6 +40,8 @@
     
     if (HasIsCommutative( ring ) && IsCommutative( ring ))
       
+      SetIsAdditiveMonoidalCategory( category, true );
+      
       SetIsSymmetricClosedMonoidalCategory( category, true );
       
       SetRangeCategoryOfHomomorphismStructure( category, category );
@@ -145,6 +147,8 @@ end );
     SetIsAbelianCategoryWithEnoughProjectives( category, true );
     
     if (HasIsCommutative( ring ) && IsCommutative( ring ))
+      
+      SetIsAdditiveMonoidalCategory( category, true );
       
       SetIsSymmetricClosedMonoidalCategory( category, true );
       
