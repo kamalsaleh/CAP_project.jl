@@ -10,6 +10,8 @@
                
  @FunctionWithNamedArguments(
   [
+    [ "cartesian_monoidal_structure", true ],
+    [ "cocartesian_monoidal_structure", false ],
     [ "FinalizeCategory", true ],
     [ "no_precompiled_code", false ],
     [ "overhead", true ],
@@ -38,6 +40,12 @@
     
     SetIsStrictCartesianCategory( cat, true );
     SetIsStrictCocartesianCategory( cat, true );
+    
+    if (cartesian_monoidal_structure && @not cocartesian_monoidal_structure)
+        SetIsSymmetricMonoidalCategoryStructureGivenByDirectProduct( cat, true );
+    elseif (cocartesian_monoidal_structure)
+        SetIsSymmetricMonoidalCategoryStructureGivenByCoproduct( cat, true );
+    end;
     
     SetIsElementaryTopos( cat, true );
     
