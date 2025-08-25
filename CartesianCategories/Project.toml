@@ -2,11 +2,11 @@ name = "CartesianCategories"
 uuid = "c5961c08-7b59-43f4-a15e-02b3e7c87ab8"
 authors = [
 	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>",
-	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>",
+	"Fabian Zickgraf <f.zickgraf@dashdos.com>",
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>"
 ]
 
-# Transpiled from GAP's CartesianCategories v2025.07-07
+# Transpiled from GAP's CartesianCategories v2025.08-01
 version = "0.3.11"
 
 [deps]

@@ -2,13 +2,13 @@ name = "MonoidalCategories"
 uuid = "bfd98c86-782f-4b94-909f-74167f1eb613"
 authors = [
 	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>",
-	"Sebastian Gutsche <gutsche@mathematik.uni-siegen.de>",
-	"Sebastian Posur <sebastian.posur@uni-siegen.de>",
+	"Sebastian Gutsche <sebastian.gutsche@gmail.com>",
+	"Sebastian Posur <sebastian.posur@uni-muenster.de>",
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>",
-	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>"
+	"Fabian Zickgraf <f.zickgraf@dashdos.com>"
 ]
 
-# Transpiled from GAP's MonoidalCategories v2025.08-01
+# Transpiled from GAP's MonoidalCategories v2025.08-02
 version = "0.2.11"
 
 [deps]
