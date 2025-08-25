@@ -1,12 +1,12 @@
 name = "LinearClosuresForCAP"
 uuid = "1f080b7b-ff6a-46b3-9ade-986f655adc86"
 authors = [
-	"Sebastian Posur <sebastian.posur@uni-siegen.de>",
+	"Sebastian Posur <sebastian.posur@uni-muenster.de>",
 	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>",
-	"Fabian Zickgraf <fabian.zickgraf@uni-siegen.de>"
+	"Fabian Zickgraf <f.zickgraf@dashdos.com>"
 ]
 
-# Transpiled from GAP's LinearClosuresForCAP v2025.08-03
+# Transpiled from GAP's LinearClosuresForCAP v2025.08-04
 version = "0.1.0"
 
 [deps]
