@@ -7,7 +7,7 @@ authors = [
 ]
 
 # Transpiled from GAP's CartesianCategories v2025.08-01
-version = "0.3.11"
+version = "0.3.12"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"

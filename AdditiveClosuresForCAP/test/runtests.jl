@@ -7,5 +7,4 @@ unsafe_store!(Base.cglobal(:jl_options, Base.JLOptions), new_opts)
 
 using Test, Documenter, AdditiveClosuresForCAP
 
-# test upto whitespaces
-doctest(AdditiveClosuresForCAP; doctestfilters=[r"\s+" => ""])
+doctest(AdditiveClosuresForCAP)
