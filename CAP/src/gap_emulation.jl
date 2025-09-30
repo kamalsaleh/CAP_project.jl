@@ -912,6 +912,12 @@ function ListN(args...)
 	map(x -> f(x...), zip(lists...))
 end
 
+function ListX(args...)
+	f = args[end]
+	lists = args[1:end-1]
+	map(x -> f(x...), Cartesian(lists...))
+end
+
 ForAll(list, func) = all(func, list)
 ForAny(list, func) = any(func, list)
 PositionsProperty(list, func) = findall(func, list)
