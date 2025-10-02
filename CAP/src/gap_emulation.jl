@@ -342,6 +342,11 @@ function RecNames(obj::CAPDict)
 	sort([string(key) for key in keys(dict)])
 end
 
+function InfoOfObject(obj::CAPDict)
+  dict = getfield(obj, :dict)
+  first(dict, length(dict))
+end
+
 function ==(rec1::CAPRecord, rec2::CAPRecord)
 	RecNames( rec1 ) == RecNames( rec2 ) && ForAll(RecNames(rec1), name -> rec1[name] == rec2[name])
 end
@@ -793,6 +798,12 @@ function REM_INT(a::Union{Int, BigInt}, b::Union{Int, BigInt})
 	a % b
 end
 
+function Log2Int(a::Union{Int, BigInt})
+	trunc(Int, log2(a))
+end
+
+global const AbsInt = abs
+
 function Cartesian(args...)
 	if length(args) == 1
 		args = args[1]
@@ -1054,6 +1065,8 @@ function Position(list::UnitRange, element::Any)
 	end
 end
 
+global const PositionSorted = searchsortedfirst
+
 function Error(args...)
 	error(string(args...))
 end
@@ -1121,6 +1134,15 @@ end
 
 function Random(v::AbstractVector)
 	rand(v)
+end
+
+function Shuffle(v::AbstractVector)
+	n = length(v)
+	for i in n:-1:2
+		j = rand(1:i)
+		v[i], v[j] = v[j], v[i]
+	end
+	return v
 end
 
 function IsPackageMarkedForLoading( name, version )

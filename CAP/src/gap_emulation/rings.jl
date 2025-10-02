@@ -98,8 +98,16 @@ function Zero(R::Nemo.Ring)
 	Nemo.zero(R)
 end
 
+global const ZeroImmutable = Zero
+
 function One(R::Nemo.Ring)
 	Nemo.one(R)
+end
+
+global const OneImmutable = One
+
+function IdentityMat(n::Union{Int64,BigInt}, R::Nemo.Ring)
+	map(i -> map(j-> i==j ? Nemo.one(R) : Nemo.zero(R), 1:n), 1:n)
 end
 
 function MinusOne(R::Nemo.Ring)
