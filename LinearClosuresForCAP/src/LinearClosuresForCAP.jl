@@ -2,6 +2,8 @@ module LinearClosuresForCAP
 
 @nospecialize
 
+using MatricesForHomalg
+
 using CAP
 
 using LinearAlgebraForCAP

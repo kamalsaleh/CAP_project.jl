@@ -85,16 +85,18 @@ end );
         end;
         
         FunctorMor = function( mor )
-            local range, id;
+            local range, id, images;
             #% CAP_JIT_RESOLVE_FUNCTION
             
             range = Range( mor );
             
-            id = HomalgIdentityMatrix( Length( range ), ring );
+            id = HomalgIdentityMatrix( IntGAP( Length( range ) ), ring );
+            
+            images = List( AsList( mor ), i -> 1 + IntGAP( i ) );
             
             return CategoryOfRowsMorphism( rows,
                 FunctorObj( Source( mor ) ),
-                CertainRows( id, 1 + AsList( mor ) ),
+                CertainRows( id, images ),
                 FunctorObj( range )
             );
             
