@@ -118,6 +118,12 @@ function Inverse(elem::AbstractAlgebra.NCRingElement)
 	AbstractAlgebra.inv(elem)
 end
 
+function AdditiveInverse(elem::AbstractAlgebra.NCRingElement)
+  -elem
+end
+
+global const AdditiveInverseSameMutability = AdditiveInverse
+
 function /(elem::AbstractAlgebra.NCRingElement, ::typeof(Integers))
 	Nemo.ZZ(BigInt(elem))
 end

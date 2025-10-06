@@ -814,7 +814,7 @@ end
 
 @DeclareAttribute( "Length", IsAttributeStoringRep )
 
-@InstallMethod( Length, [ IsString ], length );
+@InstallMethod( Length, [ IsString ], sizeof );
 
 @InstallMethod( Length, [ IsList ],
 	function ( list )
@@ -1134,6 +1134,10 @@ end
 
 function Random(v::AbstractVector)
 	rand(v)
+end
+
+function Random(m::Union{Int64, BigInt}, n::Union{Int64, BigInt})
+	rand(m:n)
 end
 
 function Shuffle(v::AbstractVector)
