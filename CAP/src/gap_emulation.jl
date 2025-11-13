@@ -1061,8 +1061,8 @@ function SplitString(str::String, sep::String)
 	map(x -> string(x), split(str, sep))
 end
 
-function Position(list::Vector, element::Any)
-	pos = findfirst(x -> x == element, list)
+function Position(list::Union{Vector, String}, element::Any)
+  pos = findfirst(isequal(element), list)
 	if isnothing(pos)
 		fail
 	else
