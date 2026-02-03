@@ -1074,7 +1074,12 @@ function CollectEntries(list::Vector)
 end
 
 function DuplicateFreeList(list::Vector)
-	unique(list)
+	# unique(list) compares using isequal and hash (not wanted)
+	d_list = eltype(list)[]
+	for x in list
+	  any(y -> y == x, d_list) || push!(d_list, x)
+	end
+  d_list
 end
 
 function IsDuplicateFreeList(list::Vector)
