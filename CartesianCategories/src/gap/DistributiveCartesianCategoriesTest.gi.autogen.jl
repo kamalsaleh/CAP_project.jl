@@ -9,7 +9,7 @@
 
 @InstallGlobalFunction( "DistributiveCartesianCategoriesTest",
     
-    function( cat, opposite, a, L )
+    function( cat, opposite, a, L, M )
         
         local verbose,
               
@@ -37,6 +37,22 @@
             
         end;
         
+        if (CanCompute( cat, "LeftCartesianDistributivityExpandingUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'LeftCartesianDistributivityExpandingUsingMultiplicities' ..." );
+                
+            end;
+            
+            left_expanding_a_L = LeftCartesianDistributivityExpandingUsingMultiplicities( a, L, M );
+            left_factoring_a_L_op = LeftCartesianDistributivityFactoringUsingMultiplicities( opposite, a_op, L_op, M );
+            
+            @Assert( 0, IsCongruentForMorphisms( left_expanding_a_L, Opposite( left_factoring_a_L_op ) ) );
+            
+        end;
+        
         if (CanCompute( cat, "LeftCartesianDistributivityFactoring" ))
             
             if (verbose)
@@ -48,6 +64,22 @@
             
             left_factoring_a_L = LeftCartesianDistributivityFactoring( a, L );
             left_expanding_a_L_op = LeftCocartesianCodistributivityExpanding( opposite, a_op, L_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( left_factoring_a_L, Opposite( left_expanding_a_L_op ) ) );
+            
+        end;
+        
+        if (CanCompute( cat, "LeftCartesianDistributivityFactoringUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'LeftCartesianDistributivityFactoringUsingMultiplicities' ..." );
+                
+            end;
+            
+            left_factoring_a_L = LeftCartesianDistributivityFactoringUsingMultiplicities( a, L, M );
+            left_expanding_a_L_op = LeftCartesianDistributivityExpandingUsingMultiplicities( opposite, a_op, L_op, M );
             
             @Assert( 0, IsCongruentForMorphisms( left_factoring_a_L, Opposite( left_expanding_a_L_op ) ) );
             
@@ -69,6 +101,22 @@
             
         end;
         
+        if (CanCompute( cat, "RightCartesianDistributivityExpandingUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'RightCartesianDistributivityExpandingUsingMultiplicities' ..." );
+                
+            end;
+            
+            right_expanding_L_a = RightCartesianDistributivityExpandingUsingMultiplicities( L, M, a );
+            right_factoring_L_a_op = RightCartesianDistributivityFactoringUsingMultiplicities( opposite, L_op, M, a_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( right_expanding_L_a, Opposite( right_factoring_L_a_op ) ) );
+            
+        end;
+        
         if (CanCompute( cat, "RightCartesianDistributivityFactoring" ))
             
             if (verbose)
@@ -85,4 +133,19 @@
             
         end;
         
+        if (CanCompute( cat, "RightCartesianDistributivityFactoringUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'RightCartesianDistributivityFactoringUsingMultiplicities' ..." );
+                
+            end;
+            
+            right_factoring_L_a = RightCartesianDistributivityFactoringUsingMultiplicities( L, M, a );
+            right_expanding_L_a_op = RightCartesianDistributivityExpandingUsingMultiplicities( opposite, L_op, M, a_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( right_factoring_L_a, Opposite( right_expanding_L_a_op ) ) );
+            
+        end;
 end );
