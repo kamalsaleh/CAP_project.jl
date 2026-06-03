@@ -8,8 +8,8 @@ authors = [
 	"Fabian Zickgraf <f.zickgraf@dashdos.com>"
 ]
 
-# Transpiled from GAP's MonoidalCategories v2026.05-01
-version = "0.2.16"
+# Transpiled from GAP's MonoidalCategories v2026.06-01
+version = "0.3.0"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
@@ -20,7 +20,7 @@ CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 
 [compat]
 julia = "1.11"
-CAP = "0.4, 0.5, 0.6, 0.7, 0.8"
+CAP = "~0.8.3"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

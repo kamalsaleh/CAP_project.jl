@@ -6,7 +6,7 @@
 
 @InstallGlobalFunction( "AdditiveMonoidalCategoriesTest",
     
-    function( cat, opposite, a, L )
+    function( cat, opposite, a, L, M )
         
         local verbose,
               
@@ -34,6 +34,22 @@
             
         end;
         
+        if (CanCompute( cat, "LeftDistributivityExpandingUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'LeftDistributivityExpandingUsingMultiplicities' ..." );
+                
+            end;
+            
+            left_expanding_a_L = LeftDistributivityExpandingUsingMultiplicities( a, L, M );
+            left_factoring_a_L_op = LeftDistributivityFactoringUsingMultiplicities( opposite, a_op, L_op, M );
+            
+            @Assert( 0, IsCongruentForMorphisms( left_expanding_a_L, Opposite( left_factoring_a_L_op ) ) );
+            
+        end;
+        
         if (CanCompute( cat, "LeftDistributivityFactoring" ))
             
             if (verbose)
@@ -45,6 +61,22 @@
             
             left_factoring_a_L = LeftDistributivityFactoring( a, L );
             left_expanding_a_L_op = LeftDistributivityExpanding( opposite, a_op, L_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( left_factoring_a_L, Opposite( left_expanding_a_L_op ) ) );
+            
+        end;
+        
+        if (CanCompute( cat, "LeftDistributivityFactoringUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'LeftDistributivityFactoringUsingMultiplicities' ..." );
+                
+            end;
+            
+            left_factoring_a_L = LeftDistributivityFactoringUsingMultiplicities( a, L, M );
+            left_expanding_a_L_op = LeftDistributivityExpandingUsingMultiplicities( opposite, a_op, L_op, M );
             
             @Assert( 0, IsCongruentForMorphisms( left_factoring_a_L, Opposite( left_expanding_a_L_op ) ) );
             
@@ -66,6 +98,22 @@
             
         end;
         
+        if (CanCompute( cat, "RightDistributivityExpandingUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'RightDistributivityExpandingUsingMultiplicities' ..." );
+                
+            end;
+            
+            right_expanding_L_a = RightDistributivityExpandingUsingMultiplicities( L, M, a );
+            right_factoring_L_a_op = RightDistributivityFactoringUsingMultiplicities( opposite, L_op, M, a_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( right_expanding_L_a, Opposite( right_factoring_L_a_op ) ) );
+            
+        end;
+        
         if (CanCompute( cat, "RightDistributivityFactoring" ))
             
             if (verbose)
@@ -82,4 +130,19 @@
             
         end;
         
+        if (CanCompute( cat, "RightDistributivityFactoringUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'RightDistributivityFactoringUsingMultiplicities' ..." );
+                
+            end;
+            
+            right_factoring_L_a = RightDistributivityFactoringUsingMultiplicities( L, M, a );
+            right_expanding_L_a_op = RightDistributivityExpandingUsingMultiplicities( opposite, L_op, M, a_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( right_factoring_L_a, Opposite( right_expanding_L_a_op ) ) );
+            
+        end;
 end );

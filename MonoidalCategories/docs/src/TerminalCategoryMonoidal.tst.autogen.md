@@ -64,9 +64,11 @@ julia> a = "a" / T;
 
 julia> L = [ "b" / T, "c" / T, "d" / T ];
 
-julia> AdditiveMonoidalCategoriesTest( T, opposite, a, L );
+julia> M = [ 3, 2, 4 ];
 
-julia> AdditiveMonoidalCategoriesTest( T, opposite_primitive, a, L );
+julia> AdditiveMonoidalCategoriesTest( T, opposite, a, L, M );
+
+julia> AdditiveMonoidalCategoriesTest( T, opposite_primitive, a, L, M );
 
 julia> a = "a" / T;
 
