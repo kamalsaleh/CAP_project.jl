@@ -160,41 +160,43 @@ julia> a = FinSet( (1):(2) );
 
 julia> L = [ FinSet( (2):(5) ), FinSet( (6):(7) ), FinSet( (3):(8) ) ];
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L );
+julia> M = [ 3, 2, 4 ];
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L, M );
+
+julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L, M );
 
 julia> a = InitialObject( finsets );
 
 julia> L = [ FinSet( (2):(5) ), FinSet( (6):(7) ), FinSet( (3):(8) ) ];
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L, M );
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L, M );
 
 julia> a = FinSet( (1):(2) );
 
 julia> L = [ FinSet( (2):(5) ), InitialObject( finsets ), FinSet( (3):(8) ) ];
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L, M );
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L, M );
 
 julia> a = TerminalObject( finsets );
 
 julia> L = [ FinSet( (2):(5) ), FinSet( (6):(7) ), FinSet( (3):(8) ) ];
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L, M );
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L, M );
 
 julia> a = FinSet( (1):(2) );
 
 julia> L = [ FinSet( (2):(5) ), TerminalObject( finsets ), FinSet( (3):(8) ) ];
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite, a, L, M );
 
-julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L );
+julia> DistributiveCartesianCategoriesTest( finsets, opposite_primitive, a, L, M );
 
 julia> a = FinSet( (1):(2) );
 

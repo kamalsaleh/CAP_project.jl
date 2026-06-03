@@ -9,7 +9,7 @@
 
 @InstallGlobalFunction( "CodistributiveCocartesianCategoriesTest",
     
-    function( cat, opposite, a, L )
+    function( cat, opposite, a, L, M )
         
         local verbose,
               
@@ -37,6 +37,22 @@
             
         end;
         
+        if (CanCompute( cat, "LeftCocartesianCodistributivityExpandingUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'LeftCocartesianCodistributivityExpandingUsingMultiplicities' ..." );
+                
+            end;
+            
+            left_expanding_a_L = LeftCocartesianCodistributivityExpandingUsingMultiplicities( a, L, M );
+            left_factoring_a_L_op = LeftCocartesianCodistributivityFactoringUsingMultiplicities( opposite, a_op, L_op, M );
+            
+            @Assert( 0, IsCongruentForMorphisms( left_expanding_a_L, Opposite( left_factoring_a_L_op ) ) );
+            
+        end;
+        
         if (CanCompute( cat, "LeftCocartesianCodistributivityFactoring" ))
             
             if (verbose)
@@ -48,6 +64,22 @@
             
             left_factoring_a_L = LeftCocartesianCodistributivityFactoring( a, L );
             left_expanding_a_L_op = LeftCartesianDistributivityExpanding( opposite, a_op, L_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( left_factoring_a_L, Opposite( left_expanding_a_L_op ) ) );
+            
+        end;
+        
+        if (CanCompute( cat, "LeftCocartesianCodistributivityFactoringUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'LeftCocartesianCodistributivityFactoringUsingMultiplicities' ..." );
+                
+            end;
+            
+            left_factoring_a_L = LeftCocartesianCodistributivityFactoringUsingMultiplicities( a, L, M );
+            left_expanding_a_L_op = LeftCocartesianCodistributivityExpandingUsingMultiplicities( opposite, a_op, L_op, M );
             
             @Assert( 0, IsCongruentForMorphisms( left_factoring_a_L, Opposite( left_expanding_a_L_op ) ) );
             
@@ -69,6 +101,22 @@
             
         end;
         
+        if (CanCompute( cat, "RightCocartesianCodistributivityExpandingUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'RightCocartesianCodistributivityExpandingUsingMultiplicities' ..." );
+                
+            end;
+            
+            right_expanding_L_a = RightCocartesianCodistributivityExpandingUsingMultiplicities( L, M, a );
+            right_factoring_L_a_op = RightCocartesianCodistributivityFactoringUsingMultiplicities( opposite, L_op, M, a_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( right_expanding_L_a, Opposite( right_factoring_L_a_op ) ) );
+            
+        end;
+        
         if (CanCompute( cat, "RightCocartesianCodistributivityFactoring" ))
             
             if (verbose)
@@ -85,4 +133,19 @@
             
         end;
         
+        if (CanCompute( cat, "RightCocartesianCodistributivityFactoringUsingMultiplicities" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'RightCocartesianCodistributivityFactoringUsingMultiplicities' ..." );
+                
+            end;
+            
+            right_factoring_L_a = RightCocartesianCodistributivityFactoringUsingMultiplicities( L, M, a );
+            right_expanding_L_a_op = RightCocartesianCodistributivityExpandingUsingMultiplicities( opposite, L_op, M, a_op );
+            
+            @Assert( 0, IsCongruentForMorphisms( right_factoring_L_a, Opposite( right_expanding_L_a_op ) ) );
+            
+        end;
 end );
