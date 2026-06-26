@@ -6,7 +6,11 @@
 
 ##
 @InstallGlobalFunction( InitialCategory,
-  function(  )
+  @FunctionWithNamedArguments(
+  [
+    [ "FinalizeCategory", true ],
+  ],
+  function( CAP_NAMED_ARGUMENTS )
     local I;
     
     I = CreateCapCategory( "InitialCategory( )", IsInitialCapCategory, IsObjectInInitialCapCategory, IsMorphismInInitialCapCategory, IsCapCategoryTwoCell );
@@ -56,8 +60,12 @@
         
     end );
     
-    Finalize( I );
+    if (FinalizeCategory)
+        
+        Finalize( I );
+        
+    end;
     
     return I;
     
-end );
+end ) );
