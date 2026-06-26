@@ -15,6 +15,10 @@
   @FunctionWithNamedArguments(
   [
     [ "FinalizeCategory", true ],
+    [ "category_filter", IsLinearClosure ],
+    [ "category_object_filter", IsLinearClosureObject ],
+    [ "category_morphism_filter", IsLinearClosureMorphism ],
+    [ "category_two_cell_filter", IsCapCategoryTwoCell ],
   ],
   function( CAP_NAMED_ARGUMENTS, rows, underlying_category, arg... ) ## rows == CategoryOfRows( ... )
     local ring, name, category, is_finite, sorting_function, with_nf, cocycle;
@@ -83,7 +87,11 @@
         
     end;
     
-    category = CreateCapCategory( name, IsLinearClosure, IsLinearClosureObject, IsLinearClosureMorphism, IsCapCategoryTwoCell; overhead = false );
+    category = CreateCapCategory( name,
+                    category_filter,
+                    category_object_filter,
+                    category_morphism_filter,
+                    category_two_cell_filter; overhead = false );
     
     category.compiler_hints = @rec(
         category_attribute_names = [
