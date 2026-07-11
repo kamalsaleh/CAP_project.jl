@@ -5,8 +5,8 @@ authors = [
 	"Fabian Zickgraf <f.zickgraf@dashdos.com>"
 ]
 
-# Transpiled from GAP's ZXCalculusForCAP v2026.01-02
-version = "0.2.17"
+# Transpiled from GAP's ZXCalculusForCAP v2026.06-01
+version = "0.2.18"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
