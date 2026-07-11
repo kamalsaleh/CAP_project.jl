@@ -25,3 +25,5 @@ include( "gap/CategoryOfGradedRowsAndColumns/Tools.gd.autogen.jl" );
 include( "gap/AdditiveClosure.gd.autogen.jl" );
 
 include( "gap/RingsAsAbCats.gd.autogen.jl" );
+
+include( "gap/LinearCategoryWithMorphismsByCoefficients.gd.autogen.jl" );

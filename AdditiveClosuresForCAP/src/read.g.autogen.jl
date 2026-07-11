@@ -26,3 +26,5 @@ include( "gap/AdditiveClosure.gi.autogen.jl" );
 include( "gap/AdditiveClosureDerivedMethods.gi.autogen.jl" );
 
 include( "gap/RingsAsAbCats.gi.autogen.jl" );
+
+include( "gap/LinearCategoryWithMorphismsByCoefficients.gi.autogen.jl" );
