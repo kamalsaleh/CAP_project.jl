@@ -60,7 +60,7 @@ function declare_attribute_or_property(mod, name::String, is_property::Bool, is_
 		
 		function (::$type_symbol)(obj::IsAttributeStoringRep.abstract_type; kwargs...)
 			if !$symbol_tester(obj)
-				$symbol_setter(obj, $symbol_op(obj; kwargs...))
+				$symbol_setter(obj, Base.invokelatest($symbol_op, obj; kwargs...))
 			end
 			dict = getfield(obj, :dict)
 			dict[Symbol($name)]
