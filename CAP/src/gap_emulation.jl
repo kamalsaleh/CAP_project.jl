@@ -673,6 +673,10 @@ macro InstallGlobalFunction(name::String, func)
 end
 
 macro InstallGlobalFunction(name::Symbol, func)
+	# Expand nested @FunctionWithNamedArguments before delegating to @InstallMethod
+	if func isa Expr && func.head === :macrocall && func.args[1] === Symbol("@FunctionWithNamedArguments")
+		func = macroexpand(__module__, func; recursive = false)
+	end
 	esc(:(@InstallMethod($name, nothing, $func)))
 end
 
@@ -736,6 +740,10 @@ macro DeclareInfoClass(name::String)
 end
 
 export @DeclareInfoClass
+
+# Standard GAP info classes
+global const InfoWarning = InfoClass("InfoWarning", 1)
+export InfoWarning
 
 function InfoLevel(infoclass::InfoClass)
 	infoclass.level
@@ -802,6 +810,10 @@ function Sum(list::Union{Vector, UnitRange, StepRange, Tuple}, init = 0)
 	else
 		sum(list)
 	end
+end
+
+function Sum(list::Union{Vector, UnitRange, StepRange, Tuple}, func::Function, init)
+	Sum(map(func, list), init)
 end
 
 function Sum(list::Union{Vector, UnitRange, StepRange, Tuple}, func::Function)
