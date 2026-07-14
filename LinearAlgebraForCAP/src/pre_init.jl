@@ -19,14 +19,6 @@ const IsHomalgRingElement = Filter("IsHomalgRingElement", MatricesForHomalg.Type
 
 const IsHomalgMatrix = Filter("IsHomalgMatrix", MatricesForHomalg.TypeOfMatrixForHomalg)
 
-function HasHasInvariantBasisProperty(::Union{typeof(MatricesForHomalg.ZZ), typeof(MatricesForHomalg.QQ)})
-	true
-end
-
-function HasInvariantBasisProperty(::Union{typeof(MatricesForHomalg.ZZ), typeof(MatricesForHomalg.QQ)})
-	true
-end
-
 # the following operations should be part of MatricesForHomalg.jl
 const NrRows = NumberRows
 const NrCols = NumberColumns
@@ -87,5 +79,24 @@ function DiagMat(R, list)::MatricesForHomalg.TypeOfMatrixForHomalg
         return HomalgZeroMatrix(0, 0, R)
     end
 
-    return cat(list...; dims=(1,2))
+    if length(list) == 1
+        return list[1]
+    end
+
+    rows_count = [NrRows(m) for m in list]
+    cols_count = [NrCols(m) for m in list]
+    total_rows = sum(rows_count)
+    total_cols = sum(cols_count)
+
+    result = HomalgZeroMatrix(total_rows, total_cols, R)
+    row_offset = 0
+    col_offset = 0
+    for (m, r, c) in zip(list, rows_count, cols_count)
+        for i in 1:r, j in 1:c
+            result[row_offset + i, col_offset + j] = m[i, j]
+        end
+        row_offset += r
+        col_offset += c
+    end
+    return result
 end
