@@ -7,6 +7,83 @@
 
 
 
+##
+@InstallMethod( TestZigzagOfCartesianRightDirectProduct,
+               [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
+               
+  function( cat, a, b )
+    
+    return IsOne( cat,
+                  PreCompose( cat,
+                          DirectProductOnObjectAndMorphism( cat,
+                                  a,
+                                  CartesianRightCoevaluationMorphism( cat, a, b ) ),
+                          CartesianRightEvaluationMorphism( cat,
+                                  a,
+                                  BinaryDirectProduct( cat, a, b ) ) ) );
+    
+end );
+
+##
+@InstallMethod( TestZigzagOfCartesianRightExponential,
+               [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
+               
+  function( cat, a, b )
+    
+    return IsOne( cat,
+                  PreCompose( cat,
+                          CartesianRightCoevaluationMorphism( cat,
+                                  a,
+                                  ExponentialOnObjects( cat,
+                                          a,
+                                          b ) ),
+                          ExponentialOnMorphisms( cat,
+                                  IdentityMorphism( a ),
+                                  CartesianRightEvaluationMorphism( cat,
+                                          a,
+                                          b ) ) ) );
+    
+end );
+
+##
+@InstallMethod( TestZigzagOfCartesianLeftDirectProduct,
+               [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
+               
+  function( cat, a, b )
+    
+    return IsOne( cat,
+                  PreCompose( cat,
+                          DirectProductOnMorphismAndObject( cat,
+                                  CartesianLeftCoevaluationMorphism( cat, a, b ),
+                                  a ),
+                          CartesianLeftEvaluationMorphism( cat,
+                                  a,
+                                  BinaryDirectProduct( cat, b, a ) ) ) );
+    
+end );
+
+##
+@InstallMethod( TestZigzagOfCartesianLeftExponential,
+               [ IsCapCategory, IsCapCategoryObject, IsCapCategoryObject ],
+               
+  function( cat, a, b )
+    
+    return IsOne( cat,
+                  PreCompose( cat,
+                          CartesianLeftCoevaluationMorphism( cat,
+                                  a,
+                                  ExponentialOnObjects( cat,
+                                          a,
+                                          b ) ),
+                          ExponentialOnMorphisms( cat,
+                                  IdentityMorphism( a ),
+                                  CartesianLeftEvaluationMorphism( cat,
+                                          a,
+                                          b ) ) ) );
+    
+end );
+
+##
 @InstallGlobalFunction( "CartesianClosedCategoriesTest",
     
     function( cat, opposite, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta )
@@ -172,14 +249,14 @@
         end;
         
         if (CanCompute( cat, "CartesianRightCoevaluationMorphism" ))
-            
+
             if (verbose)
-                
+
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CartesianRightEvaluationMorphism' ..." );
-                
+
             end;
-            
+
             coev_ab = CartesianRightCoevaluationMorphism( a, b );
             coev_ba = CartesianRightCoevaluationMorphism( b, a );
             
@@ -229,6 +306,52 @@
             
             @Assert( 0, IsCongruentForMorphisms( coca_coev_ab_op, Opposite( opposite, coev_ab ) ) );
             @Assert( 0, IsCongruentForMorphisms( coca_coev_ba_op, Opposite( opposite, coev_ba ) ) );
+            
+        end;
+        
+        if (CanCompute( cat, "CartesianRightCoevaluationMorphism" ) &&
+           CanCompute( cat, "CartesianRightEvaluationMorphism" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'TestZigzagOfCartesianRightDirectProduct' ..." );
+                
+            end;
+            
+            @Assert( 0, TestZigzagOfCartesianRightDirectProduct( cat, a, b ) );
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'TestZigzagOfCartesianRightExponential' ..." );
+                
+            end;
+            
+            @Assert( 0, TestZigzagOfCartesianRightExponential( cat, a, b ) );
+            
+        end;
+        
+        if (CanCompute( cat, "CartesianLeftCoevaluationMorphism" ) &&
+           CanCompute( cat, "CartesianLeftEvaluationMorphism" ))
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'TestZigzagOfCartesianLeftDirectProduct' ..." );
+                
+            end;
+            
+            @Assert( 0, TestZigzagOfCartesianLeftDirectProduct( cat, a, b ) );
+            
+            if (verbose)
+                
+                # COVERAGE_IGNORE_NEXT_LINE
+                Display( "Testing 'TestZigzagOfCartesianLeftExponential' ..." );
+                
+            end;
+            
+            @Assert( 0, TestZigzagOfCartesianLeftExponential( cat, a, b ) );
             
         end;
         
