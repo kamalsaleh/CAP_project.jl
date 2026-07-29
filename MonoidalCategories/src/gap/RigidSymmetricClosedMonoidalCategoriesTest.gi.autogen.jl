@@ -5,7 +5,7 @@
 #
 
 ##
-@InstallMethod( TestZigZagIdentitiesForDual,
+@InstallMethod( TestZigzagIdentitiesForDual,
                [ IsCapCategory, IsCapCategoryObject ],
                
   function( cat, object )
@@ -85,13 +85,13 @@ end );
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( cat, "IsRigidSymmetricClosedMonoidalCategory" ) ))
             
-            @Assert( 0, ForAll( [ a, b, c, d ], obj -> TestZigZagIdentitiesForDual( cat, obj ) ) );
+            @Assert( 0, ForAll( [ a, b, c, d ], obj -> TestZigzagIdentitiesForDual( cat, obj ) ) );
             
         end;
         
         if (IsEmpty( MissingOperationsForConstructivenessOfCategory( opposite, "IsRigidSymmetricClosedMonoidalCategory" ) ))
             
-            @Assert( 0, ForAll( [ a_op, b_op, c_op, d_op ], obj_op -> TestZigZagIdentitiesForDual( opposite, obj_op ) ) );
+            @Assert( 0, ForAll( [ a_op, b_op, c_op, d_op ], obj_op -> TestZigzagIdentitiesForDual( opposite, obj_op ) ) );
             
         end;
         
