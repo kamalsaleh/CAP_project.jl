@@ -16,12 +16,6 @@
 ##
 ####################################
 
-@DeclareFilter( "IsDigraphOfSubobjects" );
-
-#= comment for Julia
-
-if (IsPackageMarkedForLoading( "Digraphs", ">= 1.3.1" ))
-
 #! @Description
 #! The argument is an object <A>A</A> and a list <A>subobjs</A> of subobjects of <A>A</A>.
 #! The output is the reflexive transitive reduction of the poset of all subobjects in <A>subobjs</A>.
@@ -38,6 +32,8 @@ if (IsPackageMarkedForLoading( "Digraphs", ">= 1.3.1" ))
 @DeclareOperation( "DigraphOfSubobjects",
         [ IsCapCategoryObject ] );
 
+@DeclareFilter( "IsDigraphOfSubobjects" );
+
 #! @Description
 #!  Opens a PDF with the graph of the digraph D of subobjects.
 #! @Arguments D
@@ -45,10 +41,12 @@ if (IsPackageMarkedForLoading( "Digraphs", ">= 1.3.1" ))
 @DeclareOperation( "Visualize",
         [ IsDigraphOfSubobjects ] );
 
+#= comment for Julia
+if (IsPackageMarkedForLoading( "Digraphs", ">= 1.3.1" ))
+
 #! @Arguments digraph
 @DeclareAttribute( "SvgString",
         IsDigraph && IsDigraphOfSubobjects );
 
 end;
-
 # =#

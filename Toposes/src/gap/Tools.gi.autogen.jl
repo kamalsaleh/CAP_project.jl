@@ -5,6 +5,7 @@
 #
 
 #= comment for Julia
+if (IsPackageMarkedForLoading( "Digraphs", ">= 1.3.1" ))
 
 ##
 @InstallMethod( DigraphOfSubobjects,
@@ -100,4 +101,5 @@ MakeShowable( [ "image/svg+xml" ], IsDigraphByOutNeighboursRep && IsDigraphOfSub
     
 end );
 
+end;
 # =#
