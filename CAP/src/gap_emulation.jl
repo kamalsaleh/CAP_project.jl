@@ -1402,7 +1402,7 @@ function KroneckerProduct(mat1::Vector{Vector{S}}, mat2::Vector{Vector{T}}) wher
 		for row2 in mat2
 			row = Vector{U}()
 			for i  in row1
-				append!( row, i * row2 )
+				append!( row, map(x -> i * x, row2) )
 			end
 		push!( kroneckerproduct, row )
 		end
