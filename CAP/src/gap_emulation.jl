@@ -1174,6 +1174,19 @@ function PositionSublist(list::Vector, sublist::Vector, start::Union{Int, BigInt
 	(index != fail) ? (start + index) : fail
 end
 
+function StripBeginEnd(str::Union{String, Vector}, chars::Union{String, Vector})
+	pb = 1
+	l = Length(str)
+	while pb <= l && str[pb] in chars
+		pb += 1
+	end
+	pe = l
+	while pe > 0 && str[pe] in chars
+		pe -= 1
+	end
+	str[pb:pe]
+end
+
 global const AsSortedList = sort
 
 function SortedList(v::AbstractVector)
