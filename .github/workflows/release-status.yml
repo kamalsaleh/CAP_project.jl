@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   release-status:
-    if: github.repository == 'homalg-project/CAP_project.jl'
+    if: github.repository == 'kamalsaleh/CAP_project.jl'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
