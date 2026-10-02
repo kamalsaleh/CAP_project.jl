@@ -25,6 +25,7 @@ gen:
 	$(MAKE) -C LinearClosuresForCAP gen
 	$(MAKE) -C FreydCategoriesForCAP gen
 	$(MAKE) -C ModulePresentationsForCAP gen
+	$(MAKE) generate-root
 
 gen-full:
 	$(MAKE) -C CAP gen-full
@@ -38,6 +39,10 @@ gen-full:
 	$(MAKE) -C LinearClosuresForCAP gen-full
 	$(MAKE) -C FreydCategoriesForCAP gen-full
 	$(MAKE) -C ModulePresentationsForCAP gen-full
+	$(MAKE) generate-root
+
+generate-root:
+	ansible-playbook -i $$HOME/.gap/PackageJanitor/gap_to_julia/hosts $$HOME/.gap/PackageJanitor/gap_to_julia/site.yml -l CAP_project_root --diff
 
 test:
 	$(MAKE) -C CAP test
