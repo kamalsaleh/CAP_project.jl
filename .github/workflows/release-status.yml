@@ -51,5 +51,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git commit -m "chore: update CAP_project.jl release status badges"
+          git commit -m "chore: update CAP_project.jl release status badges ($GITHUB_SHA)"
           git push
