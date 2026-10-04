@@ -9,6 +9,14 @@ authors = [
 # Transpiled from GAP's LinearClosuresForCAP v2026.06-02
 version = "0.2.4"
 
+# Current dependencies of GAP's LinearClosuresForCAP v2026.06-02
+# NeededOtherPackages:
+#   CAP >= 2026.04-01
+#   GroupsAsCategoriesForCAP >= 2025.07-01
+#   AdditiveClosuresForCAP >= 2026.04-01
+# SuggestedOtherPackages:
+#   FinSetsForCAP >= 2023.07-03
+
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"

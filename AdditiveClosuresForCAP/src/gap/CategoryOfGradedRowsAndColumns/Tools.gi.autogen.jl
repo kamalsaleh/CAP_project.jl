@@ -67,7 +67,7 @@
         expanded_degree_list = [];
         for j in (1):(Length( DegreeList( range_object ) ))
 
-          for k in (1):(DegreeList( range_object )[ j ][ 2 ] )
+          for k in (1):(DegreeList( range_object )[ j ][ 2 ])
 
             Add( expanded_degree_list, DegreeList( range_object )[ j ][ 1 ] );
 
@@ -158,7 +158,7 @@ end );
         expanded_degree_list = [];
         for j in (1):(Length( DegreeList( source_object ) ))
 
-          for k in (1):(DegreeList( source_object )[ j ][ 2 ] )
+          for k in (1):(DegreeList( source_object )[ j ][ 2 ])
 
             Add( expanded_degree_list, DegreeList( source_object )[ j ][ 1 ] );
 
@@ -250,7 +250,7 @@ end );
         expanded_degree_list = [];
         for j in (1):(Length( DegreeList( range_object ) ))
 
-          for k in (1):(DegreeList( range_object )[ j ][ 2 ] )
+          for k in (1):(DegreeList( range_object )[ j ][ 2 ])
 
             Add( expanded_degree_list, DegreeList( range_object )[ j ][ 1 ] );
 
@@ -342,7 +342,7 @@ end );
         expanded_degree_list = [];
         for j in (1):(Length( DegreeList( source_object ) ))
 
-          for k in (1):(DegreeList( source_object )[ j ][ 2 ] )
+          for k in (1):(DegreeList( source_object )[ j ][ 2 ])
 
             Add( expanded_degree_list, DegreeList( source_object )[ j ][ 1 ] );
 
@@ -466,7 +466,7 @@ end );
     for i in (1):(Length( old_degree_list ))
 
       new_degree_list = @Concatenation( new_degree_list, 
-                                        List( (1):(old_degree_list[ i ][ 2 ] ), k -> old_degree_list[ i ][ 1 ] ) );
+                                        List( (1):(old_degree_list[ i ][ 2 ]), k -> old_degree_list[ i ][ 1 ] ) );
 
     end;
 

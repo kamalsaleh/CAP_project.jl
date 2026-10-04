@@ -7,8 +7,17 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>"
 ]
 
-# Transpiled from GAP's Toposes v2026.07-01
+# Transpiled from GAP's Toposes v2026.08-01
 version = "0.1.24"
+
+# Current dependencies of GAP's Toposes v2026.08-01
+# NeededOtherPackages:
+#   GAPDoc >= 1.5
+#   CAP >= 2026.05-02
+#   CartesianCategories >= 2025.05-01
+# SuggestedOtherPackages:
+#   ToolsForCategoricalTowers >= 2025.03-02
+#   Digraphs >= 1.3.1
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
