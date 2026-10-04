@@ -13,6 +13,33 @@ install:
 		Pkg.develop(path = "ModulePresentationsForCAP"); \
 	'
 
+uninstall:
+	$(MAKE) -C CAP uninstall
+	$(MAKE) -C MonoidalCategories uninstall
+	$(MAKE) -C CartesianCategories uninstall
+	$(MAKE) -C Toposes uninstall
+	$(MAKE) -C FinSetsForCAP uninstall
+	$(MAKE) -C ZXCalculusForCAP uninstall
+	$(MAKE) -C LinearAlgebraForCAP uninstall
+	$(MAKE) -C AdditiveClosuresForCAP uninstall
+	$(MAKE) -C LinearClosuresForCAP uninstall
+	$(MAKE) -C FreydCategoriesForCAP uninstall
+	$(MAKE) -C ModulePresentationsForCAP uninstall
+
+gen-basic:
+	$(MAKE) -C CAP gen-basic
+	$(MAKE) -C MonoidalCategories gen-basic
+	$(MAKE) -C CartesianCategories gen-basic
+	$(MAKE) -C Toposes gen-basic
+	$(MAKE) -C FinSetsForCAP gen-basic
+	$(MAKE) -C ZXCalculusForCAP gen-basic
+	$(MAKE) -C LinearAlgebraForCAP gen-basic
+	$(MAKE) -C AdditiveClosuresForCAP gen-basic
+	$(MAKE) -C LinearClosuresForCAP gen-basic
+	$(MAKE) -C FreydCategoriesForCAP gen-basic
+	$(MAKE) -C ModulePresentationsForCAP gen-basic
+	$(MAKE) gen-root
+
 gen:
 	$(MAKE) -C CAP gen
 	$(MAKE) -C MonoidalCategories gen
@@ -25,19 +52,10 @@ gen:
 	$(MAKE) -C LinearClosuresForCAP gen
 	$(MAKE) -C FreydCategoriesForCAP gen
 	$(MAKE) -C ModulePresentationsForCAP gen
+	$(MAKE) gen-root
 
-gen-full:
-	$(MAKE) -C CAP gen-full
-	$(MAKE) -C MonoidalCategories gen-full
-	$(MAKE) -C CartesianCategories gen-full
-	$(MAKE) -C Toposes gen-full
-	$(MAKE) -C FinSetsForCAP gen-full
-	$(MAKE) -C ZXCalculusForCAP gen-full
-	$(MAKE) -C LinearAlgebraForCAP gen-full
-	$(MAKE) -C AdditiveClosuresForCAP gen-full
-	$(MAKE) -C LinearClosuresForCAP gen-full
-	$(MAKE) -C FreydCategoriesForCAP gen-full
-	$(MAKE) -C ModulePresentationsForCAP gen-full
+gen-root:
+	ansible-playbook -i $$HOME/.gap/PackageJanitor/gap_to_julia/hosts $$HOME/.gap/PackageJanitor/gap_to_julia/site.yml -l CAP_project_root --diff
 
 test:
 	$(MAKE) -C CAP test

@@ -1,0 +1,16 @@
+{
+  "_comment": "Groups of packages tested together in one CI job (see workflows/Test.yml). Edit freely to rebalance CI jobs as packages are added/removed or change in cost.",
+  "packages": [
+    ["CAP"],
+    ["MonoidalCategories"],
+    ["CartesianCategories"],
+    ["Toposes"],
+    ["FinSetsForCAP"],
+    ["ZXCalculusForCAP"],
+    ["LinearAlgebraForCAP"],
+    ["AdditiveClosuresForCAP"],
+    ["LinearClosuresForCAP"],
+    ["FreydCategoriesForCAP"],
+    ["ModulePresentationsForCAP"]
+  ]
+}
