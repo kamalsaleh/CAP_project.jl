@@ -652,7 +652,7 @@ AddUniversalMorphismIntoDirectProductWithGivenDirectProduct( SkeletalFinSets,
     
     taus = List( tau, AsList );
     
-    # if l == 0, then Sum( (1):(l), j -> ... ) == 0 ∈ TerminalObject == P
+    # if l == 0, then Sum( [ 1 .. l ], j -> ... ) == 0 ∈ TerminalObject == P
     return MorphismConstructor( cat, T, List( T, i -> Sum( (1):(l), j -> taus[j][1 + i] * dd[j] ) ), P );
     
 end );
@@ -1039,7 +1039,7 @@ AddCartesianLeftCoevaluationMorphismWithGivenRange( SkeletalFinSets,
     
     bl = b * l;
     
-    #return MorphismConstructor( cat, B, List( (0):(b - 1), i -> Sum( (0):(l - 1), j -> ( i + b * j ) * (b*l)^j ) ), HL_BxL );
+    #return MorphismConstructor( cat, B, List( [ 0 .. b - 1 ], i -> Sum( [ 0 .. l - 1 ], j -> ( i + b * j ) * (b*l)^j ) ), HL_BxL );
     
     return MorphismConstructor( cat, B, List( (0):(b - 1), i -> i * GeometricSum( bl, l ) + b * bl * GeometricSumDiff1( bl, l ) ), HL_BxL );
     

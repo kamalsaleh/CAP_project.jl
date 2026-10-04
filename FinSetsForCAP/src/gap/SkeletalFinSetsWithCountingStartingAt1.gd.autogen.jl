@@ -40,7 +40,7 @@ CapJitAddTypeSignature( "Cardinality", [ IsObjectInSkeletalCategoryOfFiniteSetsW
 
 #! @Description
 #!  The list associated to a skeletal finite set, i.e.,
-#!  <C>AsList( FinSet( n ) ) == (1):(n)</C>.
+#!  <C>AsList( FinSet( n ) ) == [ 1 .. n ]</C>.
 #! @Arguments M
 #! @Returns a list
 @DeclareAttribute( "AsList",
