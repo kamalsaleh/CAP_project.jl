@@ -83,8 +83,59 @@ jobs:
       - name: Run tests
         run: |
           for pkg in ${{ join(matrix.packages, ' ') }}; do
-            make -C "$pkg" test
+            if [[ "${{ matrix.julia-version }}" == '1.12' ]]; then
+              julia -e "using Pkg; Pkg.test(\"$pkg\"; coverage=true)"
+            else
+              make -C "$pkg" test
+            fi
           done
+      - name: Process coverage data
+        if: matrix.julia-version == '1.12'
+        uses: julia-actions/julia-processcoverage@v1
+        env:
+          DISABLE_AMEND_COVERAGE_FROM_SRC: 'yes'
+        with:
+          directories: ${{ join(matrix.packages, ',') }}
+      - name: Upload coverage artifact
+        if: matrix.julia-version == '1.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ join(matrix.packages, '-') }}
+          path: lcov.info
+          if-no-files-found: error
+
+  coverage:
+    name: Upload combined coverage
+    needs: [test, test_split]
+    if: |
+      always() &&
+      needs.test.result == 'success' &&
+      (needs.test_split.result == 'success' || needs.test_split.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Download coverage artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: coverage-*
+          path: coverage
+      - name: Install LCOV
+        run: sudo apt-get update && sudo apt-get install --yes lcov
+      - name: Merge coverage reports
+        run: |
+          mapfile -d '' coverage_files < <(find coverage -name lcov.info -print0)
+          test -n "${coverage_files[0]:-}"
+          lcov $(printf ' --add-tracefile %q' "${coverage_files[@]}") --output-file lcov.info
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: lcov.info
+          disable_search: true
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   test_split:
     needs: prepare_matrices
@@ -119,7 +170,26 @@ jobs:
       - name: Run tests
         env:
           DOCTEST_FILES: ${{ join(matrix.group.files, ',') }}
-        run: make -C "${{ matrix.group.package }}" test
+        run: |
+          if [[ "${{ matrix.julia-version }}" == '1.12' ]]; then
+            julia -e "using Pkg; Pkg.test(\"${{ matrix.group.package }}\"; coverage=true)"
+          else
+            make -C "${{ matrix.group.package }}" test
+          fi
+      - name: Process coverage data
+        if: matrix.julia-version == '1.12'
+        uses: julia-actions/julia-processcoverage@v1
+        env:
+          DISABLE_AMEND_COVERAGE_FROM_SRC: 'yes'
+        with:
+          directories: ${{ matrix.group.package }}
+      - name: Upload coverage artifact
+        if: matrix.julia-version == '1.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-split-${{ strategy.job-index }}
+          path: lcov.info
+          if-no-files-found: error
 
   update_subsplits:
     name: Update subsplits
