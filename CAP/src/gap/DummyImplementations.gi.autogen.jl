@@ -104,6 +104,7 @@ CAP_INTERNAL_DUMMY_COMMUTATIVE_RING_COUNTER = 1;
     
 end );
 
+#= dummy fields are implemented in CAP/src/post_init.jl for Julia
 ## dummy fields
 
 @BindGlobal( "TheFamilyOfDummyFields",
@@ -137,6 +138,7 @@ CAP_INTERNAL_DUMMY_FIELD_COUNTER = 1;
     return ring;
     
 end );
+# =#
 
 ## dummy categories
 

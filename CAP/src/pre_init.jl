@@ -17,4 +17,17 @@ include("gap_emulation.jl")
 @DeclareAttribute( "UnderlyingCategory", IsObject )
 @DeclareAttribute( "UnderlyingDatum", IsObject )
 @DeclareOperation( "Visualize" )
+@DeclareProperty( "IsField", IsObject )
+
+@DeclareFilter( "IsDummySemiring", IsObject )
+@DeclareFilter( "IsDummySemiringElement", IsObject )
+@DeclareFilter( "IsDummyCommutativeSemiring", IsDummySemiring )
+@DeclareFilter( "IsDummyCommutativeSemiringElement", IsDummySemiringElement )
+@DeclareFilter( "IsDummyRing", IsObject )
+@DeclareFilter( "IsDummyRingElement", IsObject )
+@DeclareFilter( "IsDummyCommutativeRing", IsDummyRing )
+@DeclareFilter( "IsDummyCommutativeRingElement", IsDummyRingElement )
+@DeclareFilter( "IsDummyField", IsDummyCommutativeRing )
+@DeclareFilter( "IsDummyFieldElement", IsDummyCommutativeRingElement )
+@FilterIntersection IsAttributeStoringRep IsDummyField
 

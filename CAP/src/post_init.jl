@@ -1,6 +1,32 @@
 pop!(ModulesForEvaluationStack)
 @Assert( 0, IsEmpty( ModulesForEvaluationStack ) )
 
+const TheFamilyOfDummyFields = NewFamily( "TheFamilyOfDummyFields" )
+const CAP_INTERNAL_DUMMY_FIELD_COUNTER = Ref( 1 )
+
+# SemiringFilter/SemiringElementFilter are plain functions in the emulation, not attributes.
+SemiringFilter( ring::IsAttributeStoringRep_and_IsDummyField.abstract_type ) = getfield( ring, :dict )[ :SemiringFilter ]
+SemiringElementFilter( ring::IsAttributeStoringRep_and_IsDummyField.abstract_type ) = getfield( ring, :dict )[ :SemiringElementFilter ]
+
+@InstallGlobalFunction( DummyField, function( )
+    ring_filter = NewFilter( "DummyFieldFilter", IsDummyField )
+    ring_element_filter = NewFilter( "DummyFieldElementFilter", IsDummyFieldElement )
+    name = @Concatenation( "Dummy field ", StringGAP( CAP_INTERNAL_DUMMY_FIELD_COUNTER[] ) )
+    CAP_INTERNAL_DUMMY_FIELD_COUNTER[] += 1
+    ring = CreateGapObjectWithAttributes( NewType( TheFamilyOfDummyFields, IsAttributeStoringRep_and_IsDummyField ),
+        Name, name,
+        StringGAP, name,
+        IsField, true )
+    getfield( ring, :dict )[ :SemiringFilter ] = ring_filter
+    getfield( ring, :dict )[ :SemiringElementFilter ] = ring_element_filter
+    CapJitAddTypeSignature( "+", [ ring_element_filter, ring_element_filter ], ring_element_filter )
+    CapJitAddTypeSignature( "ZeroImmutable", [ ring_filter ], ring_element_filter )
+    CapJitAddTypeSignature( "AdditiveInverseSameMutability", [ ring_element_filter ], ring_element_filter )
+    CapJitAddTypeSignature( "*", [ ring_element_filter, ring_element_filter ], ring_element_filter )
+    CapJitAddTypeSignature( "OneImmutable", [ ring_filter ], ring_element_filter )
+    return ring
+end )
+
 function MultiplyWithElementOfCommutativeSemiringForMorphisms(C::IsCapCategory.abstract_type, r::Any, alpha::IsCapCategoryMorphism.abstract_type)
     semiring = CommutativeSemiringOfLinearCategory( C );
     return MultiplyWithElementOfCommutativeSemiringForMorphisms( C, semiring( r ), alpha );
