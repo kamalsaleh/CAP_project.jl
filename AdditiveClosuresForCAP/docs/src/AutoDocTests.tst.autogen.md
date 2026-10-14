@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/WeakHomomorphismTheorem.g
+
 julia> true
 true
 
@@ -68,6 +70,8 @@ true
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfRows.g
+
 julia> S = HomalgRingOfIntegers();
 
 julia> rows = CategoryOfRows( S )
@@ -83,6 +87,8 @@ julia> obj2 = CategoryOfRowsObject( 8, rows )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfRows.g
 
 julia> obj3 = CategoryOfRowsObject( 1, rows )
 <A row module over Z of rank 1>
@@ -104,6 +110,8 @@ true
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfRows.g
+
 julia> Length( AdditiveGenerators( rows ) )
 1
 
@@ -118,6 +126,8 @@ julia> obj5 = CategoryOfRowsObject( 2, rows )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfRows.g
+
 julia> obj6 = CategoryOfRowsObject( 1, rows )
 <A row module over Z of rank 1>
 
@@ -125,6 +135,8 @@ julia> obj6 = CategoryOfRowsObject( 1, rows )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> directSum = DirectSum( [ obj5, obj6 ] )
 <A row module over Z of rank 3>
@@ -134,6 +146,8 @@ julia> directSum = DirectSum( [ obj5, obj6 ] )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Rows( Z )>
 
@@ -141,6 +155,8 @@ julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Rows( Z )>
@@ -150,6 +166,8 @@ julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Rows( Z )>
 
@@ -157,6 +175,8 @@ julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Rows( Z )>
@@ -166,6 +186,8 @@ julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> mor2 = IdentityMorphism( obj6 )
 <A morphism in Rows( Z )>
 
@@ -173,6 +195,8 @@ julia> mor2 = IdentityMorphism( obj6 )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfRows.g
 
 julia> source = CategoryOfRowsObject( 1, rows )
 <A row module over Z of rank 1>
@@ -191,6 +215,8 @@ julia> colift = Colift( mor2, mor )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> S = HomalgRingOfIntegers();
 
 julia> cols = CategoryOfColumns( S )
@@ -206,6 +232,8 @@ julia> obj2 = CategoryOfColumnsObject( 8, cols )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> obj3 = CategoryOfColumnsObject( 1, cols )
 <A column module over Z of rank 1>
@@ -227,6 +255,8 @@ true
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> ZeroObject( cols )
 <A column module over Z of rank 0>
 
@@ -238,6 +268,8 @@ julia> obj5 = CategoryOfColumnsObject( 2, cols )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> obj6 = CategoryOfColumnsObject( 1, cols )
 <A column module over Z of rank 1>
 
@@ -245,6 +277,8 @@ julia> obj6 = CategoryOfColumnsObject( 1, cols )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> directSum = DirectSum( [ obj5, obj6 ] )
 <A column module over Z of rank 3>
@@ -254,6 +288,8 @@ julia> directSum = DirectSum( [ obj5, obj6 ] )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Columns( Z )>
 
@@ -261,6 +297,8 @@ julia> i1 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 1 )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Columns( Z )>
@@ -270,6 +308,8 @@ julia> i2 = InjectionOfCofactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 <A morphism in Columns( Z )>
 
@@ -277,6 +317,8 @@ julia> proj1 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 1 )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 <A morphism in Columns( Z )>
@@ -286,6 +328,8 @@ julia> proj2 = ProjectionInFactorOfDirectSum( [ obj5, obj6 ], 2 )
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/CategoryOfColumns.g
+
 julia> mor2 = IdentityMorphism( obj6 )
 <A morphism in Columns( Z )>
 
@@ -293,6 +337,8 @@ julia> mor2 = IdentityMorphism( obj6 )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/CategoryOfColumns.g
 
 julia> source = CategoryOfColumnsObject( 1, cols )
 <A column module over Z of rank 1>
@@ -310,6 +356,8 @@ julia> colift = Colift( mor2, mor )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/RowsAndColsOverFields.g
 
 julia> Q = HomalgFieldOfRationals();
 
@@ -410,6 +458,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/RowsAndColsOverFields.g
 
 julia> Q = HomalgFieldOfRationals();
 
@@ -515,6 +565,8 @@ true
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
 
+julia> # extracted from examples/AdditiveClosureKronecker.g
+
 julia> true
 true
 
@@ -557,6 +609,8 @@ A formal direct sum consisting of 4 objects.
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/AdditiveClosureMonoidal.g
 
 julia> true
 true
@@ -663,6 +717,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, LinearAlgebraForCAP, AdditiveClosuresForCAP
+
+julia> # extracted from examples/Opposite_CategoryOfRows_as_CategoryOfColumns.g
 
 julia> true
 true

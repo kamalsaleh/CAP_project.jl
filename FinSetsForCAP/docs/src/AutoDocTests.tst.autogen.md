@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/doc/SkeletalFinSet.g
+
 julia> true
 true
 
@@ -55,6 +57,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/doc/SkeletalMapOfFinSets.g
+
 julia> true
 true
 
@@ -106,6 +110,8 @@ julia> Display( phi )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalIsHomSetInhabited.g
+
 julia> true
 true
 
@@ -134,6 +140,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalWellDefined.g
 
 julia> true
 true
@@ -173,6 +181,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalPreCompose.g
+
 julia> true
 true
 
@@ -201,6 +211,8 @@ julia> Display( alpha )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalMonoEpi.g
 
 julia> true
 true
@@ -264,6 +276,8 @@ julia> id
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalInitialTerminal.g
+
 julia> true
 true
 
@@ -326,6 +340,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalIsProjective.g
+
 julia> true
 true
 
@@ -357,6 +373,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalIsInjective.g
 
 julia> true
 true
@@ -392,6 +410,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalDirectProduct.g
 
 julia> true
 true
@@ -439,6 +459,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalCoproduct.g
 
 julia> true
 true
@@ -500,6 +522,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalImageObject.g
+
 julia> true
 true
 
@@ -535,6 +559,8 @@ julia> Cardinality( I )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalImageEmbedding.g
+
 julia> true
 true
 
@@ -557,6 +583,8 @@ julia> Display( pi )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalCoastrictionToImage.g
 
 julia> true
 true
@@ -626,6 +654,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalCoimageObject.g
+
 julia> true
 true
 
@@ -673,6 +703,8 @@ julia> Display( ImageEmbedding( phi ) )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalPreimage.g
+
 julia> true
 true
 
@@ -702,6 +734,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalEqualizer.g
 
 julia> true
 true
@@ -764,6 +798,8 @@ julia> Display( psi )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalFiberProduct.g
 
 julia> true
 true
@@ -828,6 +864,8 @@ julia> Display( omega1 )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalCoequalizer.g
 
 julia> true
 true
@@ -927,6 +965,8 @@ julia> C = Coequalizer( [ f, g ] )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1FiberProduct.g
+
 julia> true
 true
 
@@ -973,6 +1013,8 @@ julia> Display( pi2 )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1Pushout.g
+
 julia> true
 true
 
@@ -1000,6 +1042,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1Pushout.g
 
 julia> true
 true
@@ -1056,6 +1100,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalCartesianLambdaIntroduction.g
 
 julia> true
 true
@@ -1125,6 +1171,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalLift.g
+
 julia> true
 true
 
@@ -1176,6 +1224,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalColift.g
+
 julia> true
 true
 
@@ -1223,6 +1273,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalSingletonMorphism.g
+
 julia> true
 true
 
@@ -1244,6 +1296,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalTopos.g
 
 julia> true
 true
@@ -1356,6 +1410,8 @@ julia> DirectProductExponentialCompatibilityMorphism( [ M, N, P, Q ] );
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalSubobjectClassifier.g
+
 julia> true
 true
 
@@ -1399,6 +1455,8 @@ julia> Display( ClassifyingMorphismOfSubobject( m ) )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalHeytingAlgebraOfSubobjects.g
 
 julia> true
 true
@@ -1459,6 +1517,8 @@ julia> Display( iotaNpL )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalPushoutComplement.g
+
 julia> true
 true
 
@@ -1491,6 +1551,8 @@ julia> Display( m )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1PushoutComplement.g
+
 julia> true
 true
 
@@ -1507,6 +1569,8 @@ julia> Display( c )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/SkeletalMorphismsOfExternalHom.g
 
 julia> true
 true
@@ -1537,6 +1601,8 @@ julia> Display( MorphismsOfExternalHom( M, N ) )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SkeletalExactCoverWithGlobalElements.g
+
 julia> true
 true
 
@@ -1561,6 +1627,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/doc/Skeletal1FinSet.g
 
 julia> true
 true
@@ -1615,6 +1683,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/doc/Skeletal1MapOfFinSets.g
+
 julia> true
 true
 
@@ -1666,6 +1736,8 @@ julia> Display( phi )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1IsHomSetInhabited.g
+
 julia> true
 true
 
@@ -1694,6 +1766,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1WellDefined.g
 
 julia> true
 true
@@ -1733,6 +1807,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1PreCompose.g
+
 julia> true
 true
 
@@ -1761,6 +1837,8 @@ julia> Display( alpha )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1MonoEpi.g
 
 julia> true
 true
@@ -1824,6 +1902,8 @@ julia> id
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1InitialTerminal.g
+
 julia> true
 true
 
@@ -1886,6 +1966,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1IsProjective.g
+
 julia> true
 true
 
@@ -1917,6 +1999,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1IsInjective.g
 
 julia> true
 true
@@ -1952,6 +2036,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1DirectProduct.g
 
 julia> true
 true
@@ -1999,6 +2085,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1Coproduct.g
 
 julia> true
 true
@@ -2060,6 +2148,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1ImageObject.g
+
 julia> true
 true
 
@@ -2095,6 +2185,8 @@ julia> Cardinality( I )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1ImageEmbedding.g
+
 julia> true
 true
 
@@ -2117,6 +2209,8 @@ julia> Display( pi )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1CoastrictionToImage.g
 
 julia> true
 true
@@ -2186,6 +2280,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1CoimageObject.g
+
 julia> true
 true
 
@@ -2233,6 +2329,8 @@ julia> Display( ImageEmbedding( phi ) )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1Preimage.g
+
 julia> true
 true
 
@@ -2262,6 +2360,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1Equalizer.g
 
 julia> true
 true
@@ -2324,6 +2424,8 @@ julia> Display( psi )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1FiberProduct.g
 
 julia> true
 true
@@ -2388,6 +2490,8 @@ julia> Display( omega1 )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1Coequalizer.g
 
 julia> true
 true
@@ -2487,6 +2591,8 @@ julia> C = Coequalizer( [ f, g ] )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1FiberProduct.g
+
 julia> true
 true
 
@@ -2533,6 +2639,8 @@ julia> Display( pi2 )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1Pushout.g
+
 julia> true
 true
 
@@ -2560,6 +2668,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1Pushout.g
 
 julia> true
 true
@@ -2616,6 +2726,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1CartesianLambdaIntroduction.g
 
 julia> true
 true
@@ -2685,6 +2797,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1Lift.g
+
 julia> true
 true
 
@@ -2736,6 +2850,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1Colift.g
+
 julia> true
 true
 
@@ -2783,6 +2899,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1SingletonMorphism.g
+
 julia> true
 true
 
@@ -2804,6 +2922,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1Topos.g
 
 julia> true
 true
@@ -2916,6 +3036,8 @@ julia> DirectProductExponentialCompatibilityMorphism( [ M, N, P, Q ] );
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1SubobjectClassifier.g
+
 julia> true
 true
 
@@ -2959,6 +3081,8 @@ julia> Display( ClassifyingMorphismOfSubobject( m ) )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1HeytingAlgebraOfSubobjects.g
 
 julia> true
 true
@@ -3019,6 +3143,8 @@ julia> Display( iotaNpL )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1PushoutComplement.g
+
 julia> true
 true
 
@@ -3051,6 +3177,8 @@ julia> Display( m )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1PushoutComplement.g
+
 julia> true
 true
 
@@ -3067,6 +3195,8 @@ julia> Display( c )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Skeletal1MorphismsOfExternalHom.g
 
 julia> true
 true
@@ -3097,6 +3227,8 @@ julia> Display( MorphismsOfExternalHom( M, N ) )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Skeletal1ExactCoverWithGlobalElements.g
+
 julia> true
 true
 
@@ -3121,6 +3253,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/doc/FinSet.g
 
 julia> true
 true
@@ -3155,6 +3289,8 @@ false
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/doc/FinSetNC.g
 
 julia> true
 true
@@ -3200,6 +3336,8 @@ false
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/doc/MapOfFinSets.g
 
 julia> true
 true
@@ -3294,6 +3432,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/doc/MapOfFinSetsNC.g
+
 julia> true
 true
 
@@ -3338,6 +3478,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/doc/IsEqualForElementsOfFinSets.g
 
 julia> true
 true
@@ -3407,6 +3549,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/IsHomSetInhabited.g
+
 julia> true
 true
 
@@ -3435,6 +3579,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/PreCompose.g
 
 julia> true
 true
@@ -3468,6 +3614,8 @@ false
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/IsEpiMono.g
 
 julia> true
 true
@@ -3514,6 +3662,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/InitialTerminal.g
 
 julia> true
 true
@@ -3574,6 +3724,8 @@ julia> Display( List( M, pi_t ) )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/IsProjective.g
+
 julia> true
 true
 
@@ -3605,6 +3757,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/IsInjective.g
 
 julia> true
 true
@@ -3641,6 +3795,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/DirectProduct.g
+
 julia> true
 true
 
@@ -3669,6 +3825,8 @@ julia> Display( P )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Coproduct.g
 
 julia> true
 true
@@ -3749,6 +3907,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/ImageObject.g
+
 julia> true
 true
 
@@ -3795,6 +3955,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/CoimageObject.g
+
 julia> true
 true
 
@@ -3840,6 +4002,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Equalizer.g
 
 julia> true
 true
@@ -3907,6 +4071,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/FiberProduct.g
+
 julia> true
 true
 
@@ -3955,6 +4121,8 @@ julia> Display( int2 )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Coequalizer.g
 
 julia> true
 true
@@ -4158,6 +4326,8 @@ julia> Display( AsList( C )[ 1 ][ 2 ] )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Pushout.g
+
 julia> true
 true
 
@@ -4213,6 +4383,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/CartesianLambdaIntroduction.g
+
 julia> true
 true
 
@@ -4256,6 +4428,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Lift.g
 
 julia> true
 true
@@ -4308,6 +4482,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/Colift.g
+
 julia> true
 true
 
@@ -4355,6 +4531,8 @@ false
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SingletonMorphism.g
+
 julia> true
 true
 
@@ -4374,6 +4552,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/Topos.g
 
 julia> true
 true
@@ -4469,6 +4649,8 @@ julia> DirectProductExponentialCompatibilityMorphism( [ M, N, P, Q ] );
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/SubobjectClassifier.g
+
 julia> true
 true
 
@@ -4512,6 +4694,8 @@ julia> Display( ClassifyingMorphismOfSubobject( m ) )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/HeytingAlgebraOfSubobjects.g
 
 julia> true
 true
@@ -4596,6 +4780,8 @@ julia> Display( NpL )
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
 
+julia> # extracted from examples/PushoutComplement.g
+
 julia> true
 true
 
@@ -4624,6 +4810,8 @@ julia> m = EmbeddingOfFinSets( L, G )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP
+
+julia> # extracted from examples/PushoutComplement.g
 
 julia> true
 true

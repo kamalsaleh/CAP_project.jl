@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, ZXCalculusForCAP
 
+julia> # extracted from examples/CategoryOfZXDiagrams.g
+
 julia> true
 true
 
@@ -148,6 +150,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, ZXCalculusForCAP
+
+julia> # extracted from examples/ImportExport.g
 
 julia> true
 true
