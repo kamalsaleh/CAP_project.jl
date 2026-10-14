@@ -864,7 +864,7 @@ end );
         for i in (1):(Length( degree_list1 ))
 
           buffer_list = List( degree_list2, x -> [ degree_list1[ i ][ 1 ] + x[ 1 ], x[ 2 ] ] );
-          for j in (1):(degree_list1[ i ][ 2 ] )
+          for j in (1):(degree_list1[ i ][ 2 ])
             Append( degree_list_tensor_object, buffer_list );
           end;
 

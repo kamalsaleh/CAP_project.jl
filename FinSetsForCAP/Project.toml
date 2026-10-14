@@ -9,6 +9,14 @@ authors = [
 # Transpiled from GAP's FinSetsForCAP v2026.06-02
 version = "0.3.11"
 
+# Current dependencies of GAP's FinSetsForCAP v2026.06-02
+# NeededOtherPackages:
+#   CAP >= 2026.06-01
+#   MonoidalCategories >= 2026.06-01
+#   CartesianCategories >= 2026.06-01
+#   Toposes >= 2024.03-04
+# SuggestedOtherPackages:
+
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 MonoidalCategories = "bfd98c86-782f-4b94-909f-74167f1eb613"

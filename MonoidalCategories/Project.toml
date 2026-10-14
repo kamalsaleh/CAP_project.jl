@@ -11,6 +11,12 @@ authors = [
 # Transpiled from GAP's MonoidalCategories v2026.08-02
 version = "0.3.3"
 
+# Current dependencies of GAP's MonoidalCategories v2026.08-02
+# NeededOtherPackages:
+#   ToolsForHomalg >= 2018.05.22
+#   CAP >= 2026.06-01
+# SuggestedOtherPackages:
+
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 

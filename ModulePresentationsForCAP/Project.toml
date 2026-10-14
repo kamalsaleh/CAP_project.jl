@@ -9,6 +9,14 @@ authors = [
 # Transpiled from GAP's ModulePresentationsForCAP v2026.06-01
 version = "0.2.3"
 
+# Current dependencies of GAP's ModulePresentationsForCAP v2026.06-01
+# NeededOtherPackages:
+#   MatricesForHomalg >= 2026.04-01
+#   CAP >= 2026.04-01
+#   MonoidalCategories >= 2025.08-01
+# SuggestedOtherPackages:
+#   RingsForHomalg >= 2022.07-01
+
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"

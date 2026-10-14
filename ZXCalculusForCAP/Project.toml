@@ -8,6 +8,16 @@ authors = [
 # Transpiled from GAP's ZXCalculusForCAP v2026.07-01
 version = "0.2.18"
 
+# Current dependencies of GAP's ZXCalculusForCAP v2026.07-01
+# NeededOtherPackages:
+#   CAP >= 2025.06-06
+#   MonoidalCategories >= 2023.05-03
+#   CartesianCategories >= 2026.07-03
+#   FinSetsForCAP >= 2025.12-07
+# SuggestedOtherPackages:
+#   FunctorCategories >= 2023.07-01
+#   json 2.1.1
+
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 MonoidalCategories = "bfd98c86-782f-4b94-909f-74167f1eb613"
