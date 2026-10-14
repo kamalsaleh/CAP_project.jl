@@ -22,7 +22,7 @@ end );
 
 # =#
 
-## Sum( (0):(n - 1), i -> q^i );
+## Sum( [ 0 .. n - 1 ], i -> q^i );
 @InstallMethod( GeometricSum,
         [ IsBigInt, IsBigInt ],
   function ( q, n )
@@ -35,7 +35,7 @@ end );
     
 end );
 
-## Sum( (1):(n - 1), i -> i * q^(i-1) )
+## Sum( [ 1 .. n - 1 ], i -> i * q^(i-1) )
 @InstallMethod( GeometricSumDiff1,
         [ IsBigInt, IsBigInt ],
   function ( q, n )
@@ -54,7 +54,7 @@ end );
 @InstallMethod( RemIntWithDomain,
         [ IsBigInt, IsObject, IsBigInt ],
         ## FIXME: replace IsObject -> IsBigInt
-        ## The line Product( List( D[(1):(k - 1)], Length ) ) in AddProjectionInFactorOfDirectProductWithGivenDirectProduct
+        ## The line Product( List( D[[ 1 .. k - 1 ]], Length ) ) in AddProjectionInFactorOfDirectProductWithGivenDirectProduct
         ## produces during *runtime* an empty list and Product( [ ] ) in CAP.jl evaluates it to 1 and not BigInt( 1 )
         
   function ( number, a, ab )
@@ -69,7 +69,7 @@ end );
 @InstallMethod( QuoIntWithDomain,
         [ IsBigInt, IsObject, IsBigInt ],
         ## FIXME: replace IsObject -> IsBigInt
-        ## The line Product( List( D[(1):(k - 1)], Length ) ) in AddProjectionInFactorOfDirectProductWithGivenDirectProduct
+        ## The line Product( List( D[[ 1 .. k - 1 ]], Length ) ) in AddProjectionInFactorOfDirectProductWithGivenDirectProduct
         ## produces during *runtime* an empty list and Product( [ ] ) in CAP.jl evaluates it to 1 and not BigInt( 1 )
         
   function ( number, a, ab )
@@ -84,7 +84,7 @@ end );
 @InstallMethod( DivIntWithGivenQuotient,
         [ IsBigInt, IsObject, IsBigInt ],
         ## FIXME: replace IsObject -> IsBigInt
-        ## The line Product( List( D[(1):(k - 1)], Length ) ) in AddProjectionInFactorOfDirectProductWithGivenDirectProduct
+        ## The line Product( List( D[[ 1 .. k - 1 ]], Length ) ) in AddProjectionInFactorOfDirectProductWithGivenDirectProduct
         ## produces during *runtime* an empty list and Product( [ ] ) in CAP.jl evaluates it to 1 and not BigInt( 1 )
         
   function ( number, d, q )
