@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
 
+julia> # extracted from examples/PowerObjectFunctorial.g
+
 julia> true
 true
 
@@ -24,6 +26,8 @@ julia> Display( Pf )
 
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
+
+julia> # extracted from examples/SingletonMorphism.g
 
 julia> true
 true
@@ -51,6 +55,8 @@ true
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
 
+julia> # extracted from examples/IsomorphismOntoCartesianSquareOfPowerObject.g
+
 julia> true
 true
 
@@ -67,6 +73,8 @@ julia> Display( ia )
 
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
+
+julia> # extracted from examples/RelativeTruthMorphisms.g
 
 julia> true
 true
@@ -139,6 +147,8 @@ julia> Display( iPa )
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
 
+julia> # extracted from examples/PushoutComplement_FinSets.g
+
 julia> true
 true
 
@@ -168,6 +178,8 @@ julia> m = EmbeddingOfFinSets( L, G )
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
 
+julia> # extracted from examples/PushoutComplement_FinSets.g
+
 julia> HasPushoutComplement( l, m )
 true
 
@@ -183,6 +195,8 @@ julia> Display( D )
 
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
+
+julia> # extracted from examples/PushoutComplement_SkeletalFinSets.g
 
 julia> true
 true
@@ -216,6 +230,8 @@ julia> Display( m )
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
 
+julia> # extracted from examples/PushoutComplement_SkeletalFinSets.g
+
 julia> HasPushoutComplement( l, m )
 true
 
@@ -229,6 +245,8 @@ julia> Display( c )
 
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
+
+julia> # extracted from examples/DPO_FinSets.g
 
 julia> true
 true
@@ -268,6 +286,8 @@ julia> r = EmbeddingOfFinSets( K, R )
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
 
+julia> # extracted from examples/PushoutComplement_FinSets.g
+
 julia> G = FinSet( [ 0, 1, 2, 3, 4, 5, 6, 10 ] );
 
 julia> Length( G )
@@ -283,6 +303,8 @@ julia> m = EmbeddingOfFinSets( L, G )
 
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
+
+julia> # extracted from examples/DPO_FinSets.g
 
 julia> p = DPO( m, l, r );
 
@@ -304,6 +326,8 @@ julia> Display( H )
 
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories, FinSetsForCAP, Toposes
+
+julia> # extracted from examples/LawvereTierney.g
 
 julia> true
 true

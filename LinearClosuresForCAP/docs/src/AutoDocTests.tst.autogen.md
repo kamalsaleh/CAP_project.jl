@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, LinearAlgebraForCAP, FinSetsForCAP, LinearClosuresForCAP
 
+julia> # extracted from examples/LinearClosure.g
+
 julia> Q = HomalgFieldOfRationals( );
 
 julia> QSkeletalFinSets = LinearClosure( Q, SkeletalFinSets )

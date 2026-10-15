@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories
 
+julia> # extracted from examples/InfoStringOfInstalledOperationsOfCategory.g
+
 julia> true
 true
 
@@ -22,6 +24,8 @@ and furthermore mathematically
 
 ```jldoctest AutoDocTests
 julia> using CAP, CartesianCategories
+
+julia> # extracted from examples/InitialCategory.g
 
 julia> I = InitialCategory( )
 InitialCategory( )
