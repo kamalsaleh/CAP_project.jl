@@ -93,20 +93,24 @@ julia> a = "a" / T;
 
 julia> L = [ "b" / T, "c" / T, "d" / T ];
 
+julia> M = [ 3, 2, 4 ];
 
-julia> DistributiveCartesianCategoriesTest( T, opposite, a, L );
 
-julia> DistributiveCartesianCategoriesTest( T, opposite_primitive, a, L );
+julia> DistributiveCartesianCategoriesTest( T, opposite, a, L, M );
+
+julia> DistributiveCartesianCategoriesTest( T, opposite_primitive, a, L, M );
 
 
 julia> a = "a" / T;
 
 julia> L = [ "b" / T, "c" / T, "d" / T ];
 
+julia> M = [ 3, 2, 4 ];
 
-julia> CodistributiveCocartesianCategoriesTest( T, opposite, a, L );
 
-julia> CodistributiveCocartesianCategoriesTest( T, opposite_primitive, a, L );
+julia> CodistributiveCocartesianCategoriesTest( T, opposite, a, L, M );
+
+julia> CodistributiveCocartesianCategoriesTest( T, opposite_primitive, a, L, M );
 
 
 julia> a = "a" / T;

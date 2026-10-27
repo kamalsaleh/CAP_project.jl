@@ -6,8 +6,8 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>"
 ]
 
-# Transpiled from GAP's Locales v2026.05-05
-version = "0.1.1"
+# Transpiled from GAP's Locales v2026.06-01
+version = "0.1.2"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
@@ -23,9 +23,9 @@ FpCategories = "b9f20f1b-1226-4811-b6a0-b2e47a225553"
 
 [compat]
 CAP = "0.8"
-CartesianCategories = "~0.3.13"
+CartesianCategories = "~0.3.13, 0.4"
 FpCategories = "~0.1.8"
-MonoidalCategories = "~0.2.13"
+MonoidalCategories = "~0.2.13, 0.3"
 ToolsForCategoricalTowers = "~0.1.6"
 Toposes = "~0.1.16"
 julia = "1.12"
