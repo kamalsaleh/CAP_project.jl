@@ -11,7 +11,7 @@ SkeletalDiscreteCategory( "IsPosInt" )
 julia> Display( D )
 A CAP category with name SkeletalDiscreteCategory( "IsPosInt" ):
 
-8 primitive operations were used to derive 75 operations for this category
+8 primitive operations were used to derive 84 operations for this category
 which algorithmically
 * IsCategoryWithDecidableColifts
 * IsCategoryWithDecidableLifts
@@ -72,7 +72,7 @@ TotalOrderAsCategory( "IsInt" )
 julia> Display( D )
 A CAP category with name TotalOrderAsCategory( "IsInt" ):
 
-8 primitive operations were used to derive 77 operations for this category
+8 primitive operations were used to derive 86 operations for this category
 which algorithmically
 * IsCategoryWithDecidableColifts
 * IsCategoryWithDecidableLifts
@@ -164,7 +164,7 @@ A CAP category with name
 ProsetOfCategory( PathCategory( FinQuiver( "q(a,b)[f:a→b,g:b→a]" ) )
 / [ f⋅g == id(a), g⋅f == id(b) ] ):
 
-11 primitive operations were used to derive 76 operations for this category
+11 primitive operations were used to derive 85 operations for this category
 which algorithmically
 * IsThinCategory
 * IsCategoryWithDecidableColifts
