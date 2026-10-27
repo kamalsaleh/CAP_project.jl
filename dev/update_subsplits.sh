@@ -65,6 +65,11 @@ git subtree split --prefix=LinearClosuresForCAP -b LinearClosuresForCAP-split > 
 git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/LinearClosuresForCAP.jl.git LinearClosuresForCAP-split:master
 echo "Pushed to LinearClosuresForCAP.jl"
 
+# Locales
+git subtree split --prefix=Locales -b Locales-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/Locales.jl.git Locales-split:master
+echo "Pushed to Locales.jl"
+
 # FreydCategoriesForCAP
 git subtree split --prefix=FreydCategoriesForCAP -b FreydCategoriesForCAP-split > /dev/null 2>&1
 git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FreydCategoriesForCAP.jl.git FreydCategoriesForCAP-split:master

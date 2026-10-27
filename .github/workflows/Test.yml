@@ -33,6 +33,7 @@ jobs:
           - FinSetsForCAP
           - ZXCalculusForCAP
           - LinearAlgebraForCAP
+          - Locales
           - AdditiveClosuresForCAP
           - LinearClosuresForCAP
           - FreydCategoriesForCAP
