@@ -1571,7 +1571,7 @@ function Show( str::String; scale = "1", width = "10in", height = "15in" )
     write( filename, latex_content )
     
     cmd = Cmd( `pdflatex -interaction=nonstopmode -halt-on-error main.tex`; dir = dir )
-    ret = run( ignorestatus( pipeline( cmd; stdout = devnull, stderr = devnull ) ) )
+    ret = run( pipeline( ignorestatus( cmd ); stdout = devnull, stderr = devnull ) )
     
     if ret.exitcode != 0
         error( "pdflatex failed! Check the .tex file at: ", filename )
