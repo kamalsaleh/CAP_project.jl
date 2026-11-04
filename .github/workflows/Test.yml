@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - ci-tests
   pull_request:
   schedule:
     - cron: "0 0 * * *"  # Run every day at midnight
@@ -41,6 +42,7 @@ jobs:
           - GeneralizedMorphismsForCAP
         julia-version:
           - '1.12'
+          - '1.13'
           - 'nightly'
         os:
           - ubuntu-latest
