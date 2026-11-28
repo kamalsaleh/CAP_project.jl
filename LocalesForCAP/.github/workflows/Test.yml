@@ -25,7 +25,7 @@ jobs:
         # generated from .github/ci_test_groups.yml
         group:
           - group: "default"
-            files: ["AutoDocTests.tst.autogen.md", "TerminalCategoryTopos.tst.autogen.md"]
+            files: ["DiscreteSkeletalCategory.g.autogen.md", "ProsetOfCategory.g.autogen.md", "TerminalCategoryTopos.tst.autogen.md", "TotalOrderAsCategory.g.autogen.md"]
         julia-version:
           - '1.12'
           - '1.13'

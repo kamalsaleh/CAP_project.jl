@@ -25,7 +25,7 @@ jobs:
         # generated from .github/ci_test_groups.yml
         group:
           - group: "default"
-            files: ["AutoDocTests.tst.autogen.md"]
+            files: ["AdditiveClosureKronecker.g.autogen.md", "AdditiveClosureMonoidal.g.autogen.md", "CategoryOfColumns.g.autogen.md", "CategoryOfRows.g.autogen.md", "Opposite_CategoryOfRows_as_CategoryOfColumns.g.autogen.md", "RowsAndColsOverFields.g.autogen.md", "WeakHomomorphismTheorem.g.autogen.md"]
         julia-version:
           - '1.12'
           - '1.13'

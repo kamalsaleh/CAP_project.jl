@@ -25,7 +25,7 @@ jobs:
         # generated from .github/ci_test_groups.yml
         group:
           - group: "default"
-            files: ["AutoDocTests.tst.autogen.md", "CategoryOfZXDiagrams.tst.autogen.md"]
+            files: ["CategoryOfZXDiagrams.g.autogen.md", "CategoryOfZXDiagrams.tst.autogen.md", "ImportExport.g.autogen.md"]
         julia-version:
           - '1.12'
           - '1.13'

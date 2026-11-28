@@ -4,4 +4,10 @@
 ci_test_groups:
   - group: default
     files:
-      - AutoDocTests.tst.autogen.md
+      - AdditiveClosureKronecker.g.autogen.md
+      - AdditiveClosureMonoidal.g.autogen.md
+      - CategoryOfColumns.g.autogen.md
+      - CategoryOfRows.g.autogen.md
+      - Opposite_CategoryOfRows_as_CategoryOfColumns.g.autogen.md
+      - RowsAndColsOverFields.g.autogen.md
+      - WeakHomomorphismTheorem.g.autogen.md

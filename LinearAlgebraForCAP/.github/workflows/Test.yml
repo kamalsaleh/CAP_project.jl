@@ -25,7 +25,7 @@ jobs:
         # generated from .github/ci_test_groups.yml
         group:
           - group: "default"
-            files: ["200_FreydCategoriesForCAP.tst.autogen.md", "AutoDocTests.tst.autogen.md", "HomogeneousLinearSystems.tst.autogen.md"]
+            files: ["200_FreydCategoriesForCAP.tst.autogen.md", "Example.g.autogen.md", "Functors.g.autogen.md", "HomogeneousLinearSystems.g.autogen.md", "HomogeneousLinearSystems.tst.autogen.md", "HomologyObject.g.autogen.md", "Liftable.g.autogen.md", "MonoidalStructure.g.autogen.md", "MorphismToSink_MorphismFromSource.g.autogen.md", "OppositeCategory.g.autogen.md", "PreComposeList.g.autogen.md", "SplitEpiSummand.g.autogen.md", "VectorSpacesKernelTest.g.autogen.md", "VectorSpacesPullback.g.autogen.md", "WrapperCategory.g.autogen.md"]
         julia-version:
           - '1.12'
           - '1.13'

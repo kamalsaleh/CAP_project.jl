@@ -4,5 +4,12 @@
 ci_test_groups:
   - group: default
     files:
-      - AutoDocTests.tst.autogen.md
+      - DPO_FinSets.g.autogen.md
+      - IsomorphismOntoCartesianSquareOfPowerObject.g.autogen.md
+      - LawvereTierney.g.autogen.md
       - Opposite.tst.autogen.md
+      - PowerObjectFunctorial.g.autogen.md
+      - PushoutComplement_FinSets.g.autogen.md
+      - PushoutComplement_SkeletalFinSets.g.autogen.md
+      - RelativeTruthMorphisms.g.autogen.md
+      - SingletonMorphism.g.autogen.md

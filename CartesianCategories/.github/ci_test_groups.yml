@@ -4,6 +4,7 @@
 ci_test_groups:
   - group: default
     files:
-      - AutoDocTests.tst.autogen.md
+      - InfoStringOfInstalledOperationsOfCategory.g.autogen.md
+      - InitialCategory.g.autogen.md
       - TerminalCategoryCartesian.tst.autogen.md
       - TerminalCategoryCocartesian.tst.autogen.md

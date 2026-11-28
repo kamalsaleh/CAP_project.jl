@@ -4,10 +4,14 @@
 ci_test_groups:
   - group: default
     files:
-      - AutoDocTests.tst.autogen.md
       - CAP_INTERNAL_ASSERT_VALUE_IS_OF_TYPE_GETTER.tst.autogen.md
+      - DummyCategory.g.autogen.md
       - FilterIntersection.md
+      - FiniteSkeletalDiscreteCategory.g.autogen.md
+      - HandlePrecompiledTowers.g.autogen.md
       - IsWellDefinedForMorphismsWithGivenSourceAndRange.tst.autogen.md
       - ListWithKeys.tst.autogen.md
       - Simplify.tst.autogen.md
+      - TerminalCategoryWithMultipleObjects.g.autogen.md
+      - TerminalCategoryWithSingleObject.g.autogen.md
       - ZFunctions.md

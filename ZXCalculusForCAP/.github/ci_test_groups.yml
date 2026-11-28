@@ -4,5 +4,6 @@
 ci_test_groups:
   - group: default
     files:
-      - AutoDocTests.tst.autogen.md
+      - CategoryOfZXDiagrams.g.autogen.md
       - CategoryOfZXDiagrams.tst.autogen.md
+      - ImportExport.g.autogen.md

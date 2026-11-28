@@ -4,4 +4,4 @@
 ci_test_groups:
   - group: default
     files:
-      - AutoDocTests.tst.autogen.md
+      - LinearClosure.g.autogen.md

@@ -4,5 +4,7 @@
 ci_test_groups:
   - group: default
     files:
-      - AutoDocTests.tst.autogen.md
+      - DiscreteSkeletalCategory.g.autogen.md
+      - ProsetOfCategory.g.autogen.md
       - TerminalCategoryTopos.tst.autogen.md
+      - TotalOrderAsCategory.g.autogen.md

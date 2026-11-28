@@ -5,6 +5,7 @@ ci_test_groups:
   - group: default
     files:
       - 050_load_with_suggested_dependencies.tst.autogen.md
-      - AutoDocTests.tst.autogen.md
+      - AdelmanCategoryBasics.g.autogen.md
+      - Prosets.g.autogen.md
       - add_hom_structure_using_external_hom.tst.autogen.md
       - adelman_category_hom_structure.tst.md
